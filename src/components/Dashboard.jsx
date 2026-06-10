@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, Tooltip,
   ResponsiveContainer, CartesianGrid,
 } from 'recharts';
-import { getResults } from '../utils/storage';
+import { getResults, deleteResult } from '../utils/storage';
 import { criteriaData } from '../utils/mca';
 
 function exportCSV(profile, results) {
@@ -81,7 +82,9 @@ function CriteriaComparison({ older, newer }) {
 }
 
 export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
-  const results = getResults(profile.id);
+  const [results, setResults] = useState(() => getResults(profile.id));
+  const [confirmDelete, setConfirmDelete] = useState(null); // resultId to confirm
+
   const reversed = [...results].reverse();
 
   const chartData = results.map((r, i) => ({
@@ -90,8 +93,31 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
     score: r.overallScore,
   }));
 
+  function handleDelete(resultId) {
+    deleteResult(profile.id, resultId);
+    setResults(getResults(profile.id));
+    setConfirmDelete(null);
+  }
+
   return (
     <div className="dashboard-screen">
+      {/* Confirm delete modal */}
+      {confirmDelete && (
+        <div className="modal-backdrop">
+          <div className="modal-card">
+            <p>Delete this assessment? This cannot be undone.</p>
+            <div className="modal-actions">
+              <button className="btn-primary btn-danger" onClick={() => handleDelete(confirmDelete)}>
+                Delete
+              </button>
+              <button className="btn-secondary" onClick={() => setConfirmDelete(null)}>
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="dashboard-topbar">
         <div className="dashboard-identity">
           <span className="dashboard-initial">{profile.name[0].toUpperCase()}</span>
@@ -166,8 +192,17 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
                     <span className="assessment-date">{formatDate(r.date)}</span>
                     <LevelBadge level={r.level} />
                   </div>
-                  <div className="assessment-score" style={{ color: getColor(r.overallScore) }}>
-                    {r.overallScore}<span style={{ fontSize: '0.9rem', color: '#aaa' }}>/100</span>
+                  <div className="assessment-row-right">
+                    <div className="assessment-score" style={{ color: getColor(r.overallScore) }}>
+                      {r.overallScore}<span style={{ fontSize: '0.9rem', color: '#aaa' }}>/100</span>
+                    </div>
+                    <button
+                      className="delete-btn"
+                      onClick={() => setConfirmDelete(r.id)}
+                      title="Delete this assessment"
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
               ))}

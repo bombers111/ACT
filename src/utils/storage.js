@@ -38,6 +38,11 @@ export function getResults(profileId) {
   }
 }
 
+export function deleteResult(profileId, resultId) {
+  const results = getResults(profileId).filter((r) => r.id !== resultId);
+  localStorage.setItem(resultsKey(profileId), JSON.stringify(results));
+}
+
 export function saveResult(profileId, result) {
   const results = getResults(profileId);
   const entry = {
