@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": "1781096272939",
+    "date": "2026-06-10T12:57:52.939Z",
+    "profileName": "jonas",
+    "overallScore": 43,
+    "level": "In Transition",
+    "criteria": {
+      "soil_management": 33,
+      "water": 33,
+      "biodiversity": 33,
+      "plant_health_inputs": 100,
+      "soil_nutrition": 50,
+      "vegetation_management": 33,
+      "crop_diversification": 17,
+      "plastics_waste": 50,
+      "contextuality": 17,
+      "social_foundations": 17
+    }
+  }
+]
