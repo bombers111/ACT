@@ -36,5 +36,24 @@
       "contextuality": 67,
       "social_foundations": 67
     }
+  },
+  {
+    "id": "1781113734269",
+    "date": "2026-06-10T17:48:54.269Z",
+    "profileName": "Jonas Putman",
+    "overallScore": 71,
+    "level": "Approaching Regenerative",
+    "criteria": {
+      "soil_management": 83,
+      "water": 67,
+      "biodiversity": 67,
+      "plant_health_inputs": 17,
+      "soil_nutrition": 100,
+      "vegetation_management": 67,
+      "crop_diversification": 83,
+      "plastics_waste": 100,
+      "contextuality": 67,
+      "social_foundations": 100
+    }
   }
 ]
