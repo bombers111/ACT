@@ -24,7 +24,7 @@ function LevelBadge({ level }) {
   );
 }
 
-export default function Results({ results, onRetake }) {
+export default function Results({ results, profile, onRetake, onDashboard }) {
   const { overallScore, criteriaScores, weakest, level } = results;
   const { criteria } = criteriaData;
 
@@ -158,9 +158,22 @@ export default function Results({ results, onRetake }) {
         </div>
       </div>
 
-      <button className="btn-secondary retake-btn" onClick={onRetake}>
-        Retake Assessment
-      </button>
+      <div className="results-actions">
+        {profile && (
+          <button className="btn-primary" onClick={onDashboard}>
+            View Dashboard
+          </button>
+        )}
+        <button className="btn-secondary" onClick={onRetake}>
+          Retake Assessment
+        </button>
+      </div>
+
+      {profile && (
+        <p className="saved-note">
+          This assessment has been saved to your profile.
+        </p>
+      )}
     </div>
   );
 }
