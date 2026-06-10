@@ -17,5 +17,24 @@
       "contextuality": 17,
       "social_foundations": 17
     }
+  },
+  {
+    "id": "1781096321886",
+    "date": "2026-06-10T12:58:41.886Z",
+    "profileName": "jonas",
+    "overallScore": 68,
+    "level": "Approaching Regenerative",
+    "criteria": {
+      "soil_management": 67,
+      "water": 83,
+      "biodiversity": 67,
+      "plant_health_inputs": 33,
+      "soil_nutrition": 67,
+      "vegetation_management": 83,
+      "crop_diversification": 83,
+      "plastics_waste": 100,
+      "contextuality": 67,
+      "social_foundations": 67
+    }
   }
 ]
