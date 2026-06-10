@@ -13,6 +13,7 @@ export default function Survey({ onComplete }) {
   function handleAnswer(questionId, score) {
     const key = `${criterion.id}_${questionId}`;
     setAnswers((prev) => ({ ...prev, [key]: score }));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function getAnswer(questionId) {
