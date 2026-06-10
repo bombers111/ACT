@@ -1,4 +1,16 @@
-export default function Welcome({ onStart }) {
+import { useLang } from '../contexts/LangContext';
+import { getLastResult } from '../utils/storage';
+
+function formatDate(iso) {
+  return new Date(iso).toLocaleDateString(undefined, {
+    day: 'numeric', month: 'short', year: 'numeric',
+  });
+}
+
+export default function Welcome({ profile, onStart }) {
+  const { t } = useLang();
+  const lastResult = profile ? getLastResult(profile.id) : null;
+
   return (
     <div className="welcome-screen">
       <div className="welcome-card">
@@ -7,40 +19,43 @@ export default function Welcome({ onStart }) {
           <p className="logo-sub">Agro-regenerative Citrus Tool</p>
         </div>
 
+        {lastResult && (
+          <div className="last-assessment-banner">
+            <span>{t.lastAssessment}</span>
+            <strong>{formatDate(lastResult.date)} — {lastResult.overallScore}/100</strong>
+            <span className="last-level-dot" style={{ background: lastResult.level?.color }} />
+          </div>
+        )}
+
         <div className="welcome-body">
-          <p className="welcome-intro">
-            This tool helps you assess how regenerative your Valencia citrus farm is,
-            identify your biggest opportunities, and take concrete next steps.
-          </p>
+          <p className="welcome-intro">{t.welcomeIntro}</p>
 
           <div className="welcome-how">
             <div className="how-step">
               <div>
-                <strong>Answer 29 questions</strong>
-                <p>About your soil, water, biodiversity, inputs and more</p>
+                <strong>{t.step1Title}</strong>
+                <p>{t.step1Desc}</p>
               </div>
             </div>
             <div className="how-step">
               <div>
-                <strong>Get your MCA score</strong>
-                <p>Weighted across 10 regenerative criteria</p>
+                <strong>{t.step2Title}</strong>
+                <p>{t.step2Desc}</p>
               </div>
             </div>
             <div className="how-step">
               <div>
-                <strong>See your priorities</strong>
-                <p>Clear next steps for your weakest areas</p>
+                <strong>{t.step3Title}</strong>
+                <p>{t.step3Desc}</p>
               </div>
             </div>
           </div>
 
-          <div className="welcome-note">
-            Based on the <strong>Iberian Regenerative Agriculture Criteria 2026</strong> (CREAF / Asociación de Agricultura Regenerativa), adapted for citrus farming in Valencia.
-          </div>
+          <div className="welcome-note">{t.welcomeNote}</div>
         </div>
 
         <button className="btn-primary btn-large" onClick={onStart}>
-          Start Assessment
+          {t.startAssessment}
         </button>
       </div>
     </div>

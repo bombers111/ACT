@@ -1,18 +1,34 @@
 import { useState, useEffect } from 'react';
-import { criteriaData } from '../utils/mca';
+import criteriaEn from '../data/criteria.json';
+import criteriaEs from '../data/criteria_es.json';
+import criteriaVal from '../data/criteria_val.json';
+import explanations from '../data/explanations.json';
+import { saveDraft, loadDraft } from '../utils/storage';
+import { useLang } from '../contexts/LangContext';
+
+const criteriaMap = { en: criteriaEn, es: criteriaEs, val: criteriaVal };
 
 export default function Survey({ onComplete }) {
-  const { criteria } = criteriaData;
-  const [currentCriterionIndex, setCurrentCriterionIndex] = useState(0);
-  const [answers, setAnswers] = useState({});
+  const { lang, t } = useLang();
+  const { criteria } = criteriaMap[lang] || criteriaEn;
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [answers, setAnswers] = useState(() => loadDraft());
+  const [openWhy, setOpenWhy] = useState(null); // `criterionId_questionId`
+
+  const criterion = criteria[currentIndex];
+  const totalCriteria = criteria.length;
+  const progressPct = Math.round((currentIndex / totalCriteria) * 100);
+
+  // Scroll to top when criterion changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentCriterionIndex]);
+  }, [currentIndex]);
 
-  const criterion = criteria[currentCriterionIndex];
-  const totalCriteria = criteria.length;
-  const progressPct = Math.round((currentCriterionIndex / totalCriteria) * 100);
+  // Auto-save draft on every answer change
+  useEffect(() => {
+    saveDraft(answers);
+  }, [answers]);
 
   function handleAnswer(questionId, score) {
     const key = `${criterion.id}_${questionId}`;
@@ -28,32 +44,36 @@ export default function Survey({ onComplete }) {
   }
 
   function handleNext() {
-    if (currentCriterionIndex < totalCriteria - 1) {
-      setCurrentCriterionIndex((i) => i + 1);
+    if (currentIndex < totalCriteria - 1) {
+      setCurrentIndex((i) => i + 1);
+      setOpenWhy(null);
     } else {
       onComplete(answers);
     }
   }
 
   function handleBack() {
-    if (currentCriterionIndex > 0) {
-      setCurrentCriterionIndex((i) => i - 1);
+    if (currentIndex > 0) {
+      setCurrentIndex((i) => i - 1);
+      setOpenWhy(null);
     }
+  }
+
+  function toggleWhy(key) {
+    setOpenWhy((prev) => (prev === key ? null : key));
   }
 
   return (
     <div className="survey-screen">
-      {/* Progress bar */}
       <div className="survey-header">
         <div className="progress-bar-outer">
           <div className="progress-bar-inner" style={{ width: `${progressPct}%` }} />
         </div>
         <div className="progress-label">
-          Criterion {currentCriterionIndex + 1} of {totalCriteria}
+          {t.criterionLabel} {currentIndex + 1} {t.ofLabel} {totalCriteria}
         </div>
       </div>
 
-      {/* Criterion card */}
       <div className="criterion-card">
         <div className="criterion-header">
           <div>
@@ -63,52 +83,73 @@ export default function Survey({ onComplete }) {
         </div>
 
         <div className="questions-list">
-          {criterion.questions.map((question, qi) => (
-            <div key={question.id} className="question-block">
-              <p className="question-text">
-                <span className="q-num">{qi + 1}.</span> {question.text}
-              </p>
-              <div className="options-list">
-                {question.options.map((opt) => {
-                  const selected = getAnswer(question.id) === opt.score;
-                  return (
+          {criterion.questions.map((question, qi) => {
+            const whyKey = `${criterion.id}_${question.id}`;
+            const selected = getAnswer(question.id);
+            const whyText = selected
+              ? explanations[criterion.id]?.[question.id]?.[selected]
+              : null;
+
+            return (
+              <div key={question.id} className="question-block">
+                <p className="question-text">
+                  <span className="q-num">{qi + 1}.</span> {question.text}
+                </p>
+                <div className="options-list">
+                  {question.options.map((opt) => {
+                    const isSelected = selected === opt.score;
+                    return (
+                      <button
+                        key={opt.score}
+                        className={`option-btn ${isSelected ? 'selected' : ''}`}
+                        onClick={() => handleAnswer(question.id, opt.score)}
+                      >
+                        <span className="option-score">{opt.score}</span>
+                        <span className="option-label">{opt.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {whyText && (
+                  <div className="why-block">
                     <button
-                      key={opt.score}
-                      className={`option-btn ${selected ? 'selected' : ''}`}
-                      onClick={() => handleAnswer(question.id, opt.score)}
+                      className="why-toggle"
+                      onClick={() => toggleWhy(whyKey)}
                     >
-                      <span className="option-score">{opt.score}</span>
-                      <span className="option-label">{opt.label}</span>
+                      {t.whyThisMatters}
+                      <span className={`why-chevron ${openWhy === whyKey ? 'open' : ''}`}>›</span>
                     </button>
-                  );
-                })}
+                    {openWhy === whyKey && (
+                      <p className="why-text">{whyText}</p>
+                    )}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        <div className="source-note">Source: {criterion.source}</div>
+        <div className="source-note">{t.sourceLabel} {criterion.source}</div>
       </div>
 
-      {/* Navigation */}
       <div className="survey-nav">
-        {currentCriterionIndex > 0 && (
-          <button className="btn-secondary" onClick={handleBack}>
-            Back
-          </button>
+        {currentIndex > 0 && (
+          <button className="btn-secondary" onClick={handleBack}>{t.previous}</button>
         )}
         <button
           className="btn-primary"
           onClick={handleNext}
           disabled={!allAnswered()}
-          title={!allAnswered() ? 'Please answer all questions before continuing' : ''}
         >
-          {currentCriterionIndex === totalCriteria - 1 ? 'See My Results' : 'Next'}
+          {currentIndex === totalCriteria - 1 ? t.seeResults : t.next}
         </button>
       </div>
 
       {!allAnswered() && (
-        <p className="unanswered-note">Answer all {criterion.questions.length} questions to continue.</p>
+        <p className="unanswered-note">
+          {t.answerAll} {criterion.questions.length} {t.questionsToContinue}
+        </p>
       )}
     </div>
   );

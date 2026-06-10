@@ -1,29 +1,24 @@
 import { useState } from 'react';
 import { getProfiles, createProfile, getResults } from '../utils/storage';
+import { useLang } from '../contexts/LangContext';
 
 export default function Auth({ onContinue }) {
+  const { t } = useLang();
   const [view, setView] = useState('main');
   const [name, setName] = useState('');
   const [error, setError] = useState('');
 
   const profiles = getProfiles();
 
-  function handleGuest() {
-    onContinue(null);
-  }
+  function handleGuest() { onContinue(null); }
 
   function handleCreate() {
     const trimmed = name.trim();
-    if (!trimmed) { setError('Please enter a name.'); return; }
+    if (!trimmed) { setError(t.enterName); return; }
     if (profiles.some((p) => p.name.toLowerCase() === trimmed.toLowerCase())) {
-      setError('A profile with this name already exists.'); return;
+      setError(t.profileExists); return;
     }
-    const profile = createProfile(trimmed);
-    onContinue(profile);
-  }
-
-  function handleSelect(profile) {
-    onContinue(profile);
+    onContinue(createProfile(trimmed));
   }
 
   return (
@@ -38,16 +33,16 @@ export default function Auth({ onContinue }) {
           <>
             {profiles.length > 0 && (
               <div className="auth-section">
-                <p className="auth-section-label">Continue as</p>
+                <p className="auth-section-label">{t.continueAs}</p>
                 <div className="profile-list">
                   {profiles.map((p) => {
                     const count = getResults(p.id).length;
                     return (
-                      <button key={p.id} className="profile-btn" onClick={() => handleSelect(p)}>
+                      <button key={p.id} className="profile-btn" onClick={() => onContinue(p)}>
                         <span className="profile-initial">{p.name[0].toUpperCase()}</span>
                         <div className="profile-info">
                           <strong>{p.name}</strong>
-                          <span>{count} assessment{count !== 1 ? 's' : ''}</span>
+                          <span>{count} {count === 1 ? t.assessmentSingular : t.assessmentsPlural}</span>
                         </div>
                         <span className="profile-arrow">›</span>
                       </button>
@@ -57,35 +52,29 @@ export default function Auth({ onContinue }) {
               </div>
             )}
 
-            <div className="auth-divider">
-              {profiles.length > 0 ? 'or' : 'Get started'}
-            </div>
+            <div className="auth-divider">{profiles.length > 0 ? 'or' : t.getStarted}</div>
 
             <div className="auth-actions">
               <button className="btn-primary" onClick={() => { setView('create'); setError(''); }}>
-                Create Profile
+                {t.createProfile}
               </button>
               <button className="btn-secondary" onClick={handleGuest}>
-                Continue as Guest
+                {t.continueGuest}
               </button>
             </div>
 
-            <p className="auth-note">
-              Profiles are stored locally on this device. Creating a profile lets you track your progress over time.
-            </p>
+            <p className="auth-note">{t.profilesLocal}</p>
           </>
         )}
 
         {view === 'create' && (
           <div className="auth-section">
-            <p className="auth-section-label">Create a profile</p>
-            <p className="auth-create-hint">
-              Use your name or your farm name. Your data stays on this device.
-            </p>
+            <p className="auth-section-label">{t.createProfile}</p>
+            <p className="auth-create-hint">{t.createProfileHint}</p>
             <input
               className="auth-input"
               type="text"
-              placeholder="e.g. Finca El Naranjal"
+              placeholder={t.profilePlaceholder}
               value={name}
               onChange={(e) => { setName(e.target.value); setError(''); }}
               onKeyDown={(e) => e.key === 'Enter' && handleCreate()}
@@ -95,10 +84,10 @@ export default function Auth({ onContinue }) {
             {error && <p className="auth-error">{error}</p>}
             <div className="auth-actions">
               <button className="btn-primary" onClick={handleCreate} disabled={!name.trim()}>
-                Create Profile
+                {t.createProfile}
               </button>
               <button className="btn-secondary" onClick={() => setView('main')}>
-                Back
+                {t.back}
               </button>
             </div>
           </div>
