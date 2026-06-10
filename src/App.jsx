@@ -30,7 +30,6 @@ export default function App() {
     <div className="app-container">
       <header className="app-header">
         <div className="header-inner">
-          <span className="header-logo">🍊</span>
           <span className="header-title">ACT — Agro-regenerative Citrus Tool</span>
           <span className="header-subtitle">Valencia, Spain</span>
         </div>

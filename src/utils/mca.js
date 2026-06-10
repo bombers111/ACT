@@ -23,7 +23,7 @@ export function runMCA(answers) {
 
     const avg = answered.reduce((a, b) => a + b, 0) / answered.length;
     // Normalise to 0-100
-    const normalised = ((avg - 1) / 3) * 100;
+    const normalised = ((avg - 1) / 2) * 100;
     criteriaScores[criterion.id] = Math.round(normalised);
   }
 
@@ -52,7 +52,7 @@ export function runMCA(answers) {
 
   const weakest = ranked.slice(0, 3).map(([id, score]) => {
     const criterion = criteria.find((c) => c.id === id);
-    return { id, score, title: criterion.title, icon: criterion.icon };
+    return { id, score, title: criterion.title };
   });
 
   return { overallScore, criteriaScores, weakest, level };

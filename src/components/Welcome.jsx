@@ -3,7 +3,6 @@ export default function Welcome({ onStart }) {
     <div className="welcome-screen">
       <div className="welcome-card">
         <div className="logo-area">
-          <span className="logo-icon">🍊</span>
           <h1>ACT</h1>
           <p className="logo-sub">Agro-regenerative Citrus Tool</p>
         </div>
@@ -16,21 +15,18 @@ export default function Welcome({ onStart }) {
 
           <div className="welcome-how">
             <div className="how-step">
-              <span>📋</span>
               <div>
-                <strong>Answer 28 questions</strong>
+                <strong>Answer 29 questions</strong>
                 <p>About your soil, water, biodiversity, inputs and more</p>
               </div>
             </div>
             <div className="how-step">
-              <span>📊</span>
               <div>
                 <strong>Get your MCA score</strong>
                 <p>Weighted across 10 regenerative criteria</p>
               </div>
             </div>
             <div className="how-step">
-              <span>🎯</span>
               <div>
                 <strong>See your priorities</strong>
                 <p>Clear next steps for your weakest areas</p>
@@ -44,7 +40,7 @@ export default function Welcome({ onStart }) {
         </div>
 
         <button className="btn-primary btn-large" onClick={onStart}>
-          Start Assessment →
+          Start Assessment
         </button>
       </div>
     </div>

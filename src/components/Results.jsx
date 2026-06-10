@@ -52,7 +52,7 @@ export default function Results({ results, onRetake }) {
         <LevelBadge level={level} />
         <p className="hero-msg">
           {overallScore >= 80
-            ? 'Excellent! Your farm meets regenerative standards. Keep monitoring and inspiring others.'
+            ? 'Excellent. Your farm meets regenerative standards. Keep monitoring and inspiring others.'
             : overallScore >= 60
             ? 'You are on the right path. A few key changes will bring you to full regenerative status.'
             : 'You are in transition. The priorities below show where to focus your energy first.'}
@@ -91,7 +91,6 @@ export default function Results({ results, onRetake }) {
             const score = criteriaScores[c.id] ?? 0;
             return (
               <div key={c.id} className="criteria-score-row">
-                <span className="cs-icon">{c.icon}</span>
                 <span className="cs-title">{c.title}</span>
                 <ScoreBar score={score} color={getColor(score)} />
               </div>
@@ -102,7 +101,7 @@ export default function Results({ results, onRetake }) {
 
       {/* Top 3 priorities */}
       <div className="results-section priorities-section">
-        <h2>🎯 Your Top 3 Priorities</h2>
+        <h2>Your Top 3 Priorities</h2>
         <p className="priorities-intro">
           These are your lowest-scoring criteria. Focus here first for the biggest impact.
         </p>
@@ -111,7 +110,6 @@ export default function Results({ results, onRetake }) {
             <div key={w.id} className="priority-card">
               <div className="priority-header">
                 <span className="priority-rank">#{i + 1}</span>
-                <span className="priority-icon">{w.icon}</span>
                 <span className="priority-title">{w.title}</span>
                 <span className="priority-score" style={{ color: getColor(w.score) }}>
                   {w.score}%
@@ -127,7 +125,7 @@ export default function Results({ results, onRetake }) {
 
       {/* All recommendations */}
       <div className="results-section">
-        <h2>📋 All Recommendations</h2>
+        <h2>All Recommendations</h2>
         <div className="all-recs-list">
           {criteria.map((c) => {
             const score = criteriaScores[c.id] ?? 0;
@@ -135,7 +133,7 @@ export default function Results({ results, onRetake }) {
             return (
               <details key={c.id} className="rec-detail">
                 <summary>
-                  <span>{c.icon} {c.title}</span>
+                  <span>{c.title}</span>
                   <span className="rec-score" style={{ color: getColor(score) }}>{score}%</span>
                 </summary>
                 <p className="rec-text">{rec}</p>
@@ -147,7 +145,7 @@ export default function Results({ results, onRetake }) {
 
       {/* Two-level status */}
       <div className="results-section level-section">
-        <h2>📍 Your Status</h2>
+        <h2>Your Status</h2>
         <div className="level-info">
           <div className={`level-box ${overallScore < 80 ? 'active' : ''}`} style={{ borderColor: '#e8a838' }}>
             <strong style={{ color: '#e8a838' }}>In Transition</strong>
@@ -161,7 +159,7 @@ export default function Results({ results, onRetake }) {
       </div>
 
       <button className="btn-secondary retake-btn" onClick={onRetake}>
-        ↩ Retake Assessment
+        Retake Assessment
       </button>
     </div>
   );

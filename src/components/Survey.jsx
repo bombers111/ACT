@@ -54,7 +54,6 @@ export default function Survey({ onComplete }) {
       {/* Criterion card */}
       <div className="criterion-card">
         <div className="criterion-header">
-          <span className="criterion-icon">{criterion.icon}</span>
           <div>
             <h2>{criterion.title}</h2>
             <p className="criterion-desc">{criterion.description}</p>
@@ -76,9 +75,7 @@ export default function Survey({ onComplete }) {
                       className={`option-btn ${selected ? 'selected' : ''}`}
                       onClick={() => handleAnswer(question.id, opt.score)}
                     >
-                      <span className="option-score">
-                        {opt.score === 1 ? '①' : opt.score === 2 ? '②' : opt.score === 3 ? '③' : '④'}
-                      </span>
+                      <span className="option-score">{opt.score}</span>
                       <span className="option-label">{opt.label}</span>
                     </button>
                   );
@@ -88,14 +85,14 @@ export default function Survey({ onComplete }) {
           ))}
         </div>
 
-        <div className="source-note">📚 Source: {criterion.source}</div>
+        <div className="source-note">Source: {criterion.source}</div>
       </div>
 
       {/* Navigation */}
       <div className="survey-nav">
         {currentCriterionIndex > 0 && (
           <button className="btn-secondary" onClick={handleBack}>
-            ← Back
+            Back
           </button>
         )}
         <button
@@ -104,7 +101,7 @@ export default function Survey({ onComplete }) {
           disabled={!allAnswered()}
           title={!allAnswered() ? 'Please answer all questions before continuing' : ''}
         >
-          {currentCriterionIndex === totalCriteria - 1 ? 'See My Results →' : 'Next →'}
+          {currentCriterionIndex === totalCriteria - 1 ? 'See My Results' : 'Next'}
         </button>
       </div>
 
