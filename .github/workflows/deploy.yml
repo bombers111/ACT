@@ -31,6 +31,8 @@ jobs:
       - run: npm ci
 
       - run: npm run build
+        env:
+          VITE_GH_TOKEN: ${{ secrets.VITE_GH_TOKEN }}
 
       - uses: actions/configure-pages@v4
         with:

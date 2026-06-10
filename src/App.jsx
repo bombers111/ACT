@@ -6,6 +6,7 @@ import Results from './components/Results';
 import Dashboard from './components/Dashboard';
 import { runMCA } from './utils/mca';
 import { saveResult } from './utils/storage';
+import { pushAssessmentToGitHub } from './utils/github';
 import './App.css';
 
 export default function App() {
@@ -31,7 +32,8 @@ export default function App() {
     const mca = runMCA(answers);
     setResults(mca);
     if (profile) {
-      saveResult(profile.id, mca);
+      const saved = saveResult(profile.id, mca);
+      pushAssessmentToGitHub(profile.name, { ...mca, ...saved });
     }
     setScreen('results');
     window.scrollTo({ top: 0, behavior: 'smooth' });

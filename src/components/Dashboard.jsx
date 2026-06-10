@@ -5,6 +5,31 @@ import {
 import { getResults } from '../utils/storage';
 import { criteriaData } from '../utils/mca';
 
+function exportCSV(profile, results) {
+  const { criteria } = criteriaData;
+  const headers = [
+    'Profile', 'Date', 'Overall Score', 'Level',
+    ...criteria.map((c) => c.title),
+  ];
+  const rows = results.map((r) => [
+    profile.name,
+    new Date(r.date).toLocaleDateString('en-GB'),
+    r.overallScore,
+    r.level?.label ?? '',
+    ...criteria.map((c) => r.criteriaScores[c.id] ?? ''),
+  ]);
+  const csv = [headers, ...rows]
+    .map((row) => row.map((v) => `"${v}"`).join(','))
+    .join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `ACT_${profile.name.replace(/\s+/g, '_')}_${new Date().toISOString().slice(0, 10)}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 function getColor(score) {
   if (score >= 80) return '#3a7d44';
   if (score >= 60) return '#8ab545';
@@ -77,6 +102,11 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
         </div>
         <div className="dashboard-top-actions">
           <button className="btn-primary" onClick={onNewAssessment}>New Assessment</button>
+          {results.length > 0 && (
+            <button className="btn-secondary" onClick={() => exportCSV(profile, results)}>
+              Export CSV
+            </button>
+          )}
           <button className="btn-secondary" onClick={onSignOut}>Sign Out</button>
         </div>
       </div>
