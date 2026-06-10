@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { criteriaData } from '../utils/mca';
 
 export default function Survey({ onComplete }) {
   const { criteria } = criteriaData;
   const [currentCriterionIndex, setCurrentCriterionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentCriterionIndex]);
 
   const criterion = criteria[currentCriterionIndex];
   const totalCriteria = criteria.length;
@@ -26,7 +30,6 @@ export default function Survey({ onComplete }) {
   function handleNext() {
     if (currentCriterionIndex < totalCriteria - 1) {
       setCurrentCriterionIndex((i) => i + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       onComplete(answers);
     }
@@ -35,7 +38,6 @@ export default function Survey({ onComplete }) {
   function handleBack() {
     if (currentCriterionIndex > 0) {
       setCurrentCriterionIndex((i) => i - 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 
