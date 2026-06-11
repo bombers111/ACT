@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, Tooltip,
-  ResponsiveContainer, CartesianGrid,
+  ResponsiveContainer, CartesianGrid, ReferenceLine,
 } from 'recharts';
 import { getResults, deleteResult } from '../utils/storage';
 import criteriaEn from '../data/criteria.json';
@@ -167,22 +167,33 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
         </div>
       ) : (
         <>
-          {results.length > 1 && (
-            <div className="results-section">
-              <h2>{t.scoreOverTime}</h2>
-              <ResponsiveContainer width="100%" height={220}>
+          <div className="results-section">
+            <h2>{t.scoreOverTime ?? 'Score over time'}</h2>
+            <div className="score-bands-legend">
+              <span className="band-chip" style={{ background: '#3a7d44' }}>80–100 {t.levelRegenerative ?? 'Regenerative'}</span>
+              <span className="band-chip" style={{ background: '#8ab545' }}>60–79 {t.levelApproaching ?? 'Approaching'}</span>
+              <span className="band-chip" style={{ background: '#e8a838' }}>0–59 {t.levelTransition ?? 'In Transition'}</span>
+            </div>
+            {results.length > 1 ? (
+              <ResponsiveContainer width="100%" height={240}>
                 <LineChart data={chartData} margin={{ top: 10, right: 20, bottom: 0, left: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                   <XAxis dataKey="label" tick={{ fontSize: 12, fill: '#666' }} />
                   <YAxis domain={[0, 100]} tick={{ fontSize: 12, fill: '#666' }} unit="%" />
                   <Tooltip formatter={(v) => [`${v}/100`, 'Score']}
                     labelFormatter={(label, payload) => payload?.[0]?.payload?.date || label} />
+                  <ReferenceLine y={80} stroke="#3a7d44" strokeDasharray="5 4" strokeWidth={1.5}
+                    label={{ value: 'Regenerative', position: 'insideTopRight', fontSize: 10, fill: '#3a7d44' }} />
+                  <ReferenceLine y={60} stroke="#8ab545" strokeDasharray="5 4" strokeWidth={1.5}
+                    label={{ value: 'Approaching', position: 'insideTopRight', fontSize: 10, fill: '#8ab545' }} />
                   <Line type="monotone" dataKey="score" stroke="#1a3d2b" strokeWidth={2}
                     dot={{ r: 5, fill: '#1a3d2b' }} activeDot={{ r: 7 }} />
                 </LineChart>
               </ResponsiveContainer>
-            </div>
-          )}
+            ) : (
+              <p className="priorities-intro" style={{ marginTop: 8 }}>{t.needMoreAssessments ?? 'Complete a second assessment to see your progress over time.'}</p>
+            )}
+          </div>
 
           {results.length >= 2 && (
             <div className="results-section">

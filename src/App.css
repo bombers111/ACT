@@ -630,6 +630,22 @@ body {
 .diff-down { color: #d9534f; font-weight: 700; }
 .diff-same { color: #aaa; }
 
+/* ───── Score bands legend ───── */
+.score-bands-legend {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.band-chip {
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.01em;
+}
+
 /* ───── Language toggle ───── */
 .lang-toggle { display: flex; gap: 2px; }
 .lang-btn {
