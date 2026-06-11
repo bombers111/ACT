@@ -56,6 +56,7 @@ export function saveResult(profileId, result, farmMeta = null) {
     date: new Date().toISOString(),
     overallScore: result.overallScore,
     criteriaScores: result.criteriaScores,
+    weakest: result.weakest,
     level: result.level,
     farmMeta,
   };

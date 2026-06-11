@@ -35,7 +35,12 @@ function LevelBadge({ level }) {
 export default function Results({ results, profile, onRetake, onDashboard, isHistorical }) {
   const { lang, t } = useLang();
   const { criteria } = criteriaMap[lang] || criteriaEn;
-  const { overallScore, criteriaScores, weakest, level } = results;
+  const { overallScore, criteriaScores, level } = results;
+  // Fallback: compute weakest from criteriaScores if not stored (old results)
+  const weakest = results.weakest ?? Object.entries(criteriaScores ?? {})
+    .map(([id, score]) => ({ id, score }))
+    .sort((a, b) => a.score - b.score)
+    .slice(0, 3);
 
   // Build benchmark data at 80 for all criteria
   const radarData = criteria.map((c) => ({
