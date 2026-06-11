@@ -691,6 +691,27 @@ body {
   color: #555;
   line-height: 1.6;
 }
+.criteria-ref-scores {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  font-size: 0.85rem;
+  margin-right: 8px;
+}
+.criteria-ref-compare {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: #555;
+  background: #f5f8f5;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.criteria-ref-arrow { color: #aaa; font-size: 1rem; }
 .criteria-ref-source {
   margin-top: 14px;
   font-size: 0.78rem;
@@ -888,6 +909,8 @@ body {
 [data-dark="true"] .criteria-ref-detail { color: #d1d5db; }
 [data-dark="true"] .criteria-ref-source { color: #6b7280; }
 [data-dark="true"] .criteria-ref-source a { color: #4ade80; }
+[data-dark="true"] .criteria-ref-compare { background: #273447; color: #d1d5db; }
+[data-dark="true"] .criteria-ref-arrow { color: #6b7280; }
 
 /* ───── Last assessment banner (Feature 7) ───── */
 .last-assessment-banner {

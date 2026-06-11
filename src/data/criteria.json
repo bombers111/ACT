@@ -20,7 +20,7 @@
   "criteria": [
     {
       "id": "soil_management",
-      "title": "Soil Management",
+      "title": "No-till & Soil Management",
       "description": "How you manage tillage, soil disturbance and surface cover in your citrus orchard.",
       "source": "Iberian RA Criteria 2026 – Citrus & Fruit Trees; Khangura et al. 2023",
       "questions": [
@@ -55,7 +55,7 @@
     },
     {
       "id": "water",
-      "title": "Water Management",
+      "title": "Water",
       "description": "How efficiently and regeneratively you manage water on your Valencia citrus farm.",
       "source": "Iberian RA Criteria 2026 – Criterion 2 & Citrus section",
       "questions": [
@@ -125,7 +125,7 @@
     },
     {
       "id": "plant_health_inputs",
-      "title": "Plant Health & Inputs",
+      "title": "Inputs",
       "description": "Whether you use synthetic pesticides and fertilisers, and how you manage pests and disease.",
       "source": "Iberian RA Criteria 2026 – Criterion 8 & Citrus plant health; Khangura et al. 2023",
       "questions": [
@@ -160,7 +160,7 @@
     },
     {
       "id": "soil_nutrition",
-      "title": "Soil Nutrition & Biology",
+      "title": "Soil Cover",
       "description": "How actively you feed the soil ecosystem and promote microbial life.",
       "source": "Iberian RA Criteria 2026 – Citrus soil management; Khangura et al. 2023 – soil biology",
       "questions": [
@@ -195,7 +195,7 @@
     },
     {
       "id": "vegetation_management",
-      "title": "Vegetation & Cover Management",
+      "title": "Planned Grazing",
       "description": "How you manage the vegetation between trees, with or without livestock.",
       "source": "Iberian RA Criteria 2026 – Criteria 4 & 6; Citrus section",
       "questions": [
@@ -230,7 +230,7 @@
     },
     {
       "id": "crop_diversification",
-      "title": "Crop Diversification",
+      "title": "Crops",
       "description": "Whether you grow only citrus monoculture or integrate other plants and varieties.",
       "source": "Iberian RA Criteria 2026 – Criterion 7; Khangura et al. 2023 – crop diversity",
       "questions": [
@@ -291,7 +291,7 @@
     },
     {
       "id": "contextuality",
-      "title": "Planning & Monitoring",
+      "title": "Contextuality",
       "description": "Whether your practices are deliberately adapted to your local context and evolving over time.",
       "source": "Iberian RA Criteria 2026 – Criterion 1; Jayasinghe et al. 2023",
       "questions": [
@@ -326,7 +326,7 @@
     },
     {
       "id": "social_foundations",
-      "title": "Social & Community",
+      "title": "Social & Territorial Foundations",
       "description": "Your participation in local community, cooperative networks and knowledge sharing.",
       "source": "Iberian RA Criteria 2026 – Criterion 10 & Citrus socioeconomic aspects",
       "questions": [

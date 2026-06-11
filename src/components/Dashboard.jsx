@@ -196,17 +196,6 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
             )}
           </div>
 
-          {results.length >= 2 && (
-            <div className="results-section">
-              <h2>{t.progressComparison}</h2>
-              <p className="priorities-intro">{t.comparingFirst}</p>
-              <CriteriaComparison
-                older={results[0]} newer={results[results.length - 1]}
-                criteria={criteria} t={t}
-              />
-            </div>
-          )}
-
           <div className="results-section">
             <h2>{t.assessmentHistory}</h2>
             <p className="priorities-intro">{t.clickToView ?? 'Click an assessment to view its full results.'}</p>
@@ -239,26 +228,53 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
             </div>
           </div>
 
-          {/* Criteria Reference */}
+          {/* Combined: Progress comparison + Criteria definitions */}
           <div className="results-section criteria-ref-section">
             <h2>{t.criteriaReference ?? 'The 10 Criteria of Regenerative Agriculture'}</h2>
             <p className="priorities-intro">
-              {t.criteriaReferenceIntro ?? 'As defined by the Iberian Regenerative Agriculture Association & CREAF (2026). Click any criterion to read its definition.'}
+              {results.length >= 2
+                ? (t.criteriaReferenceWithProgress ?? 'Comparing your first and most recent assessment. Click any criterion to read its official definition from the CREAF / REGEN 2026 paper.')
+                : (t.criteriaReferenceIntro ?? 'As defined by the Iberian Regenerative Agriculture Association & CREAF (2026). Click any criterion to read its definition.')}
             </p>
             <div className="criteria-ref-list">
-              {criteriaDefinitions.map((c) => (
-                <details key={c.id} className="criteria-ref-item">
-                  <summary className="criteria-ref-summary">
-                    <span className="criteria-ref-num">{c.number}</span>
-                    <span className="criteria-ref-title">{c.title}</span>
-                    <span className="criteria-ref-chevron">›</span>
-                  </summary>
-                  <div className="criteria-ref-body">
-                    <p className="criteria-ref-definition">{c.definition}</p>
-                    <p className="criteria-ref-detail">{c.detail}</p>
-                  </div>
-                </details>
-              ))}
+              {criteriaDefinitions.map((c) => {
+                const appCrit = criteria.find((cr) => cr.id === c.id);
+                const older = results.length >= 2 ? results[0] : null;
+                const newer = results.length >= 2 ? results[results.length - 1] : null;
+                const scoreOld = older ? (older.criteriaScores[c.id] ?? 0) : null;
+                const scoreNew = newer ? (newer.criteriaScores[c.id] ?? 0) : null;
+                const diff = scoreOld !== null ? scoreNew - scoreOld : null;
+                return (
+                  <details key={c.id} className="criteria-ref-item">
+                    <summary className="criteria-ref-summary">
+                      <span className="criteria-ref-num">{c.number}</span>
+                      <span className="criteria-ref-title">{appCrit?.title ?? c.title}</span>
+                      {scoreNew !== null && (
+                        <span className="criteria-ref-scores">
+                          <span style={{ color: getColor(scoreNew), fontWeight: 700 }}>{scoreNew}%</span>
+                          {diff !== null && (
+                            <span className={diff > 0 ? 'diff-up' : diff < 0 ? 'diff-down' : 'diff-same'} style={{ fontSize: '0.78rem', marginLeft: 4 }}>
+                              {diff > 0 ? `+${diff}` : diff === 0 ? '—' : diff}
+                            </span>
+                          )}
+                        </span>
+                      )}
+                      <span className="criteria-ref-chevron">›</span>
+                    </summary>
+                    <div className="criteria-ref-body">
+                      {scoreOld !== null && (
+                        <div className="criteria-ref-compare">
+                          <span>{formatDate(older.date)}: <strong style={{ color: getColor(scoreOld) }}>{scoreOld}%</strong></span>
+                          <span className="criteria-ref-arrow">→</span>
+                          <span>{formatDate(newer.date)}: <strong style={{ color: getColor(scoreNew) }}>{scoreNew}%</strong></span>
+                        </div>
+                      )}
+                      <p className="criteria-ref-definition">{c.definition}</p>
+                      <p className="criteria-ref-detail">{c.detail}</p>
+                    </div>
+                  </details>
+                );
+              })}
             </div>
             <p className="criteria-ref-source">
               Source: Iberian Regenerative Agriculture Association and CREAF. (2026).{' '}

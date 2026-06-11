@@ -2,7 +2,7 @@
   "criteria": [
     {
       "id": "soil_management",
-      "title": "Gestió del Sòl",
+      "title": "Sense Llaurar",
       "description": "Com gestioneu el llaurar, la pertorbació del sòl i la coberta superficial en el vostre hort citrícola.",
       "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026; Khangura et al. 2023",
       "questions": [
@@ -37,7 +37,7 @@
     },
     {
       "id": "water",
-      "title": "Gestió de l'Aigua",
+      "title": "Aigua",
       "description": "Amb quina eficiència i de manera regenerativa gestioneu l'aigua en la vostra finca citrícola valenciana.",
       "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 2",
       "questions": [
@@ -107,7 +107,7 @@
     },
     {
       "id": "plant_health_inputs",
-      "title": "Salut Vegetal i Inputs",
+      "title": "Inputs",
       "description": "Si useu pesticides i fertilitzants sintètics i com gestioneu les plagues i malalties.",
       "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 8; Khangura et al. 2023",
       "questions": [
@@ -142,7 +142,7 @@
     },
     {
       "id": "soil_nutrition",
-      "title": "Nutrició i Biologia del Sòl",
+      "title": "Coberta del Sòl",
       "description": "Amb quina activitat alimenteu l'ecosistema del sòl i promoveu la vida microbiana.",
       "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026; Khangura et al. 2023",
       "questions": [
@@ -177,7 +177,7 @@
     },
     {
       "id": "vegetation_management",
-      "title": "Gestió de la Vegetació i Coberta",
+      "title": "Pastura Planificada",
       "description": "Com gestioneu la vegetació entre els arbres, amb o sense ramaderia.",
       "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteris 4 i 6",
       "questions": [
@@ -212,7 +212,7 @@
     },
     {
       "id": "crop_diversification",
-      "title": "Diversificació de Cultius",
+      "title": "Cultius",
       "description": "Si cultiveu només monocultiu de cítrics o integreu altres plantes i varietats.",
       "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 7; Khangura et al. 2023",
       "questions": [
@@ -273,7 +273,7 @@
     },
     {
       "id": "contextuality",
-      "title": "Planificació i Seguiment",
+      "title": "Contextualitat",
       "description": "Si les vostres pràctiques estan deliberadament adaptades al vostre context local i evolucionen amb el temps.",
       "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 1; Jayasinghe et al. 2023",
       "questions": [
@@ -308,7 +308,7 @@
     },
     {
       "id": "social_foundations",
-      "title": "Social i Comunitat",
+      "title": "Bases Socials i Territorials",
       "description": "La vostra participació en la comunitat local, xarxes cooperatives i intercanvi de coneixement.",
       "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 10",
       "questions": [

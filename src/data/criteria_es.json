@@ -2,7 +2,7 @@
   "criteria": [
     {
       "id": "soil_management",
-      "title": "Gestión del Suelo",
+      "title": "Sin Labranza",
       "description": "Cómo gestionas el laboreo, la perturbación del suelo y la cubierta superficial en tu huerto citrícola.",
       "source": "Criterios de Agricultura Regenerativa Ibérica 2026; Khangura et al. 2023",
       "questions": [
@@ -37,7 +37,7 @@
     },
     {
       "id": "water",
-      "title": "Gestión del Agua",
+      "title": "Agua",
       "description": "Con qué eficiencia y de forma regenerativa gestionas el agua en tu finca citrícola valenciana.",
       "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 2",
       "questions": [
@@ -107,7 +107,7 @@
     },
     {
       "id": "plant_health_inputs",
-      "title": "Salud Vegetal e Insumos",
+      "title": "Insumos",
       "description": "Si usas pesticidas y fertilizantes sintéticos y cómo gestionas las plagas y enfermedades.",
       "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 8; Khangura et al. 2023",
       "questions": [
@@ -142,7 +142,7 @@
     },
     {
       "id": "soil_nutrition",
-      "title": "Nutrición y Biología del Suelo",
+      "title": "Cobertura del Suelo",
       "description": "Con qué actividad alimentas el ecosistema del suelo y promueves la vida microbiana.",
       "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Gestión del suelo; Khangura et al. 2023",
       "questions": [
@@ -177,7 +177,7 @@
     },
     {
       "id": "vegetation_management",
-      "title": "Gestión de la Vegetación y Cubierta",
+      "title": "Pastoreo Planificado",
       "description": "Cómo gestionas la vegetación entre los árboles, con o sin ganadería.",
       "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterios 4 y 6",
       "questions": [
@@ -212,7 +212,7 @@
     },
     {
       "id": "crop_diversification",
-      "title": "Diversificación de Cultivos",
+      "title": "Cultivos",
       "description": "Si cultivas solo monocultivo de cítricos o integras otras plantas y variedades.",
       "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 7; Khangura et al. 2023",
       "questions": [
@@ -273,7 +273,7 @@
     },
     {
       "id": "contextuality",
-      "title": "Planificación y Seguimiento",
+      "title": "Contextualidad",
       "description": "Si tus prácticas están adaptadas deliberadamente a tu contexto local y evolucionan con el tiempo.",
       "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 1; Jayasinghe et al. 2023",
       "questions": [
@@ -308,7 +308,7 @@
     },
     {
       "id": "social_foundations",
-      "title": "Social y Comunidad",
+      "title": "Bases Sociales y Territoriales",
       "description": "Tu participación en la comunidad local, redes cooperativas e intercambio de conocimiento.",
       "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 10",
       "questions": [

@@ -93,6 +93,7 @@ export const ui = {
     assessmentHistory: 'Assessment history',
     criteriaReference: 'The 10 Criteria of Regenerative Agriculture',
     criteriaReferenceIntro: 'As defined by the Iberian Regenerative Agriculture Association & CREAF (2026). Click any criterion to read its definition.',
+    criteriaReferenceWithProgress: 'Comparing your first and most recent assessment. Click any criterion to read its official definition from the CREAF / REGEN 2026 paper.',
     deleteBtn: 'Delete',
     confirmDelete: 'Delete this assessment? This cannot be undone.',
     cancelBtn: 'Cancel',
