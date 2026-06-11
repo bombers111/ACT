@@ -9,6 +9,7 @@ import criteriaEs from '../data/criteria_es.json';
 import criteriaVal from '../data/criteria_val.json';
 import { useLang } from '../contexts/LangContext';
 import Results from './Results';
+import criteriaDefinitions from '../data/criteriaDefinitions.json';
 
 const criteriaMap = { en: criteriaEn, es: criteriaEs, val: criteriaVal };
 
@@ -236,6 +237,36 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Criteria Reference */}
+          <div className="results-section criteria-ref-section">
+            <h2>{t.criteriaReference ?? 'The 10 Criteria of Regenerative Agriculture'}</h2>
+            <p className="priorities-intro">
+              {t.criteriaReferenceIntro ?? 'As defined by the Iberian Regenerative Agriculture Association & CREAF (2026). Click any criterion to read its definition.'}
+            </p>
+            <div className="criteria-ref-list">
+              {criteriaDefinitions.map((c) => (
+                <details key={c.id} className="criteria-ref-item">
+                  <summary className="criteria-ref-summary">
+                    <span className="criteria-ref-num">{c.number}</span>
+                    <span className="criteria-ref-title">{c.title}</span>
+                    <span className="criteria-ref-chevron">›</span>
+                  </summary>
+                  <div className="criteria-ref-body">
+                    <p className="criteria-ref-definition">{c.definition}</p>
+                    <p className="criteria-ref-detail">{c.detail}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p className="criteria-ref-source">
+              Source: Iberian Regenerative Agriculture Association and CREAF. (2026).{' '}
+              <em>Criteria that define regenerative agriculture, as agreed by the Iberian practicing and scientific community.</em>{' '}
+              <a href="https://doi.org/10.5281/zenodo.18798828" target="_blank" rel="noreferrer">
+                doi.org/10.5281/zenodo.18798828
+              </a>
+            </p>
           </div>
         </>
       )}

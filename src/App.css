@@ -630,6 +630,75 @@ body {
 .diff-down { color: #d9534f; font-weight: 700; }
 .diff-same { color: #aaa; }
 
+/* ───── Criteria Reference (Dashboard) ───── */
+.criteria-ref-list { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.criteria-ref-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.criteria-ref-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: #fafafa;
+  list-style: none;
+  transition: background 0.15s;
+  user-select: none;
+}
+.criteria-ref-summary::-webkit-details-marker { display: none; }
+.criteria-ref-summary:hover { background: #f0f5f1; }
+.criteria-ref-item[open] .criteria-ref-summary { background: #eaf3ee; border-bottom: 1px solid #d0e8d6; }
+.criteria-ref-num {
+  background: #1a3d2b;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.criteria-ref-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #1a3d2b;
+}
+.criteria-ref-chevron {
+  font-size: 1.2rem;
+  color: #aaa;
+  transition: transform 0.2s;
+  line-height: 1;
+}
+.criteria-ref-item[open] .criteria-ref-chevron { transform: rotate(90deg); }
+.criteria-ref-body {
+  padding: 14px 16px 16px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.criteria-ref-definition {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #1a3d2b;
+  line-height: 1.5;
+}
+.criteria-ref-detail {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.6;
+}
+.criteria-ref-source {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: #999;
+  line-height: 1.5;
+}
+.criteria-ref-source a { color: #1a3d2b; }
+
 /* ───── Score bands legend ───── */
 .score-bands-legend {
   display: flex;
@@ -809,6 +878,16 @@ body {
 [data-dark="true"] .last-assessment-banner { background: #273447; border-color: #374151; color: #d1d5db; }
 [data-dark="true"] .last-assessment-banner strong { color: #f9fafb; }
 [data-dark="true"] .welcome-note { background: #273447; color: #d1d5db; }
+[data-dark="true"] .criteria-ref-item { border-color: #374151; }
+[data-dark="true"] .criteria-ref-summary { background: #273447; }
+[data-dark="true"] .criteria-ref-summary:hover { background: #1e3a2a; }
+[data-dark="true"] .criteria-ref-item[open] .criteria-ref-summary { background: #1e3a2a; border-bottom-color: #374151; }
+[data-dark="true"] .criteria-ref-title { color: #4ade80; }
+[data-dark="true"] .criteria-ref-body { background: #1f2937; }
+[data-dark="true"] .criteria-ref-definition { color: #86efac; }
+[data-dark="true"] .criteria-ref-detail { color: #d1d5db; }
+[data-dark="true"] .criteria-ref-source { color: #6b7280; }
+[data-dark="true"] .criteria-ref-source a { color: #4ade80; }
 
 /* ───── Last assessment banner (Feature 7) ───── */
 .last-assessment-banner {

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "contextuality",
+    "number": "01",
+    "title": "Contextuality",
+    "definition": "Adapt the application of regenerative practices to the territorial, environmental, social and agronomic context of each farm, in coherence with long-term planning.",
+    "detail": "This includes management practices adapted to the farm's soil, climate and water availability, while also increasing resilience to the climate emergency. It involves integrating ancestral knowledge and local indigenous regenerative practices with newer ones, and considering the social organisation of the territory (watershed plans, protected areas, etc.), topography, farm size, flora and fauna, soil type, water availability, rainfall and the family and neighbouring context. This criterion prioritises ecological and productive coherence over the application of rigid models, promoting technical autonomy and informed decision-making on each farm."
+  },
+  {
+    "id": "water",
+    "number": "02",
+    "title": "Water",
+    "definition": "Plan, size and develop agricultural and livestock production in accordance with water availability and the geological and edaphoclimatic reality of the region, and carry out hydrological management practices that promote responsible and non-polluting use of water, favouring the capture and retention of rainwater in the landscape.",
+    "detail": "These practices must prevent the over-exploitation of aquifers and promote their natural recharge, while optimising irrigation according to agroclimatic and soil conditions. Practices that improve water retention and infiltration must be encouraged — including ponds, terraces, runoff retention systems following contour lines, and water harvesting and storage using natural methods. The key objective: halting and reversing erosion by transforming soils and landscapes into sponge-like systems that capture, filter and retain water, thus restoring the local water cycle."
+  },
+  {
+    "id": "biodiversity",
+    "number": "03",
+    "title": "Biodiversity",
+    "definition": "Implement practices that actively protect and increase both wild and cultivated/domestic biodiversity.",
+    "detail": "These practices include planned grazing; the promotion of natural pollinators; the installation of insect hotels, hedges and living borders; the integration of flower strips, ponds or wildlife refuges; ecological connections with the surrounding environment such as living corridors; the maintenance of margins and other natural elements that constitute a mosaic-like landscape; and the use of adapted, traditional and/or native breeds."
+  },
+  {
+    "id": "vegetation_management",
+    "number": "04",
+    "title": "Planned Grazing & Vegetation Management",
+    "definition": "In the presence of herbivorous or omnivorous livestock, which is a highly desirable and recommended practice, it must be integrated with planned grazing. Keep the soil covered with plant or animal matter for as long as possible throughout the year.",
+    "detail": "Planned grazing includes methodologies such as Holistic Management, PRV (Voisin Rational Grazing), Polyface, Total Grazing, Ultra High Density Grazing, or other systems that plan grazing in symbiosis with the physiological growth of plants and soil fertility, using high animal density in short periods of time followed by long rest periods. Soil cover can be achieved through cover crops, productive crops, meadows, spontaneous vegetation or mulching (organic mulch such as woodchips, shredded prunings, BRF, algae, wool...)."
+  },
+  {
+    "id": "soil_management",
+    "number": "05",
+    "title": "No-till & Soil Management",
+    "definition": "Eliminate tillage that inverts soil layers and minimise vertical tillage.",
+    "detail": "There should be no tillage that turns over soil layers. Only minimal surface tillage can be carried out in very specific and justified times and circumstances. This protects the soil's living structure, its microbial communities, and prevents the release of stored carbon."
+  },
+  {
+    "id": "soil_nutrition",
+    "number": "06",
+    "title": "Soil Cover & Nutrition",
+    "definition": "Keep the soil covered with plant or animal matter for as long as possible throughout the year, and actively build soil organic matter and fertility through biological processes.",
+    "detail": "Soil cover can be achieved with various strategies such as cover crops, productive crops, meadows, spontaneous vegetation or mulching (organic mulch such as woodchips, shredded prunings, BRF, algae, wool...). Building soil fertility relies on biological processes and organic inputs such as compost, biochar, fermented products, natural minerals and biofertilisers rather than synthetic fertilisers."
+  },
+  {
+    "id": "crop_diversification",
+    "number": "07",
+    "title": "Crops & Diversification",
+    "definition": "In the case of seasonal crops, apply associations and/or rotations and/or crop diversification by combining them in space and over time.",
+    "detail": "Among the temporal strategies are the rotation of legumes and pasture cropping. Among the spatial ones, agroforestry and intensive no-till farming systems (such as market gardening, biointensive systems and syntropic agroforestry) are recommended. Diversification increases resilience, reduces pest pressure and improves overall ecosystem health."
+  },
+  {
+    "id": "plant_health_inputs",
+    "number": "08",
+    "title": "Inputs & Plant Health",
+    "definition": "The fundamental objective is to manage the farm without synthetic chemical fertilisers or biocides (herbicides, insecticides and fungicides), genetically modified organisms or those generated by genetic editing.",
+    "detail": "Regenerative agriculture is based on protecting soil microbiology and promoting ecosystem processes as the foundation for fertility, health and resilience. It prioritises management systems that reduce the need for external inputs through planned grazing, islands of biodiversity, biological control methods, and the preferential use of organic and natural inputs such as compost, biochar, fermented products, natural minerals and biofertilisers. Inputs are considered according to their impact, necessity and method of use — not solely on their origin. The use of ivermectin and the indiscriminate use of copper (Cu) are not considered compatible with regenerative agriculture."
+  },
+  {
+    "id": "plastics_waste",
+    "number": "09",
+    "title": "Plastics & Waste",
+    "definition": "Minimise the use of plastic and non-recyclable materials, and ensure proper recycling of those that are used.",
+    "detail": "The use of single-use plastics (nets, trays, etc.) must be minimised. The use of reusable, recycled and recyclable materials is encouraged, ensuring their responsible and traceable disposal, as well as the use of reusable, recycled and recyclable materials for agricultural management and packaging."
+  },
+  {
+    "id": "social_foundations",
+    "number": "10",
+    "title": "Social & Territorial Foundations",
+    "definition": "Promote landscape-wide cooperation and knowledge transfer, to strengthen the community and the sustainability of territories.",
+    "detail": "To meet this criterion, at least two of the following must be practised: work with local markets, direct sales or short supply chains; offer guided tours or on-farm training; be part of local collaborative networks; participate in knowledge exchange networks; become part of a producer or consumer cooperative; promote a healthy work-life balance for all staff; share knowledge through social media or public events; collaborate with schools or research centres; integrate family and collaborators into learning processes; be in a process of continuous education; actively contribute to the collective care of the territory through conservation of shared natural resources."
+  }
+]

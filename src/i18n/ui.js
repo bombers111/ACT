@@ -91,6 +91,8 @@ export const ui = {
     progressComparison: 'Progress comparison',
     comparingFirst: 'Comparing your first and most recent assessment.',
     assessmentHistory: 'Assessment history',
+    criteriaReference: 'The 10 Criteria of Regenerative Agriculture',
+    criteriaReferenceIntro: 'As defined by the Iberian Regenerative Agriculture Association & CREAF (2026). Click any criterion to read its definition.',
     deleteBtn: 'Delete',
     confirmDelete: 'Delete this assessment? This cannot be undone.',
     cancelBtn: 'Cancel',
