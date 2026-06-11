@@ -239,7 +239,8 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
             <div className="criteria-ref-list">
               {criteriaDefinitions.map((c) => {
                 const appCrit = criteria.find((cr) => cr.id === c.id);
-                const older = results.length >= 2 ? results[0] : null;
+                // Show the 2 most recent results
+                const older = results.length >= 2 ? results[results.length - 2] : null;
                 const newer = results.length >= 2 ? results[results.length - 1] : null;
                 const scoreOld = older ? (older.criteriaScores[c.id] ?? 0) : null;
                 const scoreNew = newer ? (newer.criteriaScores[c.id] ?? 0) : null;
@@ -254,7 +255,7 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
                           <span style={{ color: getColor(scoreNew), fontWeight: 700 }}>{scoreNew}%</span>
                           {diff !== null && (
                             <span className={diff > 0 ? 'diff-up' : diff < 0 ? 'diff-down' : 'diff-same'} style={{ fontSize: '0.78rem', marginLeft: 4 }}>
-                              {diff > 0 ? `+${diff}` : diff === 0 ? '—' : diff}
+                              {diff > 0 ? `+${diff}%` : diff === 0 ? '—' : `${diff}%`}
                             </span>
                           )}
                         </span>
@@ -264,13 +265,15 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
                     <div className="criteria-ref-body">
                       {scoreOld !== null && (
                         <div className="criteria-ref-compare">
-                          <span>{formatDate(older.date)}: <strong style={{ color: getColor(scoreOld) }}>{scoreOld}%</strong></span>
+                          <strong style={{ color: getColor(scoreOld) }}>{scoreOld}%</strong>
                           <span className="criteria-ref-arrow">→</span>
-                          <span>{formatDate(newer.date)}: <strong style={{ color: getColor(scoreNew) }}>{scoreNew}%</strong></span>
+                          <strong style={{ color: getColor(scoreNew) }}>{scoreNew}%</strong>
+                          <span className={diff > 0 ? 'diff-up' : diff < 0 ? 'diff-down' : 'diff-same'}>
+                            ({diff > 0 ? `+${diff}%` : diff === 0 ? '0%' : `${diff}%`})
+                          </span>
                         </div>
                       )}
                       <p className="criteria-ref-definition">{c.definition}</p>
-                      <p className="criteria-ref-detail">{c.detail}</p>
                     </div>
                   </details>
                 );
