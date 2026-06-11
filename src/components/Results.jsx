@@ -32,7 +32,7 @@ function LevelBadge({ level }) {
   );
 }
 
-export default function Results({ results, profile, onRetake, onDashboard }) {
+export default function Results({ results, profile, onRetake, onDashboard, isHistorical }) {
   const { lang, t } = useLang();
   const { criteria } = criteriaMap[lang] || criteriaEn;
   const { overallScore, criteriaScores, weakest, level } = results;
@@ -152,13 +152,17 @@ export default function Results({ results, profile, onRetake, onDashboard }) {
       {/* Actions */}
       <div className="results-actions">
         {profile && (
-          <button className="btn-primary" onClick={onDashboard}>{t.viewDashboard}</button>
+          <button className="btn-primary" onClick={onDashboard}>
+            {isHistorical ? (t.backToDashboard ?? '← Back to Dashboard') : t.viewDashboard}
+          </button>
         )}
         <button className="btn-secondary" onClick={() => window.print()}>{t.printResults}</button>
-        <button className="btn-secondary" onClick={onRetake}>{t.retakeAssessment}</button>
+        {!isHistorical && onRetake && (
+          <button className="btn-secondary" onClick={onRetake}>{t.retakeAssessment}</button>
+        )}
       </div>
 
-      {profile && <p className="saved-note">{t.savedToProfile}</p>}
+      {profile && !isHistorical && <p className="saved-note">{t.savedToProfile}</p>}
     </div>
   );
 }

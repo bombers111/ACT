@@ -8,6 +8,7 @@ import criteriaEn from '../data/criteria.json';
 import criteriaEs from '../data/criteria_es.json';
 import criteriaVal from '../data/criteria_val.json';
 import { useLang } from '../contexts/LangContext';
+import Results from './Results';
 
 const criteriaMap = { en: criteriaEn, es: criteriaEs, val: criteriaVal };
 
@@ -90,6 +91,7 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
   const { criteria } = criteriaMap[lang] || criteriaEn;
   const [results, setResults] = useState(() => getResults(profile.id));
   const [confirmDelete, setConfirmDelete] = useState(null);
+  const [viewingResult, setViewingResult] = useState(null);
 
   const reversed = [...results].reverse();
   const chartData = results.map((r, i) => ({
@@ -100,6 +102,28 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
     deleteResult(profile.id, resultId);
     setResults(getResults(profile.id));
     setConfirmDelete(null);
+    if (viewingResult?.id === resultId) setViewingResult(null);
+  }
+
+  // Show individual result detail view
+  if (viewingResult) {
+    return (
+      <div className="dashboard-screen">
+        <div className="result-detail-header">
+          <button className="btn-secondary result-back-btn" onClick={() => setViewingResult(null)}>
+            ← {t.backToDashboard ?? 'Back to Dashboard'}
+          </button>
+          <span className="result-detail-date">{formatDate(viewingResult.date)}</span>
+        </div>
+        <Results
+          results={viewingResult}
+          profile={profile}
+          onRetake={null}
+          onDashboard={() => setViewingResult(null)}
+          isHistorical
+        />
+      </div>
+    );
   }
 
   return (
@@ -173,9 +197,14 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
 
           <div className="results-section">
             <h2>{t.assessmentHistory}</h2>
+            <p className="priorities-intro">{t.clickToView ?? 'Click an assessment to view its full results.'}</p>
             <div className="assessment-list">
               {reversed.map((r, i) => (
-                <div key={r.id} className="assessment-row">
+                <div
+                  key={r.id}
+                  className="assessment-row assessment-row-clickable"
+                  onClick={() => { setViewingResult(r); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                >
                   <div className="assessment-meta">
                     <span className="assessment-num">#{results.length - i}</span>
                     <span className="assessment-date">{formatDate(r.date)}</span>
@@ -185,7 +214,13 @@ export default function Dashboard({ profile, onNewAssessment, onSignOut }) {
                     <div className="assessment-score" style={{ color: getColor(r.overallScore) }}>
                       {r.overallScore}<span style={{ fontSize: '0.9rem', color: '#aaa' }}>/100</span>
                     </div>
-                    <button className="delete-btn" onClick={() => setConfirmDelete(r.id)}>{t.deleteBtn}</button>
+                    <span className="view-hint">View →</span>
+                    <button
+                      className="delete-btn"
+                      onClick={(e) => { e.stopPropagation(); setConfirmDelete(r.id); }}
+                    >
+                      {t.deleteBtn}
+                    </button>
                   </div>
                 </div>
               ))}
