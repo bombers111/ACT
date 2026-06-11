@@ -55,5 +55,24 @@
       "contextuality": 67,
       "social_foundations": 100
     }
+  },
+  {
+    "id": "1781172416082",
+    "date": "2026-06-11T10:06:56.082Z",
+    "profileName": "jonas",
+    "overallScore": 49,
+    "level": "In Transition",
+    "criteria": {
+      "soil_management": 83,
+      "water": 50,
+      "biodiversity": 67,
+      "plant_health_inputs": 0,
+      "soil_nutrition": 50,
+      "vegetation_management": 33,
+      "crop_diversification": 50,
+      "plastics_waste": 75,
+      "contextuality": 50,
+      "social_foundations": 33
+    }
   }
 ]
