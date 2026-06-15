@@ -4,13 +4,16 @@ export async function submitSurvey(payload) {
   if (!ENDPOINT) {
     throw new Error('Survey endpoint not configured. Set VITE_SURVEY_ENDPOINT in .env');
   }
-  const response = await fetch(ENDPOINT, {
+  // Google Apps Script requires no-cors mode — we send as form data
+  // and cannot read the response, but the row is written to the sheet.
+  const form = new FormData();
+  form.append('data', JSON.stringify(payload));
+
+  await fetch(ENDPOINT, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
+    mode: 'no-cors',
+    body: form,
   });
-  if (!response.ok) {
-    throw new Error(`Submission failed: ${response.status}`);
-  }
-  return response.json();
+  // no-cors means response is opaque — we can't check status,
+  // so we optimistically treat reaching here as success.
 }
