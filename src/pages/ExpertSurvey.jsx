@@ -7,7 +7,7 @@ import { submitSurvey } from '../utils/surveySubmit';
 const { criteria } = criteriaData;
 const { expertDomains, sections } = surveyConfig;
 
-const TOTAL_SECTIONS = 4;
+const TOTAL_SECTIONS = 3;
 
 function StepIndicator({ current }) {
   return (
@@ -163,52 +163,7 @@ function WeightsSection({ weights, elaborations, onWeight, onElab }) {
   );
 }
 
-// ── Section 2: Validation ─────────────────────────────────────────────
-function ValidationSection({ validation, onChange }) {
-  const { options, commentPrompt } = sections.validation;
-
-  return (
-    <div className="es-criteria-list">
-      {criteria.map(c => {
-        const val = validation[c.id] || { rating: '', comment: '' };
-        const needsComment = val.rating === 'Partly — see comment' || val.rating === 'No — see comment';
-        return (
-          <div key={c.id} className="es-criterion-card">
-            <div className="es-criterion-name">{c.title}</div>
-            <div className="es-criterion-desc" style={{ marginBottom: 12 }}>
-              {c.questions.length} indicator{c.questions.length > 1 ? 's' : ''}: {c.questions.map(q => q.text.split('?')[0].split('(')[0].trim()).join(' · ')}
-            </div>
-            <div className="es-radio-group">
-              {options.map(opt => (
-                <label key={opt} className="es-radio-label">
-                  <input
-                    type="radio"
-                    name={`val_${c.id}`}
-                    value={opt}
-                    checked={val.rating === opt}
-                    onChange={() => onChange(c.id, 'rating', opt)}
-                  />
-                  <span>{opt}</span>
-                </label>
-              ))}
-            </div>
-            {needsComment && (
-              <textarea
-                className="es-textarea"
-                rows={3}
-                placeholder={commentPrompt}
-                value={val.comment || ''}
-                onChange={e => onChange(c.id, 'comment', e.target.value)}
-              />
-            )}
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-// ── Section 3: Free text ──────────────────────────────────────────────
+// ── Section 2: Free text ──────────────────────────────────────────────
 function FreeTextSection({ freeText, onChange }) {
   return (
     <div className="es-form-fields">
@@ -259,13 +214,8 @@ export default function ExpertSurvey() {
     Object.fromEntries(criteria.map(c => [c.id, '']))
   );
 
-  const [validation, setValidation] = useState(
-    Object.fromEntries(criteria.map(c => [c.id, { rating: '', comment: '' }]))
-  );
-
   const [freeText, setFreeText] = useState({ missing: '', other: '' });
 
-  // ── validation ──
   function validateSection() {
     if (currentSection === 0) {
       if (!profile.domain) return 'Please select your area of expertise.';
@@ -274,10 +224,6 @@ export default function ExpertSurvey() {
     if (currentSection === 1) {
       const total = Object.values(weights).reduce((a, b) => a + b, 0);
       if (total !== 100) return `Points must sum to exactly 100 (currently ${total}).`;
-    }
-    if (currentSection === 2) {
-      const missing = criteria.find(c => !validation[c.id]?.rating);
-      if (missing) return `Please rate the indicators for: ${missing.title}`;
     }
     return null;
   }
@@ -310,7 +256,6 @@ export default function ExpertSurvey() {
       valenciaFamiliarity: profile.valenciaFamiliarity,
       weights,
       elaborations,
-      validation,
       freeText,
     };
 
@@ -326,13 +271,11 @@ export default function ExpertSurvey() {
   const sectionTitles = [
     sections.profile.title,
     sections.weights.title,
-    sections.validation.title,
     sections.freeText.title,
   ];
   const sectionDescs = [
     sections.profile.description,
     sections.weights.description,
-    sections.validation.description,
     'Please share any final thoughts on the framework.',
   ];
 
@@ -370,14 +313,6 @@ export default function ExpertSurvey() {
             />
           )}
           {currentSection === 2 && (
-            <ValidationSection
-              validation={validation}
-              onChange={(id, field, val) =>
-                setValidation(v => ({ ...v, [id]: { ...v[id], [field]: val } }))
-              }
-            />
-          )}
-          {currentSection === 3 && (
             <FreeTextSection
               freeText={freeText}
               onChange={(k, v) => setFreeText(f => ({ ...f, [k]: v }))}
