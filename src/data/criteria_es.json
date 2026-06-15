@@ -1,36 +1,45 @@
 {
   "criteria": [
     {
-      "id": "soil_management",
-      "title": "Sin Labranza",
-      "description": "Cómo gestionas el laboreo, la perturbación del suelo y la cubierta superficial en tu huerto citrícola.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026; Khangura et al. 2023",
+      "id": "contextuality",
+      "title": "Contextualidad",
+      "description": "Condiciones de base de la finca que determinan el punto de partida y la dificultad de tu transición regenerativa.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 1; EU CAP Network Focus Group (2024); Tadeo et al. (2021); Fernández-Escobar et al. (2011)",
       "questions": [
         {
-          "id": "tillage",
-          "text": "¿Cómo gestionas el laboreo en tu huerto?",
+          "id": "topography",
+          "text": "¿Cómo describirías la pendiente y el riesgo de erosión de tu finca?",
           "options": [
-            { "score": 1, "label": "Arado regular o gradeo de discos que voltea el suelo" },
-            { "score": 2, "label": "Laboreo superficial mínimo solo en situaciones específicas justificadas" },
-            { "score": 3, "label": "Sin laboreo en absoluto – el suelo nunca se voltea ni se invierte" }
+            { "score": 1, "label": "Pendientes pronunciadas (>15%) — riesgo severo de erosión, cárcavas visibles, alta vulnerabilidad ante DANA" },
+            { "score": 2, "label": "Pendientes suaves (5–10%) — riesgo moderado de erosión, algunas cárcavas visibles" },
+            { "score": 3, "label": "Terreno llano o muy suave (<5%) — riesgo mínimo de erosión, el agua infiltra de forma natural" }
           ]
         },
         {
-          "id": "soil_cover",
-          "text": "¿Qué cubre el suelo entre tus árboles de cítricos a lo largo del año?",
+          "id": "pest_pressure",
+          "text": "¿Cuál es la presión de plagas y enfermedades de base en tu finca?",
           "options": [
-            { "score": 1, "label": "Suelo desnudo – mantenido limpio con herbicidas o laboreo" },
-            { "score": 2, "label": "Cubierta parcial o cobertura orgánica permanente (astillas, restos de poda, paja)" },
-            { "score": 3, "label": "Cubierta vegetal viva (cultivos de cobertura o vegetación espontánea) mantenida todo el año" }
+            { "score": 1, "label": "Alta presión — ácaros, cochinillas y enfermedades fúngicas requieren pulverizaciones frecuentes" },
+            { "score": 2, "label": "Moderada — manejable con buenas prácticas; la AR ayuda pero puede necesitar algunos insumos al inicio" },
+            { "score": 3, "label": "Baja presión — el control biológico es suficiente; los insectos beneficiosos se establecen rápidamente" }
           ]
         },
         {
-          "id": "soil_structure",
-          "text": "¿Cómo describirías la estructura del suelo al coger un puñado?",
+          "id": "soil_salinity",
+          "text": "¿Tiene tu finca un problema de salinidad del suelo?",
           "options": [
-            { "score": 1, "label": "Completamente compactado y duro – difícil de penetrar" },
-            { "score": 2, "label": "Moderadamente suelto con cierta estructura y agregados visibles" },
-            { "score": 3, "label": "Suelto, desmenuzable, rico en lombrices y actividad biológica visible" }
+            { "score": 1, "label": "Alta salinidad — costra de sal visible, quemaduras foliares comunes, zona costera con riesgo de intrusión marina" },
+            { "score": 2, "label": "Salinidad moderada — acumulación ocasional de sal, manejable con buen drenaje" },
+            { "score": 3, "label": "Sin salinidad — sin problemas visibles de sal, ubicación interior, sin riesgo de agua marina" }
+          ]
+        },
+        {
+          "id": "fruit_set",
+          "text": "¿Cómo describirías la intensidad de floración y el cuajado de frutos en esta temporada? (Cuenta flores en 5 ramas en abril; cuenta frutos cuajados en junio)",
+          "options": [
+            { "score": 1, "label": "Pobre — bajo número de flores y <15% de cuajado, indicando estrés severo o malnutrición" },
+            { "score": 2, "label": "Normal — buen número de flores y 15–45% de cuajado, productividad citrícola normal" },
+            { "score": 3, "label": "Excelente — floración abundante y >45% de cuajado, indicando excelente salud del árbol y nutrición del suelo" }
           ]
         }
       ]
@@ -38,34 +47,34 @@
     {
       "id": "water",
       "title": "Agua",
-      "description": "Con qué eficiencia y de forma regenerativa gestionas el agua en tu finca citrícola valenciana.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 2",
+      "description": "Cómo gestionas el riego, la retención de humedad del suelo y los aportes de materia orgánica que afectan la eficiencia hídrica.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 2; Harmanny & Malek (2019); Soto et al. (2020); Cachipuendo et al. (2025)",
       "questions": [
         {
           "id": "irrigation",
-          "text": "¿Cómo riegas tus árboles de cítricos?",
+          "text": "¿Cómo gestionas el riego en tu finca?",
           "options": [
-            { "score": 1, "label": "Riego por inundación o surcos sin programación" },
-            { "score": 2, "label": "Riego por goteo localizado con cierto control de la eficiencia" },
-            { "score": 3, "label": "Goteo de precisión con sensores de humedad del suelo o programación nocturna para minimizar la evaporación" }
+            { "score": 1, "label": "Riego por inundación o calendario fijo sin adaptación a las necesidades del cultivo o el clima" },
+            { "score": 2, "label": "Riego por goteo o aspersión con calendario semi-consistente, aún ocurre algo de exceso de riego" },
+            { "score": 3, "label": "Riego por goteo con programación adaptativa o predictiva basada en las necesidades del cultivo y las condiciones del suelo" }
           ]
         },
         {
-          "id": "rainwater",
-          "text": "¿Capturas y retienes el agua de lluvia en tu finca?",
+          "id": "green_cover",
+          "text": "¿Cuánta cubierta vegetal hay entre las filas de árboles para retener humedad?",
           "options": [
-            { "score": 1, "label": "No – el agua escurre libremente de la finca" },
-            { "score": 2, "label": "Terrazas, zanjas de infiltración o caballones en curva de nivel que ralentizan e infiltran la escorrentía" },
-            { "score": 3, "label": "Estanque, depósito o zanjas de infiltración que capturan y almacenan activamente el agua de lluvia" }
+            { "score": 1, "label": "Escasa o nula — alta escorrentía, baja infiltración de agua" },
+            { "score": 2, "label": "Cubierta vegetal moderada entre filas — cierta retención de humedad del suelo" },
+            { "score": 3, "label": "Cubierta densa y diversa durante todo el año — excelente retención de humedad e infiltración" }
           ]
         },
         {
-          "id": "water_source",
-          "text": "¿De dónde proviene el agua para tu finca?",
+          "id": "som_management",
+          "text": "¿Cómo gestionas la materia orgánica del suelo para mejorar su capacidad de retención hídrica?",
           "options": [
-            { "score": 1, "label": "Principalmente de acuíferos profundos sin seguimiento ni límites" },
-            { "score": 2, "label": "Combinación de acuífero y aguas superficiales o canales dentro de los derechos legales" },
-            { "score": 3, "label": "Principalmente aguas superficiales o de lluvia; el uso del acuífero es mínimo y controlado" }
+            { "score": 1, "label": "Sin gestión — sin aporte de materia orgánica, suelo compactado con baja actividad biológica" },
+            { "score": 2, "label": "Compost o restos de cultivos de cobertura ocasionales — cierta actividad biológica" },
+            { "score": 3, "label": "Aportes orgánicos regulares, compost y cultivos de cobertura que promueven activamente alta MOS y capacidad de retención hídrica" }
           ]
         }
       ]
@@ -73,104 +82,34 @@
     {
       "id": "biodiversity",
       "title": "Biodiversidad",
-      "description": "Cómo proteges y aumentas activamente la biodiversidad silvestre en y alrededor de tu finca.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 3; Jayasinghe et al. 2023",
+      "description": "Indicadores observables de biodiversidad a nivel edáfico, de insectos y comunidad vegetal — evaluables sin equipos de laboratorio.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 3; Stroud (2019); Soto et al. (2020)",
       "questions": [
         {
-          "id": "hedges",
-          "text": "¿Hay setos, franjas floridas o corredores ecológicos en o alrededor de tu finca?",
+          "id": "earthworms",
+          "text": "¿Cuántas lombrices encuentras en una cata de 20×20×20 cm excavada en primavera u otoño? (Clasifica a mano durante 5 minutos identificando grupos funcionales: epigeas, endogeas, anécicas)",
           "options": [
-            { "score": 1, "label": "Ninguno – los límites son desnudos o de hormigón" },
-            { "score": 2, "label": "Setos o franjas floridas presentes en al menos un lado de la finca" },
-            { "score": 3, "label": "Múltiples setos, franjas floridas y corredores ecológicos conectados con el paisaje circundante" }
+            { "score": 1, "label": "Ausentes o muy escasas — sin lombrices o solo un grupo funcional (<20/m²), suelo biológicamente empobrecido" },
+            { "score": 2, "label": "Presentes — dos grupos funcionales encontrados, actividad biológica moderada" },
+            { "score": 3, "label": "Abundantes — los tres grupos funcionales, ≥9 por cata (≥150/m²), suelo sano y biológicamente activo" }
           ]
         },
         {
-          "id": "pollinators",
-          "text": "¿Qué hábitats existen para polinizadores y controladores naturales de plagas en tu finca?",
+          "id": "auxiliary_fauna",
+          "text": "¿Con qué frecuencia observas mariquitas y otros insectos beneficiosos (fauna auxiliar) en tu finca?",
           "options": [
-            { "score": 1, "label": "Ninguno – no se mantienen hábitats específicos" },
-            { "score": 2, "label": "Franjas floridas o refugios para insectos instalados en al menos un área" },
-            { "score": 3, "label": "Múltiples hábitats: franjas floridas, hoteles de insectos, estanques o refugios para fauna beneficiosa gestionados activamente" }
+            { "score": 1, "label": "Ausentes — no se observan mariquitas ni fauna auxiliar en ningún punto de la finca" },
+            { "score": 2, "label": "Escasas — avistamientos ocasionales, no presentes de forma consistente en toda la finca" },
+            { "score": 3, "label": "Abundantes — presencia regular y extendida de mariquitas y fauna auxiliar en toda la finca" }
           ]
         },
         {
-          "id": "biodiversity_trend",
-          "text": "¿Has notado un cambio en la biodiversidad (aves, insectos, lombrices) en tu finca en los últimos años?",
+          "id": "indicator_plants",
+          "text": "¿Cuál es la diversidad vegetal en las calles y bordes de tu finca?",
           "options": [
-            { "score": 1, "label": "Clara disminución – se observan menos especies e individuos" },
-            { "score": 2, "label": "Ligero aumento en algunas especies (p.ej. más lombrices o insectos beneficiosos)" },
-            { "score": 3, "label": "Claro aumento – se observan más aves, polinizadores, lombrices y vida edáfica" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "plant_health_inputs",
-      "title": "Insumos",
-      "description": "Si usas pesticidas y fertilizantes sintéticos y cómo gestionas las plagas y enfermedades.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 8; Khangura et al. 2023",
-      "questions": [
-        {
-          "id": "pesticides",
-          "text": "¿Cómo controlas las plagas y enfermedades en tus cítricos?",
-          "options": [
-            { "score": 1, "label": "Pulverización preventiva regular con pesticidas sintéticos o fungicidas en calendario fijo" },
-            { "score": 2, "label": "Principalmente productos orgánicos o biológicos; sintéticos solo como último recurso en casos justificados" },
-            { "score": 3, "label": "Sin pesticidas sintéticos – solo control biológico, trampas de feromonas, insectos beneficiosos y gestión preventiva del ecosistema" }
-          ]
-        },
-        {
-          "id": "herbicides",
-          "text": "¿Cómo gestionas las malas hierbas en tu huerto?",
-          "options": [
-            { "score": 1, "label": "Aplicaciones regulares de herbicidas para mantener el suelo desnudo" },
-            { "score": 2, "label": "Gestión principalmente mecánica; herbicidas raramente o nunca usados" },
-            { "score": 3, "label": "Sin herbicidas – las malas hierbas se gestionan mediante cultivos de cobertura, acolchado o siega selectiva" }
-          ]
-        },
-        {
-          "id": "synthetic_fertiliser",
-          "text": "¿Cómo fertilizas tus árboles de cítricos?",
-          "options": [
-            { "score": 1, "label": "Principalmente fertilizantes minerales sintéticos (NPK, urea) mediante fertirriego o distribución" },
-            { "score": 2, "label": "Principalmente fertilizantes orgánicos (compost, estiércol); sintéticos usados ocasionalmente" },
-            { "score": 3, "label": "Solo inputs orgánicos o biológicos: compost, estiércol fermentado, bokashi, biofertilizantes – sin sintéticos" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "soil_nutrition",
-      "title": "Cobertura del Suelo",
-      "description": "Con qué actividad alimentas el ecosistema del suelo y promueves la vida microbiana.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Gestión del suelo; Khangura et al. 2023",
-      "questions": [
-        {
-          "id": "organic_matter",
-          "text": "¿Cómo devuelves materia orgánica a tu suelo?",
-          "options": [
-            { "score": 1, "label": "Los restos de poda y el material vegetal se retiran o queman" },
-            { "score": 2, "label": "Los restos de poda se trituran y dejan como acolchado; se aplica algo de compost" },
-            { "score": 3, "label": "Devolución sistemática de toda la materia orgánica: podas trituradas como acolchado, compost y enmiendas orgánicas aplicadas regularmente" }
-          ]
-        },
-        {
-          "id": "biofertilisers",
-          "text": "¿Usas productos biológicos o microbianos para apoyar la vida del suelo?",
-          "options": [
-            { "score": 1, "label": "No – solo dependo de fertilizantes minerales" },
-            { "score": 2, "label": "Uso inoculantes micorrícicos, bioestimulantes o preparados fermentados (té de compost, bokashi)" },
-            { "score": 3, "label": "Programa regular con micorrizas, biofertilizantes, preparados fermentados y minerales naturales para construir activamente el microbioma del suelo" }
-          ]
-        },
-        {
-          "id": "cover_crops_nutrition",
-          "text": "¿Usas cultivos de cobertura con leguminosas para mejorar naturalmente el nitrógeno del suelo?",
-          "options": [
-            { "score": 1, "label": "Sin cultivos de cobertura – suelo desnudo entre árboles" },
-            { "score": 2, "label": "Mezcla que incluye algunas leguminosas (veza, trébol) para la fijación de nitrógeno" },
-            { "score": 3, "label": "Mezcla diversa de cultivos de cobertura con leguminosas, gramíneas y plantas nativas – diseñada para mejorar la fertilidad y la infiltración del agua" }
+            { "score": 1, "label": "Ausente — suelo desnudo o monocultivo de gramíneas, sin leguminosas ni diversidad vegetal" },
+            { "score": 2, "label": "Parcial — cierta diversidad vegetal, leguminosas limitadas presentes" },
+            { "score": 3, "label": "Alta diversidad — abundantes leguminosas y gran diversidad vegetal en calles y bordes" }
           ]
         }
       ]
@@ -178,34 +117,59 @@
     {
       "id": "vegetation_management",
       "title": "Pastoreo Planificado",
-      "description": "Cómo gestionas la vegetación entre los árboles, con o sin ganadería.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterios 4 y 6",
+      "description": "Si y cómo se integra ganadería en el huerto para gestionar la vegetación y contribuir al ciclo de nutrientes.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 4; Vázquez-Martínez et al. (2024)",
       "questions": [
         {
-          "id": "cover_management",
-          "text": "¿Cómo gestionas la vegetación que crece entre tus árboles de cítricos?",
+          "id": "livestock_integration",
+          "text": "¿Cómo integras ganadería en tu huerto citrícola para la gestión de la vegetación?",
           "options": [
-            { "score": 1, "label": "Eliminada con herbicidas o siega frecuente hasta suelo desnudo" },
-            { "score": 2, "label": "Siega mínima selectiva; se permite que la vegetación crezca y se cicle naturalmente" },
-            { "score": 3, "label": "Gestionada con pastoreo planificado (ovejas o cabras) o gestión mecánica mínima muy selectiva" }
+            { "score": 1, "label": "Sin ganadería — no incorporada al sistema agrícola" },
+            { "score": 2, "label": "Integración parcial — ganadería utilizada estacionalmente o en zonas específicas de la finca" },
+            { "score": 3, "label": "Control principal de malas hierbas — la ganadería es el supresor principal de vegetación en toda la finca" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soil_management",
+      "title": "Sin Labranza",
+      "description": "Cuánto perturba el suelo el laboreo y cuántos restos de cosecha dejas en la superficie tras la recolección.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 5; Beeson et al. (2016); CTIC (2009)",
+      "questions": [
+        {
+          "id": "tillage_type",
+          "text": "¿Qué tipo de laboreo practicas?",
+          "options": [
+            { "score": 1, "label": "Labranza de inversión total (arado >30 cm) — perturbación regular de las capas del suelo" },
+            { "score": 2, "label": "Labranza superficial o reducida (<30 cm de suelo superficial) — menor frecuencia, cierta perturbación permanece" },
+            { "score": 3, "label": "Sin labranza de ningún tipo — estructura del suelo dejada intacta durante todo el año" }
           ]
         },
         {
-          "id": "grazing",
-          "text": "¿Integras ganadería en tu huerto citrícola?",
+          "id": "residue_cover",
+          "text": "¿Qué porcentaje de superficie del suelo está cubierta por restos de cultivo o poda poco después de la recolección? (Estima visualmente antes de cualquier labor)",
           "options": [
-            { "score": 1, "label": "Sin ganadería – no se considera" },
-            { "score": 2, "label": "Pastoreo estacional planificado con tiempos de entrada y salida definidos" },
-            { "score": 3, "label": "Pastoreo rotacional completamente planificado integrado en la gestión del huerto con cargas ganaderas adecuadas" }
+            { "score": 1, "label": "Menos del 15% de cobertura de restos — laboreo intensivo, poca cobertura superficial" },
+            { "score": 2, "label": "15–30% de cobertura de restos — laboreo reducido, algunos restos retenidos en superficie" },
+            { "score": 3, "label": "Más del 30% de cobertura de restos — conservación o sin laboreo, superficie bien protegida" }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "soil_nutrition",
+      "title": "Cobertura del Suelo",
+      "description": "El porcentaje de tu suelo mantenido cubierto con material vegetal, cultivos de cobertura o acolchado orgánico durante el año.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 6; Rainforest Alliance (2022)",
+      "questions": [
         {
-          "id": "pruning_waste",
-          "text": "¿Cómo gestionas los restos de poda de tus árboles de cítricos?",
+          "id": "soil_cover_pct",
+          "text": "¿Qué porcentaje de la superficie de tu suelo está cubierta (por plantas vivas, restos de cosecha o acolchado) durante la mayor parte del año?",
           "options": [
-            { "score": 1, "label": "Quemados o retirados de la finca" },
-            { "score": 2, "label": "Triturados y dejados en la superficie del suelo como acolchado" },
-            { "score": 3, "label": "Triturados como acolchado y compostados; algunos usados como alimento animal donde sea posible" }
+            { "score": 1, "label": "Menos del 40% de cobertura — períodos significativos de suelo desnudo, sin cultivos de cobertura deliberados" },
+            { "score": 2, "label": "40–60% de cobertura — algunos cultivos de cobertura o gestión de restos, avanzando hacia lo regenerativo" },
+            { "score": 3, "label": "60% o más de cobertura — cobertura continua como principio (umbral de certificación regenerativa Rainforest Alliance)" }
           ]
         }
       ]
@@ -213,34 +177,33 @@
     {
       "id": "crop_diversification",
       "title": "Cultivos",
-      "description": "Si cultivas solo monocultivo de cítricos o integras otras plantas y variedades.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 7; Khangura et al. 2023",
+      "description": "Si cultivas solo una variedad o diversificas activamente con policultivo y sistemas de cultivo en calles.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 7; Perrino et al. (2025); Deng et al. (2025); Fernández-Soler et al. (2024)",
       "questions": [
         {
           "id": "intercropping",
-          "text": "¿Cultivas otras plantas junto a tus árboles de cítricos?",
+          "text": "¿Cómo de diverso es tu sistema de cultivo — usas policultivo o cultivos en calles entre los naranjos?",
           "options": [
-            { "score": 1, "label": "Monocultivo puro – solo cítricos, nada más" },
-            { "score": 2, "label": "Algunos elementos de policultivo o agroforestería (otros árboles frutales, arbustos)" },
-            { "score": 3, "label": "Sistema diverso de agroforestería o policultivo con múltiples especies integradas en tiempo y espacio" }
+            { "score": 1, "label": "Monocultivo — una sola variedad de cultivo, sin policultivo ni cultivos de cobertura entre filas" },
+            { "score": 2, "label": "Diversificación parcial — algunos cultivos de cobertura o en calles, variedad de especies limitada" },
+            { "score": 3, "label": "Policultivo o cultivos en calles — múltiples especies usadas activamente, incluidas leguminosas para alta diversidad entre filas" }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "plant_health_inputs",
+      "title": "Insumos",
+      "description": "Si tu finca usa fertilizantes químicos sintéticos, herbicidas y pesticidas o ha transitado a alternativas orgánicas.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 8",
+      "questions": [
         {
-          "id": "varieties",
-          "text": "¿Qué tipos de variedades de cítricos cultivas?",
+          "id": "synthetic_use",
+          "text": "¿Cuál es tu uso actual de insumos químicos sintéticos (fertilizantes, herbicidas, pesticidas)?",
           "options": [
-            { "score": 1, "label": "Una sola variedad comercial, muy dependiente de inputs externos" },
-            { "score": 2, "label": "Múltiples variedades incluyendo algunas tradicionales o locales" },
-            { "score": 3, "label": "Variedades diversas incluyendo tradicionales, locales y resistentes a enfermedades adaptadas al microclima valenciano" }
-          ]
-        },
-        {
-          "id": "trap_crops",
-          "text": "¿Usas plantas compañeras o cultivos trampa para gestionar plagas de forma natural?",
-          "options": [
-            { "score": 1, "label": "No – solo dependo del control químico de plagas" },
-            { "score": 2, "label": "Algunos cultivos trampa o plantas compañeras usados para plagas específicas (p.ej. caléndulas, rábanos)" },
-            { "score": 3, "label": "Uso estratégico de plantas compañeras, cultivos trampa y flores refugio en todo el huerto para el equilibrio ecológico de plagas" }
+            { "score": 1, "label": "Uso sintético intensivo — uso regular de fertilizantes, herbicidas y pesticidas sintéticos" },
+            { "score": 2, "label": "Uso sintético reducido — algunas alternativas orgánicas introducidas, aún se usan sintéticos" },
+            { "score": 3, "label": "Solo orgánico — solo fertilizantes y biocidas orgánicos, sin productos químicos sintéticos ni derivados de OMG" }
           ]
         }
       ]
@@ -248,60 +211,34 @@
     {
       "id": "plastics_waste",
       "title": "Plásticos y Residuos",
-      "description": "Cómo minimizas y gestionas responsablemente el uso de plásticos y los residuos agrícolas.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 9",
+      "description": "Cómo gestionas el acolchado plástico, los materiales de infraestructura y la eliminación de residuos agrícolas.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 9; Gilbert, Ricci & Thompson / FAO (2021)",
       "questions": [
         {
-          "id": "plastics_use",
-          "text": "¿Cuánto plástico de un solo uso utilizas en tu finca (mallas, mangueras de goteo, bandejas, bolsas)?",
+          "id": "plastic_mulch",
+          "text": "¿Cómo gestionas el acolchado del suelo en tu finca?",
           "options": [
-            { "score": 1, "label": "Uso intensivo de plásticos de un solo uso sin plan de reducción" },
-            { "score": 2, "label": "Reduciendo activamente los plásticos; alternativas reutilizables usadas donde sea posible" },
-            { "score": 3, "label": "Plásticos mínimos; materiales reutilizables, reciclables o biodegradables utilizados en toda la finca" }
+            { "score": 1, "label": "Plástico de acolchado — lámina plástica estándar sin plan de reducción o sustitución" },
+            { "score": 2, "label": "Plástico limitado o biodegradable — biodegradable, papel o plástico de espesor ≥2mm si se utiliza" },
+            { "score": 3, "label": "Solo acolchado orgánico — restos de poda, cultivos de cobertura o biomasa en lugar de plástico" }
           ]
         },
         {
-          "id": "plastics_disposal",
-          "text": "¿Cómo eliminas los plásticos agrícolas (mangueras de goteo, embalajes, mallas viejas)?",
+          "id": "infrastructure_plastic",
+          "text": "¿Qué materiales usa la infraestructura de tu finca (tuberías de riego, mallas protectoras, tutores para árboles jóvenes)?",
           "options": [
-            { "score": 1, "label": "Quemados en la finca o dejados en el campo" },
-            { "score": 2, "label": "Llevados a un punto de recogida municipal" },
-            { "score": 3, "label": "Entrega sistemática a una empresa certificada de gestión de plásticos con trazabilidad documentada" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "contextuality",
-      "title": "Contextualidad",
-      "description": "Si tus prácticas están adaptadas deliberadamente a tu contexto local y evolucionan con el tiempo.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 1; Jayasinghe et al. 2023",
-      "questions": [
-        {
-          "id": "planning",
-          "text": "¿Tienes un plan escrito o estructurado para mejorar las prácticas regenerativas de tu finca?",
-          "options": [
-            { "score": 1, "label": "Sin plan – cultivando como siempre se ha hecho" },
-            { "score": 2, "label": "Un plan de mejora claro con prioridades identificadas" },
-            { "score": 3, "label": "Un plan de gestión regenerativa a largo plazo documentado con seguimiento y revisión anual" }
+            { "score": 1, "label": "Basada en PVC — tuberías de riego de PVC o textil protector tejido PVC usado extensamente" },
+            { "score": 2, "label": "Mixto — algo de PVC y algunas alternativas; avanzando hacia la reducción de productos con PVC" },
+            { "score": 3, "label": "Sin PVC — sistema de riego sin polímeros PVC; tutores orgánicos o de base biológica para árboles jóvenes" }
           ]
         },
         {
-          "id": "monitoring",
-          "text": "¿Observas y registras regularmente los cambios en tu finca (suelo, plagas, agua, biodiversidad)?",
+          "id": "waste_disposal",
+          "text": "¿Cómo eliminas los residuos plásticos agrícolas (mangueras de goteo, embalajes, mallas, envases)?",
           "options": [
-            { "score": 1, "label": "Sin observación sistemática" },
-            { "score": 2, "label": "Observación regular con algunos registros informales o fotos" },
-            { "score": 3, "label": "Seguimiento sistemático: análisis de suelo, puntos fotográficos, registros de biodiversidad, uso del agua registrado anualmente" }
-          ]
-        },
-        {
-          "id": "training",
-          "text": "¿Cómo te mantienes actualizado sobre el conocimiento en agricultura regenerativa?",
-          "options": [
-            { "score": 1, "label": "Sin aprendizaje activo – confío en la práctica existente" },
-            { "score": 2, "label": "Asisto a cursos o visitas a fincas regularmente" },
-            { "score": 3, "label": "Miembro activo de una red de aprendizaje; participa en investigación, ensayos o intercambio de conocimiento con científicos y agricultores" }
+            { "score": 1, "label": "Quemados o enterrados — plásticos quemados en la finca o dejados en el campo" },
+            { "score": 2, "label": "Punto de residuos municipal — llevados a la recogida estándar de residuos" },
+            { "score": 3, "label": "Reciclaje correcto — entregados a esquema certificado (p.ej. MAPLA), con registros de residuos y separación por polímero" }
           ]
         }
       ]
@@ -309,34 +246,87 @@
     {
       "id": "social_foundations",
       "title": "Bases Sociales y Territoriales",
-      "description": "Tu participación en la comunidad local, redes cooperativas e intercambio de conocimiento.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 10",
+      "description": "Tu participación en intercambio de conocimiento, creación de comunidad, toma de decisiones local y redes cooperativas.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 10; Gaspar et al. (2025)",
       "questions": [
         {
-          "id": "networks",
-          "text": "¿Formas parte de alguna cooperativa, red de agricultores o grupo de agricultura regenerativa?",
+          "id": "knowledge_exchange",
+          "text": "¿Con qué actividad participas en el intercambio de conocimiento y aprendizaje con otros agricultores?",
           "options": [
-            { "score": 1, "label": "No – trabajo de forma independiente sin participación en ninguna red" },
-            { "score": 2, "label": "Activo en una cooperativa o grupo de agricultores con algún intercambio de conocimiento" },
-            { "score": 3, "label": "Miembro activo de una red de agricultura regenerativa; colabora en aprendizaje, ensayos y mejora colectiva" }
+            { "score": 1, "label": "Ausente — sin participación en eventos de intercambio de conocimiento; información solo a través de canales verticales" },
+            { "score": 2, "label": "Informal — participa 2–5 veces al año en eventos o a través de redes personales informales" },
+            { "score": 3, "label": "Activo — organiza o participa 3–5+ veces al año en redes de agricultores, jornadas de campo o aprendizaje entre pares" }
           ]
         },
         {
-          "id": "market",
-          "text": "¿Cómo vendes tus cítricos?",
+          "id": "community_identity",
+          "text": "¿Cuánto te identificas con Valencia y la comunidad agrícola local?",
           "options": [
-            { "score": 1, "label": "Exclusivamente a través de grandes distribuidores sin conexión con el consumidor final" },
-            { "score": 2, "label": "Combinación de ventas locales o directas y canales de distribución" },
-            { "score": 3, "label": "Ventas directas o locales significativas (tienda de la finca, mercado local, cadena corta, Km 0)" }
+            { "score": 1, "label": "Individual — trabaja solo con poca conexión o identidad con el área local" },
+            { "score": 2, "label": "Conectado — siente vinculación regional pero aún no se ha traducido en participación comunitaria activa" },
+            { "score": 3, "label": "Integrado — fuerte conexión con Valencia, invierte en la comunidad, demuestra cohesión social con el entorno" }
           ]
         },
         {
-          "id": "sharing",
-          "text": "¿Compartes conocimiento o abres tu finca a otros (visitas, eventos, redes sociales)?",
+          "id": "local_decisions",
+          "text": "¿Qué papel juegas en la toma de decisiones agrícolas locales (p.ej. reuniones de comunidad de regantes, comités agrícolas municipales)?",
           "options": [
-            { "score": 1, "label": "Sin intercambio – mantengo las prácticas en privado" },
-            { "score": 2, "label": "Participo en visitas a fincas o eventos, o comparto información públicamente" },
-            { "score": 3, "label": "Comparto activamente el progreso a través de redes sociales, jornadas de puertas abiertas, o colaboraciones con escuelas o centros de investigación" }
+            { "score": 1, "label": "Ninguno — no asiste a reuniones locales donde se toman decisiones agrícolas" },
+            { "score": 2, "label": "Pasivo — asiste a reuniones pero adopta un papel pasivo" },
+            { "score": 3, "label": "Activo — toma un papel activo en la toma de decisiones horizontal y trabaja para empoderar la dirección agrícola local" }
+          ]
+        },
+        {
+          "id": "cooperative_networks",
+          "text": "¿Cuál es tu implicación en cooperativas o redes agrícolas?",
+          "options": [
+            { "score": 1, "label": "Ninguna — no ha ingresado en ninguna cooperativa; poco acceso a subvenciones, redes o apoyo técnico" },
+            { "score": 2, "label": "Miembro — parte de una cooperativa pero invierte poca energía en oportunidades de networking" },
+            { "score": 3, "label": "Miembro activo — activo en cooperativas, con buen acceso a subvenciones, conexiones políticas e instituciones locales" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soil_health",
+      "title": "Salud del Suelo",
+      "description": "Indicadores observables de la salud general del suelo — accesibles para el agricultor sin equipos de laboratorio.",
+      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Indicador transversal; Soto et al. (2020); EU CAP Network Focus Group (2024)",
+      "questions": [
+        {
+          "id": "soil_structure",
+          "text": "¿Cómo describirías la estructura de tu suelo al coger un puñado?",
+          "options": [
+            { "score": 1, "label": "Compactado — duro, prensado y apelmazado; estructura en bloques o sin agregados visibles" },
+            { "score": 2, "label": "Moderado — suelo algo suelto, agregados de tamaño medio visibles" },
+            { "score": 3, "label": "Sano — suelto y esponjoso, pequeños agregados redondeados que indican buena actividad biológica" }
+          ]
+        },
+        {
+          "id": "soil_colour",
+          "text": "¿De qué color es tu suelo superficial?",
+          "options": [
+            { "score": 1, "label": "Claro o pálido — color pálido, gris o amarillento que indica poca materia orgánica" },
+            { "score": 2, "label": "Medio — ni claro ni oscuro, niveles medios de materia orgánica" },
+            { "score": 3, "label": "Oscuro — marrón oscuro o negro que indica alto contenido de materia orgánica y riqueza biológica" }
+          ]
+        },
+        {
+          "id": "soil_smell",
+          "text": "¿A qué huele tu suelo al coger un puñado fresco?",
+          "options": [
+            { "score": 1, "label": "Sin olor o químico — sin olor o olor artificial/químico que indica baja actividad biológica" },
+            { "score": 2, "label": "Leve olor terroso — suave aroma terroso, actividad microbiana moderada presente" },
+            { "score": 3, "label": "Olor a bosque fresco — olor fuerte, fresco y profundo a bosque (petricor) que indica vida microbiana y micorrícica abundante" }
+          ]
+        },
+        {
+          "id": "root_content",
+          "text": "¿Cuántas raíces y raicillas son visibles en una muestra de suelo de 20 cm de profundidad?",
+          "options": [
+            { "score": 1, "label": "Ausentes — pocas o ninguna raíz visible, indicando suelo biológicamente inactivo o compactado" },
+            { "score": 2, "label": "Presentes — número apreciable de raíces y raicillas, desarrollo radicular moderado" },
+            { "score": 3, "label": "Abundantes — muchas raíces y raicillas en todo el perfil del suelo, indicando suelo sano y biológicamente activo" }
           ]
         }
       ]

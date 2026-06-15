@@ -1,16 +1,17 @@
 {
   "mcaWeights": {
     "note": "Weights must sum to 1.0. Adjust here to change MCA importance of each criterion.",
-    "soil_management": 0.15,
-    "water": 0.12,
-    "biodiversity": 0.12,
-    "plant_health_inputs": 0.15,
-    "soil_nutrition": 0.12,
-    "vegetation_management": 0.08,
-    "crop_diversification": 0.08,
-    "plastics_waste": 0.06,
     "contextuality": 0.06,
-    "social_foundations": 0.06
+    "water": 0.10,
+    "biodiversity": 0.10,
+    "vegetation_management": 0.06,
+    "soil_management": 0.10,
+    "soil_nutrition": 0.10,
+    "crop_diversification": 0.08,
+    "plant_health_inputs": 0.12,
+    "plastics_waste": 0.06,
+    "social_foundations": 0.06,
+    "soil_health": 0.16
   },
   "levels": {
     "in_transition": { "min": 0, "max": 59, "label": "In Transition", "color": "#e8a838" },
@@ -19,36 +20,45 @@
   },
   "criteria": [
     {
-      "id": "soil_management",
-      "title": "No-till & Soil Management",
-      "description": "How you manage tillage, soil disturbance and surface cover in your citrus orchard.",
-      "source": "Iberian RA Criteria 2026 – Citrus & Fruit Trees; Khangura et al. 2023",
+      "id": "contextuality",
+      "title": "Contextuality",
+      "description": "Baseline farm conditions that determine the starting point and difficulty of your regenerative transition.",
+      "source": "Iberian RA Criteria 2026 – Criterion 1; EU CAP Network Focus Group 'Regenerative Agriculture for Soil Health' (2024); Tadeo et al. (2021); Fernández-Escobar et al. (2011)",
       "questions": [
         {
-          "id": "tillage",
-          "text": "How do you manage tillage in your orchard?",
+          "id": "topography",
+          "text": "How would you describe the slope and erosion risk of your farm?",
           "options": [
-            { "score": 1, "label": "Regular ploughing or disc harrowing that turns the soil" },
-            { "score": 2, "label": "Minimal surface tillage only in specific justified situations" },
-            { "score": 3, "label": "No tillage at all – soil is never turned or inverted" }
+            { "score": 1, "label": "Steep slopes (>15% gradient) — severe erosion risk, gullies visible, high DANA flood vulnerability" },
+            { "score": 2, "label": "Gentle slopes (5–10%) — moderate erosion risk, some gullying visible" },
+            { "score": 3, "label": "Flat or very gentle terrain (<5%) — minimal erosion risk, water infiltrates naturally" }
           ]
         },
         {
-          "id": "soil_cover",
-          "text": "What covers the soil between your citrus trees throughout the year?",
+          "id": "pest_pressure",
+          "text": "What is the baseline pest and disease pressure on your farm?",
           "options": [
-            { "score": 1, "label": "Bare soil – kept clear by herbicides or tillage" },
-            { "score": 2, "label": "Partial cover or permanent organic mulch (wood chips, pruning residues, straw)" },
-            { "score": 3, "label": "Living plant cover (cover crops or spontaneous vegetation) maintained year-round" }
+            { "score": 1, "label": "High pressure — spider mites, scale insects, citrus fungal diseases require frequent sprays" },
+            { "score": 2, "label": "Moderate — manageable with good practices; RA helps but may need some inputs initially" },
+            { "score": 3, "label": "Low pressure — biological control is sufficient; beneficial insects establish quickly" }
           ]
         },
         {
-          "id": "soil_structure",
-          "text": "How would you describe the soil structure when you dig a handful?",
+          "id": "soil_salinity",
+          "text": "Does your farm have a soil salinity problem?",
           "options": [
-            { "score": 1, "label": "Completely compacted and hard – difficult to penetrate" },
-            { "score": 2, "label": "Moderately loose with some structure and aggregates visible" },
-            { "score": 3, "label": "Loose, crumbly, rich in earthworms and visible biological activity" }
+            { "score": 1, "label": "High salinity — visible salt crust, leaf burn common, coastal area with seawater intrusion risk" },
+            { "score": 2, "label": "Moderate salinity — occasional salt accumulation, manageable with good drainage" },
+            { "score": 3, "label": "No salinity — no visible salt problems, inland location, no seawater risk" }
+          ]
+        },
+        {
+          "id": "fruit_set",
+          "text": "How would you describe your citrus flowering intensity and fruit set this season? (Count flowers on 5 branches in April; count fruit set in June)",
+          "options": [
+            { "score": 1, "label": "Poor — low flower count and <15% fruit set, indicating severe tree stress or malnutrition" },
+            { "score": 2, "label": "Normal — good flower count and 15–45% fruit set, normal citrus productivity" },
+            { "score": 3, "label": "Excellent — heavy flowering and >45% fruit set, indicating excellent tree health and soil nutrition" }
           ]
         }
       ]
@@ -56,34 +66,34 @@
     {
       "id": "water",
       "title": "Water",
-      "description": "How efficiently and regeneratively you manage water on your Valencia citrus farm.",
-      "source": "Iberian RA Criteria 2026 – Criterion 2 & Citrus section",
+      "description": "How you manage irrigation, soil moisture retention, and organic matter inputs that affect water use efficiency.",
+      "source": "Iberian RA Criteria 2026 – Criterion 2; Harmanny & Malek (2019); Soto et al. (2020); Cachipuendo et al. (2025)",
       "questions": [
         {
           "id": "irrigation",
-          "text": "How do you irrigate your citrus trees?",
+          "text": "How do you manage irrigation on your farm?",
           "options": [
-            { "score": 1, "label": "Flood or furrow irrigation without scheduling" },
-            { "score": 2, "label": "Localised drip irrigation with some efficiency monitoring" },
-            { "score": 3, "label": "Precision drip with soil moisture sensors or night-time scheduling to minimise evaporation" }
+            { "score": 1, "label": "Flood irrigation or fixed schedule with no adaptation to crop or climate needs" },
+            { "score": 2, "label": "Drip or sprinkler irrigation with semi-consistent schedule, some over-irrigation still occurs" },
+            { "score": 3, "label": "Drip irrigation with adaptive or predictive scheduling based on crop needs and soil conditions" }
           ]
         },
         {
-          "id": "rainwater",
-          "text": "Do you capture and retain rainwater on your farm?",
+          "id": "green_cover",
+          "text": "How much green cover is present between your tree rows for moisture retention?",
           "options": [
-            { "score": 1, "label": "No – water runs off the farm freely" },
-            { "score": 2, "label": "Terraces, swales or contour bunds that slow and infiltrate runoff" },
-            { "score": 3, "label": "Pond, reservoir or infiltration trenches actively harvest and store rainwater" }
+            { "score": 1, "label": "Bare or sparse — high runoff, low water infiltration" },
+            { "score": 2, "label": "Moderate green cover between rows — some soil moisture retention" },
+            { "score": 3, "label": "High, dense, diverse plant cover year-round — excellent moisture retention and infiltration" }
           ]
         },
         {
-          "id": "water_source",
-          "text": "Where does the water for your farm come from?",
+          "id": "som_management",
+          "text": "How do you manage soil organic matter to improve water-holding capacity?",
           "options": [
-            { "score": 1, "label": "Primarily deep aquifer without monitoring or limits" },
-            { "score": 2, "label": "Mix of aquifer and surface or canal water within legal rights" },
-            { "score": 3, "label": "Primarily surface water or rainwater; aquifer use is minimal and monitored" }
+            { "score": 1, "label": "No management — no organic matter inputs, compacted soil with low biological activity" },
+            { "score": 2, "label": "Occasional compost or cover crop residues — some biological activity" },
+            { "score": 3, "label": "Regular organic inputs, compost, and cover crops actively promoting high SOM and water-holding capacity" }
           ]
         }
       ]
@@ -91,104 +101,34 @@
     {
       "id": "biodiversity",
       "title": "Biodiversity",
-      "description": "How you protect and actively increase wild biodiversity on and around your farm.",
-      "source": "Iberian RA Criteria 2026 – Criterion 3 & Citrus section; Jayasinghe et al. 2023",
+      "description": "Observable biodiversity indicators at soil, insect, and plant community levels — assessable without laboratory equipment.",
+      "source": "Iberian RA Criteria 2026 – Criterion 3; Stroud (2019); Soto et al. (2020)",
       "questions": [
         {
-          "id": "hedges",
-          "text": "Are there hedges, flower strips or ecological corridors on or around your farm?",
+          "id": "earthworms",
+          "text": "How many earthworms do you find in a 20×20×20 cm pit dug in spring or autumn? (Hand-sort for 5 minutes and identify functional groups: epigeic, endogeic, anecic)",
           "options": [
-            { "score": 1, "label": "None – boundaries are bare or concrete" },
-            { "score": 2, "label": "Hedges or flower strips present on at least one side of the farm" },
-            { "score": 3, "label": "Multiple hedges, flower strips and ecological corridors connecting with the surrounding landscape" }
+            { "score": 1, "label": "Absent or very low — no earthworms or only one functional group (<20/m²), biologically depleted soil" },
+            { "score": 2, "label": "Present — two functional groups found, moderate biological activity" },
+            { "score": 3, "label": "Abundant — all three functional groups, ≥9 per pit (≥150/m²), healthy biologically active soil" }
           ]
         },
         {
-          "id": "pollinators",
-          "text": "What habitats exist for pollinators and natural pest controllers on your farm?",
+          "id": "auxiliary_fauna",
+          "text": "How often do you observe ladybugs and other beneficial insects (auxiliary fauna) across your farm?",
           "options": [
-            { "score": 1, "label": "None – no specific habitats maintained" },
-            { "score": 2, "label": "Flower strips or insect refuges installed in at least one area" },
-            { "score": 3, "label": "Multiple habitats: flower strips, insect hotels, ponds or shelters for beneficial fauna actively managed" }
+            { "score": 1, "label": "Absent — no ladybugs or auxiliary fauna observed anywhere on the farm" },
+            { "score": 2, "label": "Sparse — occasional sightings, not consistently present across the farm" },
+            { "score": 3, "label": "Abundant — regular, widespread presence of ladybugs and auxiliary fauna across the whole farm" }
           ]
         },
         {
-          "id": "biodiversity_trend",
-          "text": "Have you noticed a change in biodiversity (birds, insects, earthworms) on your farm in recent years?",
+          "id": "indicator_plants",
+          "text": "What is the plant diversity in your inter-row and border areas?",
           "options": [
-            { "score": 1, "label": "Clear decline – fewer species and individuals observed" },
-            { "score": 2, "label": "Slight increase in some species (e.g. more earthworms or beneficial insects)" },
-            { "score": 3, "label": "Clear increase – more birds, pollinators, earthworms and soil life observed" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "plant_health_inputs",
-      "title": "Inputs",
-      "description": "Whether you use synthetic pesticides and fertilisers, and how you manage pests and disease.",
-      "source": "Iberian RA Criteria 2026 – Criterion 8 & Citrus plant health; Khangura et al. 2023",
-      "questions": [
-        {
-          "id": "pesticides",
-          "text": "How do you control pests and diseases in your citrus?",
-          "options": [
-            { "score": 1, "label": "Regular preventive spraying with synthetic pesticides or fungicides on a fixed calendar" },
-            { "score": 2, "label": "Mainly organic or biological products; synthetic used only as last resort in justified cases" },
-            { "score": 3, "label": "No synthetic pesticides – biological control, pheromone traps, beneficial insects and preventive ecosystem management only" }
-          ]
-        },
-        {
-          "id": "herbicides",
-          "text": "How do you manage weeds in your orchard?",
-          "options": [
-            { "score": 1, "label": "Regular herbicide applications to keep soil bare" },
-            { "score": 2, "label": "Primarily mechanical management; herbicides rarely or never used" },
-            { "score": 3, "label": "No herbicides – weeds managed through cover crops, mulching or selective mowing" }
-          ]
-        },
-        {
-          "id": "synthetic_fertiliser",
-          "text": "How do you fertilise your citrus trees?",
-          "options": [
-            { "score": 1, "label": "Primarily synthetic mineral fertilisers (NPK, urea) via fertigation or broadcasting" },
-            { "score": 2, "label": "Mainly organic fertilisers (compost, manure); synthetic used occasionally" },
-            { "score": 3, "label": "Only organic or biological inputs: compost, fermented manure, bokashi, biofertilisers – no synthetics" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "soil_nutrition",
-      "title": "Soil Cover",
-      "description": "How actively you feed the soil ecosystem and promote microbial life.",
-      "source": "Iberian RA Criteria 2026 – Citrus soil management; Khangura et al. 2023 – soil biology",
-      "questions": [
-        {
-          "id": "organic_matter",
-          "text": "How do you return organic matter to your soil?",
-          "options": [
-            { "score": 1, "label": "Pruning residues and plant material are removed or burned" },
-            { "score": 2, "label": "Pruning residues chipped and left as mulch; some compost applied" },
-            { "score": 3, "label": "Systematic return of all organic matter: chipped prunings as mulch, compost and organic amendments applied regularly" }
-          ]
-        },
-        {
-          "id": "biofertilisers",
-          "text": "Do you use biological or microbial products to support soil life?",
-          "options": [
-            { "score": 1, "label": "No – I rely only on mineral fertilisers" },
-            { "score": 2, "label": "Use mycorrhizal inoculants, biostimulants or fermented preparations (compost tea, bokashi)" },
-            { "score": 3, "label": "Regular programme with mycorrhizae, biofertilisers, fermented preparations and natural minerals to actively build the soil microbiome" }
-          ]
-        },
-        {
-          "id": "cover_crops_nutrition",
-          "text": "Do you use cover crops with legumes to naturally improve soil nitrogen?",
-          "options": [
-            { "score": 1, "label": "No cover crops – soil kept bare between trees" },
-            { "score": 2, "label": "Mix including some legumes (vetch, clover) for nitrogen fixation" },
-            { "score": 3, "label": "Diverse cover crop mix with legumes, grasses and native plants – designed to improve fertility and water infiltration" }
+            { "score": 1, "label": "Absent — bare soil or purely grass monoculture, no leguminous plants or diversity" },
+            { "score": 2, "label": "Partial — some plant diversity, limited leguminous plants present" },
+            { "score": 3, "label": "High diversity — abundant leguminous plants and high plant diversity in inter-row and border areas" }
           ]
         }
       ]
@@ -196,34 +136,59 @@
     {
       "id": "vegetation_management",
       "title": "Planned Grazing",
-      "description": "How you manage the vegetation between trees, with or without livestock.",
-      "source": "Iberian RA Criteria 2026 – Criteria 4 & 6; Citrus section",
+      "description": "Whether and how livestock are integrated into the orchard to manage vegetation and contribute to nutrient cycling.",
+      "source": "Iberian RA Criteria 2026 – Criterion 4; Vázquez-Martínez et al. (2024)",
       "questions": [
         {
-          "id": "cover_management",
-          "text": "How do you manage the vegetation growing between your citrus trees?",
+          "id": "livestock_integration",
+          "text": "How do you integrate livestock into your citrus orchard for vegetation management?",
           "options": [
-            { "score": 1, "label": "Eliminated with herbicides or frequent mowing to bare soil" },
-            { "score": 2, "label": "Selective minimal mowing; vegetation allowed to grow and cycle naturally" },
-            { "score": 3, "label": "Managed with planned grazing (sheep or goats) or very selective minimal mechanical management" }
+            { "score": 1, "label": "No livestock — not incorporated into the farm system" },
+            { "score": 2, "label": "Partial integration — livestock used seasonally or in specific zones of the farm" },
+            { "score": 3, "label": "Primary weed control — livestock used as the main weed suppressant across the farm" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soil_management",
+      "title": "No-till & Soil Management",
+      "description": "How much you disturb the soil through tillage and how much crop residue you leave on the surface after harvest.",
+      "source": "Iberian RA Criteria 2026 – Criterion 5; Beeson et al. (2016); CTIC (2009)",
+      "questions": [
+        {
+          "id": "tillage_type",
+          "text": "What type of tillage do you practice?",
+          "options": [
+            { "score": 1, "label": "Full inversion tillage (ploughing >30 cm) — regular disturbance of soil layers" },
+            { "score": 2, "label": "Shallow or reduced tillage (<30 cm topsoil) — reduced frequency, some disturbance remains" },
+            { "score": 3, "label": "No tillage of any form — soil structure left intact year-round" }
           ]
         },
         {
-          "id": "grazing",
-          "text": "Do you integrate livestock in your citrus orchard?",
+          "id": "residue_cover",
+          "text": "What percentage of soil surface is covered by crop or pruning residue shortly after harvest? (Visually estimate the surface covered before any tillage)",
           "options": [
-            { "score": 1, "label": "No livestock – not considered" },
-            { "score": 2, "label": "Planned seasonal grazing with defined entry and exit times" },
-            { "score": 3, "label": "Fully planned rotational grazing integrated into orchard management with appropriate stocking rates" }
+            { "score": 1, "label": "Less than 15% residue cover — intensive tillage, little residue retained" },
+            { "score": 2, "label": "15–30% residue cover — reduced tillage, some residue retained on surface" },
+            { "score": 3, "label": "More than 30% residue cover — conservation or no tillage, soil surface well protected" }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "soil_nutrition",
+      "title": "Soil Cover",
+      "description": "The percentage of your soil kept covered with plant material, cover crops, or organic mulch throughout the year.",
+      "source": "Iberian RA Criteria 2026 – Criterion 6; Rainforest Alliance Certification (2022)",
+      "questions": [
         {
-          "id": "pruning_waste",
-          "text": "How do you manage pruning residues from your citrus trees?",
+          "id": "soil_cover_pct",
+          "text": "What percentage of your soil surface is covered (by living plants, crop residues, or mulch) throughout most of the year?",
           "options": [
-            { "score": 1, "label": "Burned or removed from the farm" },
-            { "score": 2, "label": "Chipped and left on soil surface as mulch" },
-            { "score": 3, "label": "Chipped as mulch and composted; some used as animal feed where possible" }
+            { "score": 1, "label": "Less than 40% soil cover — significant bare soil periods, no deliberate cover cropping" },
+            { "score": 2, "label": "40–60% soil cover — some cover crops or residue management, moving toward regenerative" },
+            { "score": 3, "label": "60% or more soil cover — year-round cover as a principle (Rainforest Alliance regenerative threshold)" }
           ]
         }
       ]
@@ -231,34 +196,33 @@
     {
       "id": "crop_diversification",
       "title": "Crops",
-      "description": "Whether you grow only citrus monoculture or integrate other plants and varieties.",
-      "source": "Iberian RA Criteria 2026 – Criterion 7; Khangura et al. 2023 – crop diversity",
+      "description": "Whether you grow only one crop variety or actively diversify with intercropping and alley cropping systems.",
+      "source": "Iberian RA Criteria 2026 – Criterion 7; Perrino et al. (2025); Deng et al. (2025); Fernández-Soler et al. (2024)",
       "questions": [
         {
           "id": "intercropping",
-          "text": "Do you grow other crops or plants alongside your citrus trees?",
+          "text": "How diverse is your cropping system — do you use intercropping or alley cropping between citrus rows?",
           "options": [
-            { "score": 1, "label": "Pure monoculture – only citrus, nothing else" },
-            { "score": 2, "label": "Some intercropping or agroforestry elements (other fruit trees, shrubs)" },
-            { "score": 3, "label": "Diverse agroforestry or intercropping system with multiple species integrated in time and space" }
+            { "score": 1, "label": "Monoculture — single crop variety, no intercropping or cover crops between rows" },
+            { "score": 2, "label": "Partial diversification — some cover crops or alley cropping, limited species variety" },
+            { "score": 3, "label": "Intercropping or alley cropping — multiple species actively used, including leguminous species for high inter-row diversity" }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "plant_health_inputs",
+      "title": "Inputs",
+      "description": "Whether your farm uses synthetic chemical fertilisers, herbicides, and pesticides or has transitioned to organic alternatives.",
+      "source": "Iberian RA Criteria 2026 – Criterion 8",
+      "questions": [
         {
-          "id": "varieties",
-          "text": "What types of citrus varieties do you grow?",
+          "id": "synthetic_use",
+          "text": "What is your current use of synthetic chemical inputs (fertilisers, herbicides, pesticides)?",
           "options": [
-            { "score": 1, "label": "Single commercial variety, highly dependent on external inputs" },
-            { "score": 2, "label": "Multiple varieties including some traditional or local ones" },
-            { "score": 3, "label": "Diverse varieties including traditional, local and disease-resistant varieties adapted to the Valencia microclimate" }
-          ]
-        },
-        {
-          "id": "trap_crops",
-          "text": "Do you use companion plants or trap crops to manage pests naturally?",
-          "options": [
-            { "score": 1, "label": "No – I rely only on chemical pest control" },
-            { "score": 2, "label": "Some trap crops or companion plants used for specific pests (e.g. marigolds, radishes)" },
-            { "score": 3, "label": "Strategic use of companion plants, trap crops and refuge flowers throughout the orchard for ecological pest balance" }
+            { "score": 1, "label": "Intensive synthetic use — regular use of synthetic fertilisers, herbicides, and pesticides" },
+            { "score": 2, "label": "Reduced synthetic use — some organic alternatives introduced, synthetics still used" },
+            { "score": 3, "label": "Organic only — only organic fertilisers and biocides used, no synthetic chemicals or GMO-derived inputs" }
           ]
         }
       ]
@@ -266,60 +230,34 @@
     {
       "id": "plastics_waste",
       "title": "Plastics & Waste",
-      "description": "How you minimise and responsibly manage plastic use and farm waste.",
-      "source": "Iberian RA Criteria 2026 – Criterion 9 & Citrus materials section",
+      "description": "How you manage plastic mulch, farm infrastructure materials, and agricultural waste disposal.",
+      "source": "Iberian RA Criteria 2026 – Criterion 9; Gilbert, Ricci & Thompson / FAO (2021)",
       "questions": [
         {
-          "id": "plastics_use",
-          "text": "How much single-use plastic do you use on your farm (nets, drip tape, trays, bags)?",
+          "id": "plastic_mulch",
+          "text": "How do you manage ground cover mulching on your farm?",
           "options": [
-            { "score": 1, "label": "Heavy use of single-use plastics with no reduction plan" },
-            { "score": 2, "label": "Actively reducing plastics; reusable alternatives used where possible" },
-            { "score": 3, "label": "Minimal plastics; reusable, recyclable or biodegradable materials used throughout the farm" }
+            { "score": 1, "label": "Plastic mulch — standard plastic sheeting used with no plan to reduce or replace" },
+            { "score": 2, "label": "Limited or biodegradable plastic — biodegradable, paper-based, or thick (≥2mm) plastic if used" },
+            { "score": 3, "label": "Organic mulching only — pruning waste, cover crops, or biomass used instead of plastic mulch" }
           ]
         },
         {
-          "id": "plastics_disposal",
-          "text": "How do you dispose of agricultural plastics (drip tape, packaging, old nets)?",
+          "id": "infrastructure_plastic",
+          "text": "What materials does your farm infrastructure use (irrigation pipes, protective netting, supports for young trees)?",
           "options": [
-            { "score": 1, "label": "Burned on farm or left in the field" },
-            { "score": 2, "label": "Taken to a municipal waste point" },
-            { "score": 3, "label": "Systematic delivery to a certified plastics management company with documented traceability" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "contextuality",
-      "title": "Contextuality",
-      "description": "Whether your practices are deliberately adapted to your local context and evolving over time.",
-      "source": "Iberian RA Criteria 2026 – Criterion 1; Jayasinghe et al. 2023",
-      "questions": [
-        {
-          "id": "planning",
-          "text": "Do you have a written or structured plan for improving your farm's regenerative practices?",
-          "options": [
-            { "score": 1, "label": "No plan – farming as always done" },
-            { "score": 2, "label": "A clear improvement plan with priorities identified" },
-            { "score": 3, "label": "A documented long-term regenerative management plan with monitoring and annual review" }
+            { "score": 1, "label": "PVC-based — PVC irrigation pipes or woven PVC textile used extensively" },
+            { "score": 2, "label": "Mixed — some PVC, some alternatives; moving toward reducing PVC-based products" },
+            { "score": 3, "label": "No PVC — irrigation system without PVC polymers; organic or bio-based supports used for young trees" }
           ]
         },
         {
-          "id": "monitoring",
-          "text": "Do you regularly observe and record changes on your farm (soil, pests, water, biodiversity)?",
+          "id": "waste_disposal",
+          "text": "How do you dispose of agricultural plastic waste (drip tape, packaging, nets, containers)?",
           "options": [
-            { "score": 1, "label": "No systematic observation" },
-            { "score": 2, "label": "Regular observation with some informal records or photos" },
-            { "score": 3, "label": "Systematic monitoring: soil tests, photo points, biodiversity records, water use tracked annually" }
-          ]
-        },
-        {
-          "id": "training",
-          "text": "How do you stay updated on regenerative farming knowledge?",
-          "options": [
-            { "score": 1, "label": "No active learning – rely on existing practice" },
-            { "score": 2, "label": "Attend courses or farm visits regularly" },
-            { "score": 3, "label": "Active member of a learning network; participates in research, trials or knowledge exchange with scientists and farmers" }
+            { "score": 1, "label": "Burned or buried — plastics burned on farm or left in the field" },
+            { "score": 2, "label": "Municipal waste point — taken to standard waste collection" },
+            { "score": 3, "label": "Proper recycling — delivered to certified scheme (e.g. MAPLA), with waste records and polymer separation" }
           ]
         }
       ]
@@ -327,34 +265,87 @@
     {
       "id": "social_foundations",
       "title": "Social & Territorial Foundations",
-      "description": "Your participation in local community, cooperative networks and knowledge sharing.",
-      "source": "Iberian RA Criteria 2026 – Criterion 10 & Citrus socioeconomic aspects",
+      "description": "Your participation in knowledge exchange, community building, local decision-making, and cooperative networks.",
+      "source": "Iberian RA Criteria 2026 – Criterion 10; Gaspar et al. (2025)",
       "questions": [
         {
-          "id": "networks",
-          "text": "Are you part of any cooperative, farmers' network or regenerative agriculture group?",
+          "id": "knowledge_exchange",
+          "text": "How actively do you participate in knowledge exchange and learning with other farmers?",
           "options": [
-            { "score": 1, "label": "No – farm independently with no network involvement" },
-            { "score": 2, "label": "Active in a cooperative or farmers group with some knowledge exchange" },
-            { "score": 3, "label": "Active member of a regenerative agriculture network; collaborates on learning, trials and collective improvement" }
+            { "score": 1, "label": "Absent — no participation in knowledge exchange events; information only from top-down channels" },
+            { "score": 2, "label": "Informal — participates 2–5 times per year in events or through informal personal networks" },
+            { "score": 3, "label": "Active — organises or participates 3–5+ times per year in farmer networks, field days, or peer learning" }
           ]
         },
         {
-          "id": "market",
-          "text": "How do you sell your citrus?",
+          "id": "community_identity",
+          "text": "How connected do you feel to Valencia and the local farming community?",
           "options": [
-            { "score": 1, "label": "Exclusively through large-scale distributors with no connection to end consumer" },
-            { "score": 2, "label": "Mix of local or direct sales and distributor channels" },
-            { "score": 3, "label": "Significant direct or local sales (farm shop, local market, short supply chain, Km 0)" }
+            { "score": 1, "label": "Individual — operates alone with little connection or identity to the local area" },
+            { "score": 2, "label": "Connected — feels regional connection but not yet translated into active community engagement" },
+            { "score": 3, "label": "Embedded — strong connection to Valencia, invests in community, demonstrates social cohesion with the area" }
           ]
         },
         {
-          "id": "sharing",
-          "text": "Do you share knowledge or open your farm to others (visits, events, social media)?",
+          "id": "local_decisions",
+          "text": "What role do you play in local agricultural decision-making (e.g. water board meetings, municipal farming committees)?",
           "options": [
-            { "score": 1, "label": "No sharing – keep practices private" },
-            { "score": 2, "label": "Participate in farm visits or events, or share some information publicly" },
-            { "score": 3, "label": "Actively share progress through social media, open farm days, or collaborations with schools or research centres" }
+            { "score": 1, "label": "None — does not attend local meetings where agricultural decisions are made" },
+            { "score": 2, "label": "Passive — attends meetings but takes a passive role" },
+            { "score": 3, "label": "Active — takes an active role in horizontal decision-making and empowers local agricultural direction" }
+          ]
+        },
+        {
+          "id": "cooperative_networks",
+          "text": "What is your involvement in cooperatives or agricultural networks?",
+          "options": [
+            { "score": 1, "label": "None — has not joined any cooperative; little access to grants, networks, or technical support" },
+            { "score": 2, "label": "Member — part of a cooperative but invests little energy in networking opportunities" },
+            { "score": 3, "label": "Active member — active in cooperatives, with good access to grants, policy connections, and local institutions" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soil_health",
+      "title": "Soil Health",
+      "description": "Observable, farmer-accessible indicators of overall soil health — reflecting the combined effect of all regenerative practices.",
+      "source": "Iberian RA Criteria 2026 – Cross-cutting outcome; Soto et al. (2020); EU CAP Network Focus Group (2024)",
+      "questions": [
+        {
+          "id": "soil_structure",
+          "text": "How would you describe the structure of your soil when you dig a handful?",
+          "options": [
+            { "score": 1, "label": "Compacted — hard, pressed, and packed; blocky or no visible aggregate structure" },
+            { "score": 2, "label": "Moderate — soils somewhat loose, medium-sized aggregates visible" },
+            { "score": 3, "label": "Healthy — loose and spongy, rounded small aggregates indicating good biological activity" }
+          ]
+        },
+        {
+          "id": "soil_colour",
+          "text": "What colour is your topsoil?",
+          "options": [
+            { "score": 1, "label": "Light or pale — pale, grey, or yellowish colour indicating low organic matter" },
+            { "score": 2, "label": "Medium — neither pale nor dark, average organic matter levels" },
+            { "score": 3, "label": "Dark — dark brown or black indicating high organic matter content and biological richness" }
+          ]
+        },
+        {
+          "id": "soil_smell",
+          "text": "What does your soil smell like when you pick up a fresh handful?",
+          "options": [
+            { "score": 1, "label": "None or chemical — no smell or artificial/chemical odour indicating low biological activity" },
+            { "score": 2, "label": "Faint earthy smell — mild earthy scent, moderate microbial activity present" },
+            { "score": 3, "label": "Fresh forest smell — strong, fresh, deep forest smell (petrichor) indicating abundant mycorrhizal and microbial life" }
+          ]
+        },
+        {
+          "id": "root_content",
+          "text": "How many roots and rootlets are visible in a 20 cm spade sample of your soil?",
+          "options": [
+            { "score": 1, "label": "Absent — few or no roots visible, indicating biologically inactive or compacted soil" },
+            { "score": 2, "label": "Present — appreciable number of roots and rootlets, moderate root development" },
+            { "score": 3, "label": "Abundant — many roots and rootlets throughout the soil profile, indicating healthy, biologically active soil" }
           ]
         }
       ]

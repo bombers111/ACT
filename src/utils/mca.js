@@ -123,6 +123,12 @@ export function getRecommendations(criterionId, score) {
       { maxScore: 80, text: 'Open your farm for a visit or share your experience on social media. Connect with researchers at a local university.' },
       { maxScore: 100, text: 'Actively mentor other transitioning farmers in your area or contribute to citizen science biodiversity monitoring.' },
     ],
+    soil_health: [
+      { maxScore: 30, text: 'Your soil shows signs of compaction and low biological activity. Prioritise stopping tillage and adding organic mulch as a first step.' },
+      { maxScore: 60, text: 'Your soil is improving. Add a diverse cover crop mix with legumes and apply compost to accelerate organic matter build-up.' },
+      { maxScore: 80, text: 'Good soil structure and biology. Conduct an earthworm count and soil colour check each spring to track continued improvement.' },
+      { maxScore: 100, text: 'Excellent soil health. Document and share your practices — your soil is a model for what regenerative agriculture achieves.' },
+    ],
   };
 
   const list = recs[criterionId] ?? [];

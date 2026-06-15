@@ -1,36 +1,45 @@
 {
   "criteria": [
     {
-      "id": "soil_management",
-      "title": "Sense Llaurar",
-      "description": "Com gestioneu el llaurar, la pertorbació del sòl i la coberta superficial en el vostre hort citrícola.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026; Khangura et al. 2023",
+      "id": "contextuality",
+      "title": "Contextualitat",
+      "description": "Condicions de base de la finca que determinen el punt de partida i la dificultat de la teua transició regenerativa.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 1; EU CAP Network Focus Group (2024); Tadeo et al. (2021); Fernández-Escobar et al. (2011)",
       "questions": [
         {
-          "id": "tillage",
-          "text": "Com gestioneu el llaurar en el vostre hort?",
+          "id": "topography",
+          "text": "Com descriuries el pendent i el risc d'erosió de la teua finca?",
           "options": [
-            { "score": 1, "label": "Llaurada regular o gradatge de discos que gira el sòl" },
-            { "score": 2, "label": "Llaurada superficial mínima només en situacions específiques justificades" },
-            { "score": 3, "label": "Sense llaurar en absolut – el sòl mai es gira ni s'invertix" }
+            { "score": 1, "label": "Pendents pronunciats (>15%) — risc sever d'erosió, còdols visibles, alta vulnerabilitat a la DANA" },
+            { "score": 2, "label": "Pendents suaus (5–10%) — risc moderat d'erosió, alguns còdols visibles" },
+            { "score": 3, "label": "Terreny pla o molt suau (<5%) — risc mínim d'erosió, l'aigua s'infiltra de manera natural" }
           ]
         },
         {
-          "id": "soil_cover",
-          "text": "Què cobreix el sòl entre els vostres arbres de cítrics al llarg de l'any?",
+          "id": "pest_pressure",
+          "text": "Quina és la pressió de base de plagues i malalties en la teua finca?",
           "options": [
-            { "score": 1, "label": "Sòl nu – mantingut net amb herbicides o llaurada" },
-            { "score": 2, "label": "Coberta parcial o coberta orgànica permanent (estelles, restes de poda, palla)" },
-            { "score": 3, "label": "Coberta vegetal viva (cultius de coberta o vegetació espontània) mantinguda tot l'any" }
+            { "score": 1, "label": "Alta pressió — àcars, cotxinilles i malalties fúngiques requereixen polvoritzacions freqüents" },
+            { "score": 2, "label": "Moderada — manejable amb bones pràctiques; l'AR ajuda però pot necessitar alguns inputs al principi" },
+            { "score": 3, "label": "Baixa pressió — el control biològic és suficient; els insectes beneficiosos s'estableixen ràpidament" }
           ]
         },
         {
-          "id": "soil_structure",
-          "text": "Com descriuries l'estructura del sòl en agafar un grapat?",
+          "id": "soil_salinity",
+          "text": "Té la teua finca un problema de salinitat del sòl?",
           "options": [
-            { "score": 1, "label": "Completament compactat i dur – difícil de penetrar" },
-            { "score": 2, "label": "Moderadament solt amb certa estructura i agregats visibles" },
-            { "score": 3, "label": "Solt, esmicolat, ric en cucs de terra i activitat biològica visible" }
+            { "score": 1, "label": "Alta salinitat — crosta de sal visible, cremades foliars comunes, zona costanera amb risc d'intrusió marina" },
+            { "score": 2, "label": "Salinitat moderada — acumulació ocasional de sal, manejable amb bon drenatge" },
+            { "score": 3, "label": "Sense salinitat — sense problemes visibles de sal, ubicació interior, sense risc d'aigua marina" }
+          ]
+        },
+        {
+          "id": "fruit_set",
+          "text": "Com descriuries la intensitat de floració i el quallat de fruits en aquesta temporada? (Compta flors en 5 branques a l'abril; compta fruits quallats al juny)",
+          "options": [
+            { "score": 1, "label": "Pobre — baix nombre de flors i <15% de quallat, indicant estrès sever o malnutrició" },
+            { "score": 2, "label": "Normal — bon nombre de flors i 15–45% de quallat, productivitat citrícola normal" },
+            { "score": 3, "label": "Excel·lent — floració abundant i >45% de quallat, indicant excel·lent salut de l'arbre i nutrició del sòl" }
           ]
         }
       ]
@@ -38,34 +47,34 @@
     {
       "id": "water",
       "title": "Aigua",
-      "description": "Amb quina eficiència i de manera regenerativa gestioneu l'aigua en la vostra finca citrícola valenciana.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 2",
+      "description": "Com gestioneu el reg, la retenció d'humitat del sòl i els aportaments de matèria orgànica que afecten l'eficiència hídrica.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 2; Harmanny & Malek (2019); Soto et al. (2020); Cachipuendo et al. (2025)",
       "questions": [
         {
           "id": "irrigation",
-          "text": "Com regueu els vostres arbres de cítrics?",
+          "text": "Com gestioneu el reg en la teua finca?",
           "options": [
-            { "score": 1, "label": "Reg per inundació o regues sense programació" },
-            { "score": 2, "label": "Reg per degoteig localitzat amb cert control de l'eficiència" },
-            { "score": 3, "label": "Degoteig de precisió amb sensors d'humitat del sòl o programació nocturna per minimitzar l'evaporació" }
+            { "score": 1, "label": "Reg per inundació o calendari fix sense adaptació a les necessitats del cultiu o el clima" },
+            { "score": 2, "label": "Reg per degoteig o aspersió amb calendari semi-consistent, encara es produeix algun excés de reg" },
+            { "score": 3, "label": "Reg per degoteig amb programació adaptativa o predictiva basada en les necessitats del cultiu i les condicions del sòl" }
           ]
         },
         {
-          "id": "rainwater",
-          "text": "Captureu i reteniu l'aigua de pluja a la vostra finca?",
+          "id": "green_cover",
+          "text": "Quanta coberta vegetal hi ha entre les files d'arbres per retenir humitat?",
           "options": [
-            { "score": 1, "label": "No – l'aigua escorre lliurement de la finca" },
-            { "score": 2, "label": "Terrasses, rases d'infiltració o cavalló en corba de nivell que alentixen i infiltren l'escolament" },
-            { "score": 3, "label": "Bassa, dipòsit o rases d'infiltració que capturen i emmagatzemen activament l'aigua de pluja" }
+            { "score": 1, "label": "Escassa o nul·la — alta escorrentia, baixa infiltració d'aigua" },
+            { "score": 2, "label": "Coberta vegetal moderada entre files — certa retenció d'humitat del sòl" },
+            { "score": 3, "label": "Coberta densa i diversa durant tot l'any — excel·lent retenció d'humitat i infiltració" }
           ]
         },
         {
-          "id": "water_source",
-          "text": "D'on prové l'aigua per a la vostra finca?",
+          "id": "som_management",
+          "text": "Com gestioneu la matèria orgànica del sòl per millorar la seua capacitat de retenció hídrica?",
           "options": [
-            { "score": 1, "label": "Principalment d'aqüífers profunds sense seguiment ni límits" },
-            { "score": 2, "label": "Combinació d'aqüífer i aigües superficials o canals dins dels drets legals" },
-            { "score": 3, "label": "Principalment aigües superficials o de pluja; l'ús de l'aqüífer és mínim i controlat" }
+            { "score": 1, "label": "Sense gestió — sense aportament de matèria orgànica, sòl compactat amb baixa activitat biològica" },
+            { "score": 2, "label": "Compost o restes de cultius de cobertura ocasionals — certa activitat biològica" },
+            { "score": 3, "label": "Aportaments orgànics regulars, compost i cultius de cobertura que promouen activament alta MOS i capacitat de retenció hídrica" }
           ]
         }
       ]
@@ -73,139 +82,94 @@
     {
       "id": "biodiversity",
       "title": "Biodiversitat",
-      "description": "Com protegiu i augmenteu activament la biodiversitat silvestre en i al voltant de la vostra finca.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 3; Jayasinghe et al. 2023",
+      "description": "Indicadors observables de biodiversitat a nivell edàfic, d'insectes i comunitat vegetal — avaluables sense equips de laboratori.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 3; Stroud (2019); Soto et al. (2020)",
       "questions": [
         {
-          "id": "hedges",
-          "text": "Hi ha tanques vives, franges florals o corredors ecològics a la vostra finca o al seu voltant?",
+          "id": "earthworms",
+          "text": "Quantes cucs de terra trobes en una mostra de 20×20×20 cm excavada a la primavera o la tardor? (Classifica a mà durant 5 minuts identificant grups funcionals: epigeus, endogeus, anècics)",
           "options": [
-            { "score": 1, "label": "Cap – els límits són nus o de formigó" },
-            { "score": 2, "label": "Tanques vives o franges florals presents en almenys un costat de la finca" },
-            { "score": 3, "label": "Múltiples tanques vives, franges florals i corredors ecològics connectats amb el paisatge circumdant" }
+            { "score": 1, "label": "Absents o molt escassos — sense cucs o només un grup funcional (<20/m²), sòl biològicament empobrit" },
+            { "score": 2, "label": "Presents — dos grups funcionals trobats, activitat biològica moderada" },
+            { "score": 3, "label": "Abundants — els tres grups funcionals, ≥9 per mostra (≥150/m²), sòl sa i biològicament actiu" }
           ]
         },
         {
-          "id": "pollinators",
-          "text": "Quins hàbitats existixen per a pol·linitzadors i controladors naturals de plagues a la vostra finca?",
+          "id": "auxiliary_fauna",
+          "text": "Amb quina freqüència observeu marietes i altres insectes beneficiosos (fauna auxiliar) en la teua finca?",
           "options": [
-            { "score": 1, "label": "Cap – no es mantenen hàbitats específics" },
-            { "score": 2, "label": "Franges florals o refugis per a insectes instal·lats en almenys una àrea" },
-            { "score": 3, "label": "Múltiples hàbitats: franges florals, hotels d'insectes, basses o refugis per a fauna beneficiosa gestionats activament" }
+            { "score": 1, "label": "Absents — no s'observen marietes ni fauna auxiliar en cap punt de la finca" },
+            { "score": 2, "label": "Escasses — observacions ocasionals, no presents de forma consistent en tota la finca" },
+            { "score": 3, "label": "Abundants — presència regular i estesa de marietes i fauna auxiliar en tota la finca" }
           ]
         },
         {
-          "id": "biodiversity_trend",
-          "text": "Heu notat un canvi en la biodiversitat (ocells, insectes, cucs) a la vostra finca en els últims anys?",
+          "id": "indicator_plants",
+          "text": "Quina és la diversitat vegetal en els carrers i vores de la teua finca?",
           "options": [
-            { "score": 1, "label": "Clara disminució – s'observen menys espècies i individus" },
-            { "score": 2, "label": "Lleuger augment en algunes espècies (p.ex. més cucs de terra o insectes beneficiosos)" },
-            { "score": 3, "label": "Clar augment – s'observen més ocells, pol·linitzadors, cucs i vida edàfica" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "plant_health_inputs",
-      "title": "Inputs",
-      "description": "Si useu pesticides i fertilitzants sintètics i com gestioneu les plagues i malalties.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 8; Khangura et al. 2023",
-      "questions": [
-        {
-          "id": "pesticides",
-          "text": "Com controlem les plagues i malalties en els vostres cítrics?",
-          "options": [
-            { "score": 1, "label": "Polvorització preventiva regular amb pesticides sintètics o fungicides en calendari fix" },
-            { "score": 2, "label": "Principalment productes orgànics o biològics; sintètics només com a últim recurs en casos justificats" },
-            { "score": 3, "label": "Sense pesticides sintètics – només control biològic, trampes de feromones, insectes beneficiosos i gestió preventiva de l'ecosistema" }
-          ]
-        },
-        {
-          "id": "herbicides",
-          "text": "Com gestioneu les males herbes en el vostre hort?",
-          "options": [
-            { "score": 1, "label": "Aplicacions regulars d'herbicides per mantenir el sòl nu" },
-            { "score": 2, "label": "Gestió principalment mecànica; herbicides rarament o mai usats" },
-            { "score": 3, "label": "Sense herbicides – les males herbes es gestionen mitjançant cultius de coberta, encoixinat o sega selectiva" }
-          ]
-        },
-        {
-          "id": "synthetic_fertiliser",
-          "text": "Com fertilitzeu els vostres arbres de cítrics?",
-          "options": [
-            { "score": 1, "label": "Principalment fertilitzants minerals sintètics (NPK, urea) mitjançant fertirrigació o distribució" },
-            { "score": 2, "label": "Principalment fertilitzants orgànics (compost, fem); sintètics usats ocasionalment" },
-            { "score": 3, "label": "Només inputs orgànics o biològics: compost, fem fermentat, bokashi, biofertilitzants – sense sintètics" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "soil_nutrition",
-      "title": "Coberta del Sòl",
-      "description": "Amb quina activitat alimenteu l'ecosistema del sòl i promoveu la vida microbiana.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026; Khangura et al. 2023",
-      "questions": [
-        {
-          "id": "organic_matter",
-          "text": "Com torneu matèria orgànica al vostre sòl?",
-          "options": [
-            { "score": 1, "label": "Les restes de poda i el material vegetal es retiren o cremen" },
-            { "score": 2, "label": "Les restes de poda es trituren i deixen com a encoixinat; s'aplica una mica de compost" },
-            { "score": 3, "label": "Retorn sistemàtic de tota la matèria orgànica: podes triturades com a encoixinat, compost i esmenes orgàniques aplicades regularment" }
-          ]
-        },
-        {
-          "id": "biofertilisers",
-          "text": "Useu productes biològics o microbians per donar suport a la vida del sòl?",
-          "options": [
-            { "score": 1, "label": "No – només depenem de fertilitzants minerals" },
-            { "score": 2, "label": "Usem inoculants micorrízics, bioestimulants o preparats fermentats (te de compost, bokashi)" },
-            { "score": 3, "label": "Programa regular amb micorizes, biofertilitzants, preparats fermentats i minerals naturals per construir activament el microbioma del sòl" }
-          ]
-        },
-        {
-          "id": "cover_crops_nutrition",
-          "text": "Useu cultius de coberta amb lleguminoses per millorar naturalment el nitrogen del sòl?",
-          "options": [
-            { "score": 1, "label": "Sense cultius de coberta – sòl nu entre arbres" },
-            { "score": 2, "label": "Mescla que inclou algunes lleguminoses (veça, trèvol) per a la fixació de nitrogen" },
-            { "score": 3, "label": "Mescla diversa de cultius de coberta amb lleguminoses, gramínies i plantes natives – dissenyada per millorar la fertilitat i la infiltració de l'aigua" }
+            { "score": 1, "label": "Absent — sòl nu o monocultiu de gramínies, sense lleguminoses ni diversitat vegetal" },
+            { "score": 2, "label": "Parcial — certa diversitat vegetal, lleguminoses limitades presents" },
+            { "score": 3, "label": "Alta diversitat — lleguminoses abundants i gran diversitat vegetal en carrers i vores" }
           ]
         }
       ]
     },
     {
       "id": "vegetation_management",
-      "title": "Pastura Planificada",
-      "description": "Com gestioneu la vegetació entre els arbres, amb o sense ramaderia.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteris 4 i 6",
+      "title": "Pasturatge Planificat",
+      "description": "Si i com s'integra ramaderia en l'hort per gestionar la vegetació i contribuir al cicle de nutrients.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 4; Vázquez-Martínez et al. (2024)",
       "questions": [
         {
-          "id": "cover_management",
-          "text": "Com gestioneu la vegetació que creix entre els vostres arbres de cítrics?",
+          "id": "livestock_integration",
+          "text": "Com integres ramaderia en el teu hort citrícola per a la gestió de la vegetació?",
           "options": [
-            { "score": 1, "label": "Eliminada amb herbicides o sega freqüent fins a sòl nu" },
-            { "score": 2, "label": "Sega mínima selectiva; es permet que la vegetació cresca i es cicle naturalment" },
-            { "score": 3, "label": "Gestionada amb pastura planificada (ovelles o cabres) o gestió mecànica mínima molt selectiva" }
+            { "score": 1, "label": "Sense ramaderia — no incorporada al sistema agrícola" },
+            { "score": 2, "label": "Integració parcial — ramaderia utilitzada estacionalment o en zones específiques de la finca" },
+            { "score": 3, "label": "Control principal de males herbes — la ramaderia és el supressor principal de vegetació en tota la finca" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soil_management",
+      "title": "Sense Llaurar",
+      "description": "Quant pertorba el sòl el llaurar i quants restes de collita deixes en la superfície després de la recol·lecció.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 5; Beeson et al. (2016); CTIC (2009)",
+      "questions": [
+        {
+          "id": "tillage_type",
+          "text": "Quin tipus de llaurar practiques?",
+          "options": [
+            { "score": 1, "label": "Llaurat d'inversió total (arar >30 cm) — pertorbació regular de les capes del sòl" },
+            { "score": 2, "label": "Llaurat superficial o reduït (<30 cm de sòl superficial) — menor freqüència, certa pertorbació roman" },
+            { "score": 3, "label": "Sense llaurat de cap tipus — estructura del sòl deixada intacta durant tot l'any" }
           ]
         },
         {
-          "id": "grazing",
-          "text": "Integreu ramaderia en el vostre hort citrícola?",
+          "id": "residue_cover",
+          "text": "Quin percentatge de superfície del sòl està coberta per restes de cultiu o poda poc després de la recol·lecció? (Estima visualment abans de qualsevol labor)",
           "options": [
-            { "score": 1, "label": "Sense ramaderia – no es considera" },
-            { "score": 2, "label": "Pastura estacional planificada amb temps d'entrada i eixida definits" },
-            { "score": 3, "label": "Pastura rotacional completament planificada integrada en la gestió de l'hort amb càrregues ramaderes adequades" }
+            { "score": 1, "label": "Menys del 15% de cobertura de restes — llaurat intensiu, poca cobertura superficial" },
+            { "score": 2, "label": "15–30% de cobertura de restes — llaurat reduït, alguns restes retinguts en superfície" },
+            { "score": 3, "label": "Més del 30% de cobertura de restes — conservació o sense llaurat, superfície ben protegida" }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "soil_nutrition",
+      "title": "Cobertura del Sòl",
+      "description": "El percentatge del teu sòl mantingut cobert amb material vegetal, cultius de cobertura o encoixinament orgànic durant l'any.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 6; Rainforest Alliance (2022)",
+      "questions": [
         {
-          "id": "pruning_waste",
-          "text": "Com gestioneu les restes de poda dels vostres arbres de cítrics?",
+          "id": "soil_cover_pct",
+          "text": "Quin percentatge de la superfície del teu sòl està coberta (per plantes vives, restes de collita o encoixinament) durant la major part de l'any?",
           "options": [
-            { "score": 1, "label": "Cremades o retirades de la finca" },
-            { "score": 2, "label": "Triturades i deixades en la superfície del sòl com a encoixinat" },
-            { "score": 3, "label": "Triturades com a encoixinat i compostades; algunes usades com a aliment animal on siga possible" }
+            { "score": 1, "label": "Menys del 40% de cobertura — períodes significatius de sòl nu, sense cultius de cobertura deliberats" },
+            { "score": 2, "label": "40–60% de cobertura — alguns cultius de cobertura o gestió de restes, avançant cap al regeneratiu" },
+            { "score": 3, "label": "60% o més de cobertura — cobertura contínua com a principi (llindar de certificació regenerativa Rainforest Alliance)" }
           ]
         }
       ]
@@ -213,34 +177,33 @@
     {
       "id": "crop_diversification",
       "title": "Cultius",
-      "description": "Si cultiveu només monocultiu de cítrics o integreu altres plantes i varietats.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 7; Khangura et al. 2023",
+      "description": "Si cultives només una varietat o diversifiques activament amb policultiu i sistemes de cultiu en carrers.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 7; Perrino et al. (2025); Deng et al. (2025); Fernández-Soler et al. (2024)",
       "questions": [
         {
           "id": "intercropping",
-          "text": "Cultiveu altres plantes juntament amb els vostres arbres de cítrics?",
+          "text": "Quin de divers és el teu sistema de cultiu — uses policultiu o cultius en carrers entre els tarongers?",
           "options": [
-            { "score": 1, "label": "Monocultiu pur – només cítrics, res més" },
-            { "score": 2, "label": "Alguns elements de policultiu o agroforesteria (altres arbres fruiters, arbusts)" },
-            { "score": 3, "label": "Sistema divers d'agroforesteria o policultiu amb múltiples espècies integrades en temps i espai" }
+            { "score": 1, "label": "Monocultiu — una sola varietat de cultiu, sense policultiu ni cultius de cobertura entre files" },
+            { "score": 2, "label": "Diversificació parcial — alguns cultius de cobertura o en carrers, varietat d'espècies limitada" },
+            { "score": 3, "label": "Policultiu o cultius en carrers — múltiples espècies usades activament, incloses lleguminoses per a alta diversitat entre files" }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "plant_health_inputs",
+      "title": "Inputs",
+      "description": "Si la teua finca usa fertilitzants químics sintètics, herbicides i pesticides o ha transitat a alternatives orgàniques.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 8",
+      "questions": [
         {
-          "id": "varieties",
-          "text": "Quins tipus de varietats de cítrics cultiveu?",
+          "id": "synthetic_use",
+          "text": "Quin és el teu ús actual d'inputs químics sintètics (fertilitzants, herbicides, pesticides)?",
           "options": [
-            { "score": 1, "label": "Una sola varietat comercial, molt dependent d'inputs externs" },
-            { "score": 2, "label": "Múltiples varietats incloent algunes tradicionals o locals" },
-            { "score": 3, "label": "Varietats diverses incloent tradicionals, locals i resistents a malalties adaptades al microclima valencià" }
-          ]
-        },
-        {
-          "id": "trap_crops",
-          "text": "Useu plantes companyes o cultius trampa per gestionar plagues de forma natural?",
-          "options": [
-            { "score": 1, "label": "No – només depenem del control químic de plagues" },
-            { "score": 2, "label": "Alguns cultius trampa o plantes companyes usats per a plagues específiques (p.ex. calendules, rabes)" },
-            { "score": 3, "label": "Ús estratègic de plantes companyes, cultius trampa i flors refugi en tot l'hort per a l'equilibri ecològic de plagues" }
+            { "score": 1, "label": "Ús sintètic intensiu — ús regular de fertilitzants, herbicides i pesticides sintètics" },
+            { "score": 2, "label": "Ús sintètic reduït — algunes alternatives orgàniques introduïdes, encara s'usen sintètics" },
+            { "score": 3, "label": "Només orgànic — només fertilitzants i biocides orgànics, sense productes químics sintètics ni derivats d'OGM" }
           ]
         }
       ]
@@ -248,60 +211,34 @@
     {
       "id": "plastics_waste",
       "title": "Plàstics i Residus",
-      "description": "Com minimitzeu i gestioneu responsablement l'ús de plàstics i els residus agrícoles.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 9",
+      "description": "Com gestioneu l'encoixinament plàstic, els materials d'infraestructura i l'eliminació de residus agrícoles.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 9; Gilbert, Ricci & Thompson / FAO (2021)",
       "questions": [
         {
-          "id": "plastics_use",
-          "text": "Quant plàstic d'un sol ús utiliseu a la vostra finca (malles, tubs de degoteig, safates, bosses)?",
+          "id": "plastic_mulch",
+          "text": "Com gestioneu l'encoixinament del sòl en la teua finca?",
           "options": [
-            { "score": 1, "label": "Ús intensiu de plàstics d'un sol ús sense pla de reducció" },
-            { "score": 2, "label": "Reduint activament els plàstics; alternatives reutilitzables usades on siga possible" },
-            { "score": 3, "label": "Plàstics mínims; materials reutilitzables, reciclables o biodegradables utilisats a tota la finca" }
+            { "score": 1, "label": "Plàstic d'encoixinament — làmina plàstica estàndard sense pla de reducció o substitució" },
+            { "score": 2, "label": "Plàstic limitat o biodegradable — biodegradable, paper o plàstic de gruix ≥2mm si s'utilitza" },
+            { "score": 3, "label": "Només encoixinament orgànic — restes de poda, cultius de cobertura o biomassa en lloc de plàstic" }
           ]
         },
         {
-          "id": "plastics_disposal",
-          "text": "Com elimineu els plàstics agrícoles (tubs de degoteig, embalatges, malles velles)?",
+          "id": "infrastructure_plastic",
+          "text": "Quins materials usa la infraestructura de la teua finca (canonades de reg, malles protectores, tutors per a arbres joves)?",
           "options": [
-            { "score": 1, "label": "Cremats a la finca o deixats al camp" },
-            { "score": 2, "label": "Portats a un punt de recollida municipal" },
-            { "score": 3, "label": "Lliurament sistemàtic a una empresa certificada de gestió de plàstics amb traçabilitat documentada" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "contextuality",
-      "title": "Contextualitat",
-      "description": "Si les vostres pràctiques estan deliberadament adaptades al vostre context local i evolucionen amb el temps.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 1; Jayasinghe et al. 2023",
-      "questions": [
-        {
-          "id": "planning",
-          "text": "Teniu un pla escrit o estructurat per millorar les pràctiques regeneratives de la vostra finca?",
-          "options": [
-            { "score": 1, "label": "Sense pla – cultivant com sempre s'ha fet" },
-            { "score": 2, "label": "Un pla de millora clar amb prioritats identificades" },
-            { "score": 3, "label": "Un pla de gestió regenerativa a llarg termini documentat amb seguiment i revisió anual" }
+            { "score": 1, "label": "Basada en PVC — canonades de reg de PVC o tèxtil protector teixit PVC usat extensament" },
+            { "score": 2, "label": "Mixt — algun PVC i algunes alternatives; avançant cap a la reducció de productes amb PVC" },
+            { "score": 3, "label": "Sense PVC — sistema de reg sense polímers PVC; tutors orgànics o de base biològica per a arbres joves" }
           ]
         },
         {
-          "id": "monitoring",
-          "text": "Observeu i registreu regularment els canvis a la vostra finca (sòl, plagues, aigua, biodiversitat)?",
+          "id": "waste_disposal",
+          "text": "Com elimines els residus plàstics agrícoles (canonades de degoteig, embalatges, malles, envasos)?",
           "options": [
-            { "score": 1, "label": "Sense observació sistemàtica" },
-            { "score": 2, "label": "Observació regular amb alguns registres informals o fotos" },
-            { "score": 3, "label": "Seguiment sistemàtic: anàlisis de sòl, punts fotogràfics, registres de biodiversitat, ús de l'aigua registrat anualment" }
-          ]
-        },
-        {
-          "id": "training",
-          "text": "Com us manteniu actualitzats sobre el coneixement en agricultura regenerativa?",
-          "options": [
-            { "score": 1, "label": "Sense aprenentatge actiu – confiem en la pràctica existent" },
-            { "score": 2, "label": "Assistim a cursos o visites a finques regularment" },
-            { "score": 3, "label": "Membre actiu d'una xarxa d'aprenentatge; participa en investigació, assajos o intercanvi de coneixement amb científics i agricultors" }
+            { "score": 1, "label": "Cremats o enterrats — plàstics cremats a la finca o deixats al camp" },
+            { "score": 2, "label": "Punt de residus municipal — portats a la recollida estàndard de residus" },
+            { "score": 3, "label": "Reciclatge correcte — lliurats a esquema certificat (p.ex. MAPLA), amb registres de residus i separació per polímer" }
           ]
         }
       ]
@@ -309,34 +246,87 @@
     {
       "id": "social_foundations",
       "title": "Bases Socials i Territorials",
-      "description": "La vostra participació en la comunitat local, xarxes cooperatives i intercanvi de coneixement.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 10",
+      "description": "La teua participació en intercanvi de coneixement, creació de comunitat, presa de decisions local i xarxes cooperatives.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 10; Gaspar et al. (2025)",
       "questions": [
         {
-          "id": "networks",
-          "text": "Formeu part d'alguna cooperativa, xarxa d'agricultors o grup d'agricultura regenerativa?",
+          "id": "knowledge_exchange",
+          "text": "Amb quina activitat participeu en l'intercanvi de coneixement i aprenentatge amb altres agricultors?",
           "options": [
-            { "score": 1, "label": "No – treballem de forma independent sense participació en cap xarxa" },
-            { "score": 2, "label": "Actiu en una cooperativa o grup d'agricultors amb algun intercanvi de coneixement" },
-            { "score": 3, "label": "Membre actiu d'una xarxa d'agricultura regenerativa; col·labora en aprenentatge, assajos i millora col·lectiva" }
+            { "score": 1, "label": "Absent — sense participació en esdeveniments d'intercanvi de coneixement; informació només a través de canals verticals" },
+            { "score": 2, "label": "Informal — participa 2–5 vegades a l'any en esdeveniments o a través de xarxes personals informals" },
+            { "score": 3, "label": "Actiu — organitza o participa 3–5+ vegades a l'any en xarxes d'agricultors, jornades de camp o aprenentatge entre iguals" }
           ]
         },
         {
-          "id": "market",
-          "text": "Com veneu els vostres cítrics?",
+          "id": "community_identity",
+          "text": "Quant t'identifiques amb València i la comunitat agrícola local?",
           "options": [
-            { "score": 1, "label": "Exclusivament a través de grans distribuïdors sense connexió amb el consumidor final" },
-            { "score": 2, "label": "Combinació de vendes locals o directes i canals de distribució" },
-            { "score": 3, "label": "Vendes directes o locals significatives (botiga de la finca, mercat local, cadena curta, Km 0)" }
+            { "score": 1, "label": "Individual — treballa sol amb poca connexió o identitat amb l'àrea local" },
+            { "score": 2, "label": "Connectat — sent vinculació regional però encara no s'ha traduït en participació comunitària activa" },
+            { "score": 3, "label": "Integrat — forta connexió amb València, inverteix en la comunitat, demostra cohesió social amb l'entorn" }
           ]
         },
         {
-          "id": "sharing",
-          "text": "Compartiu coneixement o obriu la vostra finca a altres (visites, esdeveniments, xarxes socials)?",
+          "id": "local_decisions",
+          "text": "Quin paper jugues en la presa de decisions agrícoles locals (p.ex. reunions de comunitat de regants, comitès agrícoles municipals)?",
           "options": [
-            { "score": 1, "label": "Sense intercanvi – mantenim les pràctiques en privat" },
-            { "score": 2, "label": "Participem en visites a finques o esdeveniments, o compartim informació públicament" },
-            { "score": 3, "label": "Compartim activament el progrés a través de xarxes socials, jornades de portes obertes, o col·laboracions amb escoles o centres de recerca" }
+            { "score": 1, "label": "Cap — no assisteix a reunions locals on es prenen decisions agrícoles" },
+            { "score": 2, "label": "Passiu — assisteix a reunions però adopta un paper passiu" },
+            { "score": 3, "label": "Actiu — pren un paper actiu en la presa de decisions horitzontal i treballa per empoderar la direcció agrícola local" }
+          ]
+        },
+        {
+          "id": "cooperative_networks",
+          "text": "Quina és la teua implicació en cooperatives o xarxes agrícoles?",
+          "options": [
+            { "score": 1, "label": "Cap — no ha ingressat en cap cooperativa; poc accés a subvencions, xarxes o suport tècnic" },
+            { "score": 2, "label": "Membre — part d'una cooperativa però inverteix poca energia en oportunitats de networking" },
+            { "score": 3, "label": "Membre actiu — actiu en cooperatives, amb bon accés a subvencions, connexions polítiques i institucions locals" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soil_health",
+      "title": "Salut del Sòl",
+      "description": "Indicadors observables de la salut general del sòl — accessibles per a l'agricultor sense equips de laboratori.",
+      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Indicador transversal; Soto et al. (2020); EU CAP Network Focus Group (2024)",
+      "questions": [
+        {
+          "id": "soil_structure",
+          "text": "Com descriuries l'estructura del teu sòl en agafar un grapat?",
+          "options": [
+            { "score": 1, "label": "Compactat — dur, premsat i apedaçat; estructura en blocs o sense agregats visibles" },
+            { "score": 2, "label": "Moderat — sòl una mica solt, agregats de mida mitjana visibles" },
+            { "score": 3, "label": "Sa — solt i esponjós, petits agregats arrodonits que indiquen bona activitat biològica" }
+          ]
+        },
+        {
+          "id": "soil_colour",
+          "text": "De quin color és el teu sòl superficial?",
+          "options": [
+            { "score": 1, "label": "Clar o pàl·lid — color pàl·lid, gris o groguenc que indica poca matèria orgànica" },
+            { "score": 2, "label": "Mitjà — ni clar ni fosc, nivells mitjans de matèria orgànica" },
+            { "score": 3, "label": "Fosc — marró fosc o negre que indica alt contingut de matèria orgànica i riquesa biològica" }
+          ]
+        },
+        {
+          "id": "soil_smell",
+          "text": "A què fa olor el teu sòl en agafar un grapat fresc?",
+          "options": [
+            { "score": 1, "label": "Sense olor o químic — sense olor o olor artificial/química que indica baixa activitat biològica" },
+            { "score": 2, "label": "Lleu olor terrosa — suau aroma terrosa, activitat microbiana moderada present" },
+            { "score": 3, "label": "Olor a bosc fresc — olor fort, fresc i profund a bosc (petricor) que indica vida microbiana i micorrícica abundant" }
+          ]
+        },
+        {
+          "id": "root_content",
+          "text": "Quantes arrels i arreletes són visibles en una mostra de sòl de 20 cm de profunditat?",
+          "options": [
+            { "score": 1, "label": "Absents — poques o cap arrel visible, indicant sòl biològicament inactiu o compactat" },
+            { "score": 2, "label": "Presents — nombre apreciable d'arrels i arreletes, desenvolupament radicular moderat" },
+            { "score": 3, "label": "Abundants — moltes arrels i arreletes en tot el perfil del sòl, indicant sòl sa i biològicament actiu" }
           ]
         }
       ]

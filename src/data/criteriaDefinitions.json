@@ -68,5 +68,12 @@
     "title": "Social & Territorial Foundations",
     "definition": "Promote landscape-wide cooperation and knowledge transfer, to strengthen the community and the sustainability of territories.",
     "detail": "To meet this criterion, at least two of the following must be practised: work with local markets, direct sales or short supply chains; offer guided tours or on-farm training; be part of local collaborative networks; participate in knowledge exchange networks; become part of a producer or consumer cooperative; promote a healthy work-life balance for all staff; share knowledge through social media or public events; collaborate with schools or research centres; integrate family and collaborators into learning processes; be in a process of continuous education; actively contribute to the collective care of the territory through conservation of shared natural resources."
+  },
+  {
+    "id": "soil_health",
+    "number": "11",
+    "title": "Soil Health",
+    "definition": "Observable, farmer-accessible proxy indicators for overall soil health, reflecting the combined effect of regenerative practices across all 10 criteria.",
+    "detail": "Soil health is assessed through four field observations requiring no laboratory equipment: soil structure (compacted vs loose and spongy with rounded aggregates), soil colour (pale indicating low organic matter vs dark brown/black indicating richness), soil smell (none/chemical vs strong fresh forest petrichor indicating abundant mycorrhizal life), and root content (few roots vs abundant rootlets throughout the profile). These indicators are a cross-cutting outcome — improvement here reflects the success of practices across tillage, cover, biodiversity, and inputs management."
   }
 ]

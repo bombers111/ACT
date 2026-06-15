@@ -1,167 +1,159 @@
 {
-  "soil_management": {
-    "tillage": {
-      "1": "Regular ploughing inverts and destroys soil structure, kills earthworms and fungal networks, releases stored carbon and creates compaction hardpan layers over time.",
-      "2": "Minimal, targeted tillage reduces soil disturbance to a fraction of conventional practice, preserving most biological activity while allowing necessary interventions.",
-      "3": "Permanent no-till keeps the soil food web intact, maintains mycorrhizal networks, and locks in organic matter — the foundation of long-term soil fertility."
+  "contextuality": {
+    "topography": {
+      "1": "Steep slopes combined with Valencia's intense autumn rainfall events (DANA) create a high risk of erosion and soil loss. This makes the transition to regenerative practices harder but also more urgent.",
+      "2": "Moderate slopes carry moderate erosion risk. Good soil cover and water retention practices become especially valuable here to reduce runoff.",
+      "3": "Flat terrain minimises erosion risk and allows water to infiltrate naturally, creating a favourable starting point for regenerative practices."
     },
-    "soil_cover": {
-      "1": "Bare soil is exposed to erosion from rain and wind, UV degradation, extreme temperature swings and rain-impact compaction — all of which destroy soil structure and life.",
-      "2": "Organic mulch or partial cover insulates the soil, adds organic matter as it decomposes, retains moisture and provides habitat for soil organisms.",
-      "3": "Year-round living cover continuously feeds soil organisms through root exudates, prevents erosion, fixes nitrogen (with legumes) and suppresses weeds without chemicals."
+    "pest_pressure": {
+      "1": "High pest and disease pressure in conventional systems often reflects low biodiversity and high synthetic input dependency. Transitioning away from pesticides takes longer under these conditions.",
+      "2": "Moderate pressure means regenerative practices can begin replacing inputs with manageable short-term risk — a realistic and achievable transition path.",
+      "3": "Low pest pressure signals an already-favourable ecosystem balance. Biological control can be established relatively quickly with targeted habitat improvements."
     },
-    "soil_structure": {
-      "1": "Compacted soil has poor water infiltration, root penetration and gas exchange. It signals absent or severely stressed biological activity.",
-      "2": "Moderate structure with visible aggregates indicates biological activity is recovering — a good sign of improving soil health.",
-      "3": "Loose, crumbly soil with earthworms indicates a thriving soil ecosystem, excellent water infiltration and high biological activity — the goal of regenerative management."
+    "soil_salinity": {
+      "1": "Coastal salt accumulation limits what RA practices are feasible and requires careful drainage management before many improvements can take effect.",
+      "2": "Moderate salinity is manageable with good drainage and organic matter build-up, which improves soil structure and salt leaching.",
+      "3": "Low salinity removes a significant barrier, making a wide range of regenerative practices immediately accessible."
+    },
+    "fruit_set": {
+      "1": "Poor fruit set below 15% indicates severe tree stress, often linked to malnutrition, poor root development or soil health problems — a key signal to address soil management urgently.",
+      "2": "Normal fruit set of 15–45% is standard for citrus and indicates the tree is coping but may benefit from further soil health and nutrition improvements.",
+      "3": "Excellent fruit set above 45% is an indicator of outstanding tree health, good soil nutrition and effective regenerative management — confirm with soil structure checks."
     }
   },
   "water": {
     "irrigation": {
-      "1": "Flood irrigation can waste 40–60% of water through runoff and evaporation in Valencia's climate, accelerating aquifer depletion and risking soil salinisation.",
-      "2": "Localised drip reduces water use significantly compared to flood irrigation and begins to match water supply to plant needs.",
-      "3": "Sensor-guided precision drip delivers water only when soil moisture drops below the threshold plants need, minimising waste and plant stress simultaneously."
+      "1": "Flood irrigation on a fixed schedule wastes 40–60% of water through runoff and evaporation in Valencia's climate, accelerating aquifer depletion and risking soil salinisation.",
+      "2": "Drip or sprinkler irrigation with semi-consistent scheduling reduces water use significantly compared to flood irrigation, but still misses precision opportunities.",
+      "3": "Adaptive drip irrigation based on actual crop and soil needs delivers water only when needed, minimising waste, reducing energy costs and preventing plant stress."
     },
-    "rainwater": {
-      "1": "Without any water retention, rainfall runs off the farm carrying topsoil and nutrients, while the farm remains entirely dependent on irrigation infrastructure.",
-      "2": "Passive water harvesting infrastructure such as terraces and swales slows runoff, increases infiltration and can significantly recharge local groundwater.",
-      "3": "Active rainwater storage creates on-farm water independence, reduces irrigation costs and provides resilience during Valencia's increasingly frequent drought periods."
+    "green_cover": {
+      "1": "Bare soil between rows leads to high runoff, low infiltration and increased aquifer dependency — the opposite of what regenerative water management requires.",
+      "2": "Moderate cover between rows reduces runoff and improves infiltration, beginning to close the water cycle at farm level.",
+      "3": "Dense, diverse year-round cover maximises infiltration, retains moisture in the root zone, reduces irrigation need and suppresses evaporation."
     },
-    "water_source": {
-      "1": "Unmonitored deep aquifer extraction depletes shared groundwater resources that may take centuries to recharge, threatening the long-term viability of farming in Valencia.",
-      "2": "Using a mix of sources within legal rights is a pragmatic transition step, reducing pressure on any single water body.",
-      "3": "Relying primarily on surface water or rainfall minimises pressure on aquifers, supports the regional water balance and aligns with sustainable farming."
+    "som_management": {
+      "1": "Without organic matter management, soil remains compacted with low water-holding capacity — wasting irrigation and increasing aquifer dependency.",
+      "2": "Occasional compost or cover crop residues improve soil biology, and with them, water retention — a good first step toward regenerative water management.",
+      "3": "Regular organic inputs and active SOM management can double or triple the soil's water-holding capacity, reducing irrigation needs and aquifer stress."
     }
   },
   "biodiversity": {
-    "hedges": {
-      "1": "Bare or concrete boundaries eliminate habitat corridors for wildlife, leaving the farm as an ecological island disconnected from surrounding biodiversity.",
-      "2": "Hedges and flower strips on farm boundaries provide nesting habitat, food sources and movement corridors for beneficial insects, birds and small mammals.",
-      "3": "Multiple interconnected corridors linking to the wider landscape multiply ecological benefits, creating resilient populations of pollinators and natural pest predators."
+    "earthworms": {
+      "1": "Absence of earthworms is a clear signal of biologically depleted soil — typically caused by tillage, synthetic inputs or lack of organic matter. Earthworms are a key driver of soil structure and water infiltration.",
+      "2": "Two functional groups indicate recovery is underway. Endogeic and epigeic earthworms together signal improving organic matter and soil structure.",
+      "3": "All three functional groups — epigeic, endogeic and anecic — present at high density indicate a fully functioning soil food web, excellent organic matter cycling and strong biological activity."
     },
-    "pollinators": {
-      "1": "Without pollinator habitat, citrus relies on chance for pollination and lacks the natural predator populations that control pest outbreaks.",
-      "2": "A dedicated flower strip or insect refuge provides refuge and food for beneficial insects, improving both pollination rates and biological pest control.",
-      "3": "Multiple managed habitats create year-round resources for diverse pollinator and predator species, reducing reliance on chemical pest control and improving yields."
+    "auxiliary_fauna": {
+      "1": "Absence of ladybugs and beneficial insects signals a biological desert — often caused by pesticide use eliminating both pests and their natural predators.",
+      "2": "Occasional sightings indicate some habitat exists but populations have not yet established consistently — targeted flower strips or habitat features can accelerate recovery.",
+      "3": "Widespread, consistent presence of beneficial insects indicates a functioning biological control system reducing the need for any pest management inputs."
     },
-    "biodiversity_trend": {
-      "1": "A declining trend is a warning signal that the farming system is actively degrading the ecological foundation it depends on — this is urgent to address.",
-      "2": "A slight increase indicates that some practices are already moving in the right direction, even if the full ecosystem has not yet recovered.",
-      "3": "Observed increases in multiple species groups confirm that the farm's ecological management is working and building genuine resilience."
-    }
-  },
-  "plant_health_inputs": {
-    "pesticides": {
-      "1": "Calendar-based synthetic spraying kills beneficial insects including pollinators and natural predators, creates pesticide resistance and contaminates soil and water.",
-      "2": "Replacing most synthetics with biological or organic products protects beneficial organisms, reduces environmental contamination and builds natural pest suppression.",
-      "3": "Full biological pest management through ecological balance eliminates pesticide costs, protects human health, preserves biodiversity and builds long-term resilience."
-    },
-    "herbicides": {
-      "1": "Regular herbicides keep soil bare, destroy the understory plant community, eliminate habitat for beneficial insects and contaminate soil and groundwater.",
-      "2": "Mechanical management avoids chemical contamination. Eliminating herbicide use entirely is the regenerative goal.",
-      "3": "Replacing herbicides with cover crops or mulch eliminates chemical inputs, adds organic matter, provides habitat and can actually improve soil structure."
-    },
-    "synthetic_fertiliser": {
-      "1": "Synthetic NPK fertilisers bypass the soil food web, acidify soils over time, contaminate groundwater through leaching and create dependency on external supply chains.",
-      "2": "Shifting primarily to organic inputs begins to rebuild soil biology and reduce chemical dependency while maintaining adequate nutrition.",
-      "3": "Fully organic biological inputs feed soil organisms rather than bypassing them, building long-term fertility, improving water retention and reducing costs over time."
-    }
-  },
-  "soil_nutrition": {
-    "organic_matter": {
-      "1": "Removing or burning organic residues depletes soil organic matter, reduces water retention, diminishes carbon sequestration and starves soil organisms.",
-      "2": "Chipping prunings as mulch and applying compost returns nutrients and organic matter to the soil, gradually rebuilding the biological foundation.",
-      "3": "A systematic programme of organic matter return maximises carbon input, feeds diverse soil organisms and builds soil organic matter — the foundation of fertility."
-    },
-    "biofertilisers": {
-      "1": "Relying solely on mineral fertilisers feeds the plant but not the soil, leading to progressive decline of soil biology and increasing dependency on external inputs.",
-      "2": "Mycorrhizal inoculants and biostimulants reinforce the soil–plant symbiosis, improving nutrient uptake efficiency and plant resilience to stress.",
-      "3": "A regular biological programme actively builds the soil microbiome, increases nutrient cycling efficiency and reduces the need for external inputs over time."
-    },
-    "cover_crops_nutrition": {
-      "1": "No cover crops leaves the soil biologically inactive between rows, losing the opportunity to fix nitrogen, build organic matter and support soil life.",
-      "2": "Including legumes in the cover crop mix allows biological nitrogen fixation, potentially supplying 30–150 kg N/ha/year without synthetic fertiliser.",
-      "3": "A diverse cover crop mix with legumes, grasses and native species creates maximum biodiversity above and below ground, optimising nitrogen fixation, water infiltration and soil structure."
+    "indicator_plants": {
+      "1": "Bare or monoculture inter-rows eliminate biological nitrogen fixation, ground-level habitat and the plant diversity that supports insect communities.",
+      "2": "Some plant diversity with limited legumes is a positive early signal, beginning to provide nitrogen fixation, food sources and habitat for soil organisms.",
+      "3": "High diversity with abundant leguminous plants provides biological nitrogen fixation (potentially 30–150 kg N/ha/year), habitat for pollinators and predators, and soil cover year-round."
     }
   },
   "vegetation_management": {
-    "cover_management": {
-      "1": "Eliminating all vegetation between trees removes habitat, food sources, soil cover and the biological control agents that keep pest populations in balance.",
-      "2": "Allowing vegetation to grow and cycle naturally with minimal mowing maintains soil cover, organic matter input and habitat for beneficial organisms year-round.",
-      "3": "Planned grazing integrates livestock into the system, converting biomass to fertility while controlling vegetation without machinery, fuel or herbicides."
+    "livestock_integration": {
+      "1": "Without livestock, biomass can only be managed mechanically or chemically, missing the opportunity to convert on-farm vegetation into fertility through natural cycling.",
+      "2": "Partial integration — seasonal or zone-based grazing — begins to use livestock as a management tool, distributing fertility and reducing vegetation management costs.",
+      "3": "Livestock as the primary weed control mechanism eliminates herbicide and mowing costs, distributes fertility across the orchard and integrates animal production into the farm system."
+    }
+  },
+  "soil_management": {
+    "tillage_type": {
+      "1": "Full inversion tillage (>30 cm) destroys soil structure, severs mycorrhizal networks, kills earthworms and fungal communities, releases stored carbon and creates compaction hardpan layers.",
+      "2": "Shallow or reduced tillage minimises soil inversion and preserves most of the soil biology and structure, a significant improvement over full tillage.",
+      "3": "No tillage keeps the soil food web fully intact, maintains mycorrhizal networks, locks in organic matter and protects the soil surface year-round — the foundation of regenerative soil management."
     },
-    "grazing": {
-      "1": "No livestock integration misses the opportunity to convert on-farm biomass into fertility and manage vegetation without mechanical or chemical inputs.",
-      "2": "Planned seasonal grazing with controlled timing prevents overgrazing, distributes fertility evenly and contributes to soil organic matter through manure.",
-      "3": "Fully planned rotational grazing mimics natural grazing patterns, maximises soil biology stimulation, prevents compaction and integrates livestock as a farm asset."
-    },
-    "pruning_waste": {
-      "1": "Burning prunings destroys organic matter, releases CO₂, kills soil-surface organisms and eliminates a valuable on-farm fertility resource.",
-      "2": "Chipping prunings and leaving them as mulch recycles nutrients back to the soil surface, protects from erosion and feeds soil organisms as they decompose.",
-      "3": "Composting or using chipped prunings as both mulch and animal feed creates a closed nutrient loop, maximising on-farm fertility and minimising external inputs."
+    "residue_cover": {
+      "1": "Less than 15% residue cover signals intensive tillage with minimal residue retention. Exposed soil is vulnerable to erosion, moisture loss and biological depletion.",
+      "2": "15–30% residue cover indicates reduced tillage and meaningful retention, protecting soil from erosion and beginning to return organic matter to the surface.",
+      "3": "More than 30% residue cover — the conservation tillage benchmark — protects the soil surface, feeds soil organisms and significantly increases organic matter over time."
+    }
+  },
+  "soil_nutrition": {
+    "soil_cover_pct": {
+      "1": "Less than 40% soil cover means significant bare soil periods — leaving soil exposed to erosion, UV degradation and moisture loss, while starving soil organisms of organic inputs.",
+      "2": "40–60% cover represents a meaningful transition step: erosion is reduced and soil biology is beginning to be supported, moving toward the regenerative threshold.",
+      "3": "60% or more cover — the Rainforest Alliance regenerative certification threshold — means the soil is protected, fed and biologically active throughout the year."
     }
   },
   "crop_diversification": {
     "intercropping": {
-      "1": "Monoculture creates uniform conditions that favour pest and disease outbreaks, requires high external inputs and offers no resilience if one crop fails.",
-      "2": "Integrating other species creates habitat niches, biological diversity and income diversification, beginning to move away from the fragility of monoculture.",
-      "3": "A diverse agroforestry system maximises ecological interactions, creates multiple income streams, provides habitat, sequesters more carbon and reduces systemic risk."
-    },
-    "varieties": {
-      "1": "Reliance on a single commercial variety creates genetic uniformity — a new pest or pathogen could devastate the entire farm.",
-      "2": "Multiple varieties including traditional ones provides genetic diversity, market diversification and resilience against climate variability.",
-      "3": "A diverse mix of local, traditional and disease-resistant varieties adapted to Valencia's microclimate maximises resilience, ecological fit and market interest."
-    },
-    "trap_crops": {
-      "1": "Without companion plants or trap crops, the only pest management tools are chemical ones, creating resistance, costs and ecological damage over time.",
-      "2": "Targeted trap crops or companion plants for specific pests begin to use ecological processes for pest management, reducing chemical dependency.",
-      "3": "A strategic companion planting system creates year-round ecological balance, attracting beneficial insects, confusing pests and providing habitat for natural predators."
+      "1": "Monoculture creates uniform conditions that favour pest and disease outbreaks, requires high external inputs and provides no resilience if market conditions change.",
+      "2": "Partial diversification with cover crops or alley cropping begins to introduce ecological interactions that can suppress pests, fix nitrogen and improve soil health.",
+      "3": "Intercropping or alley cropping with diverse species including legumes maximises ecological interactions, nitrogen fixation, habitat provision and soil cover — all at once."
+    }
+  },
+  "plant_health_inputs": {
+    "synthetic_use": {
+      "1": "Regular synthetic inputs — fertilisers, herbicides and pesticides — destroy soil biology, create resistance, contaminate groundwater and make the farm dependent on external supply chains.",
+      "2": "Reducing synthetics and introducing organic alternatives begins to rebuild soil biology and reduce contamination, though the transition period requires careful management.",
+      "3": "Fully organic practice eliminates soil biology disruption, contamination and supply chain dependency, building long-term fertility and biological pest management."
     }
   },
   "plastics_waste": {
-    "plastics_use": {
-      "1": "Heavy single-use plastic use contributes to microplastic contamination of soil and water, creates disposal costs and is increasingly restricted by EU regulations.",
-      "2": "Actively replacing single-use with reusable or biodegradable alternatives reduces contamination, costs and regulatory risk.",
-      "3": "Minimal plastic use throughout the farm represents full alignment with circular economy principles and future EU agricultural sustainability requirements."
+    "plastic_mulch": {
+      "1": "Standard plastic mulch accumulates in soil as microplastics over time, contributing to soil and water contamination, and has no pathway to regenerative certification.",
+      "2": "Biodegradable or paper-based mulch reduces contamination risk. Thick plastic (≥2mm) extends service life and improves recyclability compared to thin single-use films.",
+      "3": "Organic mulching with pruning waste, cover crops or biomass eliminates plastic use entirely, returns organic matter to the soil and supports soil biology."
     },
-    "plastics_disposal": {
-      "1": "Burning agricultural plastics releases toxic compounds including dioxins and furans. Leaving them in fields causes progressive microplastic soil contamination.",
-      "2": "Municipal waste disposal is the legal minimum but lacks the traceability and professional handling needed for proper agricultural plastic recycling.",
-      "3": "Certified plastic management with documented traceability ensures proper recycling, protects from liability and demonstrates full compliance with regulations."
-    }
-  },
-  "contextuality": {
-    "planning": {
-      "1": "Farming without a structured plan makes it very difficult to measure progress, identify priorities or demonstrate improvement to buyers or certifiers.",
-      "2": "A clear improvement plan enables systematic progress, better resource allocation and clearer communication with advisors and cooperative networks.",
-      "3": "A documented long-term plan with annual monitoring creates accountability, enables adaptive management and is often required for regenerative certification."
+    "infrastructure_plastic": {
+      "1": "PVC-based irrigation pipes and protective textiles contain harmful additives, are difficult to recycle and represent long-term contamination risk when degraded in the field.",
+      "2": "Reducing PVC in infrastructure reduces contamination risk; transitioning to single-polymer systems improves recyclability at end of life.",
+      "3": "Eliminating PVC from irrigation and using organic or bio-based tree supports removes contamination risk and demonstrates alignment with circular economy principles."
     },
-    "monitoring": {
-      "1": "Without systematic observation it is impossible to know if practices are working, to detect early warning signs or to demonstrate progress to buyers or researchers.",
-      "2": "Regular observation with records enables trend detection, captures seasonal variation and provides evidence for certifications or research partnerships.",
-      "3": "Systematic monitoring with quantitative data creates a rigorous evidence base, enables adaptive management decisions and is the foundation of continuous improvement."
-    },
-    "training": {
-      "1": "Without active learning, farming practices tend to remain static while the science and market expectations for regenerative agriculture continue to evolve rapidly.",
-      "2": "Regular courses and farm visits provide new techniques, peer learning and motivation — essential for staying current with regenerative practices.",
-      "3": "Active participation in research networks and knowledge exchange accelerates learning, contributes to the wider field and builds connections that open market opportunities."
+    "waste_disposal": {
+      "1": "Burning agricultural plastics releases toxic dioxins and furans. Leaving them in fields causes progressive microplastic contamination of soil and groundwater.",
+      "2": "Municipal waste disposal is the legal minimum but typically lacks the traceability and professional handling needed for proper agricultural plastic recycling.",
+      "3": "Participation in a certified scheme like MAPLA ensures proper recycling, documented traceability, polymer separation and compliance with EU agricultural plastic regulations."
     }
   },
   "social_foundations": {
-    "networks": {
-      "1": "Farming in isolation misses the peer learning, collective bargaining power and market access that cooperative and network membership provides.",
-      "2": "Active knowledge exchange within a cooperative or group multiplies learning opportunities and helps share the costs and risks of transition.",
-      "3": "Membership in a regenerative agriculture network connects you to the forefront of practice, research, policy and market access for certified regenerative products."
+    "knowledge_exchange": {
+      "1": "Without peer learning and knowledge exchange, farming practices evolve slowly while science and best practice advance rapidly — missing opportunities for improvement and connection.",
+      "2": "Participating a few times per year in events or informal networks provides exposure to new ideas, peer comparison and the motivation that comes from shared purpose.",
+      "3": "Active participation in farmer networks, field days and peer learning at 3–5+ events per year accelerates knowledge transfer, builds relationships and can catalyse rapid practice change."
     },
-    "market": {
-      "1": "Selling exclusively to large distributors leaves the farmer price-exposed, with no connection to final consumers who might pay a premium for regenerative products.",
-      "2": "Mixed sales channels begin to build direct relationships and test the premium market while maintaining the security of distributor volumes.",
-      "3": "Significant local or direct sales connect the farmer to consumers who value quality and sustainability, enabling premium prices and feedback that drives further improvement."
+    "community_identity": {
+      "1": "Operating without a sense of community connection makes it harder to access shared resources, collective knowledge and the social support that sustains long-term regenerative commitment.",
+      "2": "Feeling connected to the region is a positive foundation, but translating that into active community investment multiplies the impact for both the farm and the territory.",
+      "3": "A farmer embedded in the local community and invested in Valencia's collective identity is more likely to contribute to, and benefit from, the regional regenerative agriculture movement."
     },
-    "sharing": {
-      "1": "Keeping practices private misses the opportunity to build reputation, attract research partnerships, access premium markets and contribute to collective regenerative knowledge.",
-      "2": "Participating in farm visits or events builds relationships with peers, researchers and consumers — creating opportunities beyond the farm gate.",
-      "3": "Active knowledge sharing through multiple channels builds strong reputation, attracts research attention, opens premium market access and contributes to the broader regenerative transition."
+    "local_decisions": {
+      "1": "Non-participation in local decision-making means the farmer has no voice in water allocation, land use planning or policy that directly affects farming conditions.",
+      "2": "Attending meetings passively provides awareness of decisions and relationships, but active participation creates real influence over outcomes.",
+      "3": "Active participation in horizontal decision-making builds collective governance capacity, shapes policy and demonstrates the social dimension of regenerative agriculture."
+    },
+    "cooperative_networks": {
+      "1": "Without cooperative membership, the farmer lacks access to collective bargaining, shared services, grant applications and the technical support that networks provide.",
+      "2": "Cooperative membership opens access to resources and networks, though active engagement is needed to convert membership into real benefit.",
+      "3": "Active cooperative membership provides access to grants, policy connections, market opportunities and peer support — multiplying the resources available for regenerative transition."
+    }
+  },
+  "soil_health": {
+    "soil_structure": {
+      "1": "Hard, blocky, compacted soil indicates poor biological activity, high tillage intensity and low organic matter — water infiltration and root development are both severely limited.",
+      "2": "Moderately loose soil with some aggregates shows biological activity is recovering. This is a transitional state that will improve with continued cover and reduced tillage.",
+      "3": "Loose, spongy soil with rounded small aggregates is the signature of a biologically active soil — produced by earthworms, fungi and root activity. This is the regenerative goal."
+    },
+    "soil_colour": {
+      "1": "Pale, grey or yellowish soil indicates very low organic matter content — biological activity is minimal and the soil has limited ability to store water, nutrients or carbon.",
+      "2": "Medium-coloured soil indicates average organic matter levels — a good baseline from which regenerative practices can build.",
+      "3": "Dark brown or black soil indicates high organic matter content and biological richness — carbon is being stored, water is retained and soil life is thriving."
+    },
+    "soil_smell": {
+      "1": "No smell or an artificial/chemical odour from soil indicates very low biological activity or contamination from synthetic inputs — microbial life is essentially absent.",
+      "2": "A faint earthy smell indicates moderate microbial activity. Geosmin — the compound behind the earthy smell — is produced by Actinobacteria, a good sign of developing soil life.",
+      "3": "A strong, fresh forest smell (petrichor) indicates abundant mycorrhizal fungi and actinobacterial communities — the hallmark of a fully biologically active, healthy soil ecosystem."
+    },
+    "root_content": {
+      "1": "Few or no roots in the top 20 cm indicates poor root development, likely due to compaction, low organic matter or biological soil health problems limiting plant growth.",
+      "2": "An appreciable number of roots indicates moderate root development and a soil structure permeable enough for plant roots to explore — a positive sign of improving conditions.",
+      "3": "Abundant roots and rootlets throughout the soil profile indicate excellent soil porosity, biological activity and plant health — roots are the primary input of organic matter to soil."
     }
   }
 }
