@@ -21,13 +21,6 @@
     "detail": "These practices include planned grazing; the promotion of natural pollinators; the installation of insect hotels, hedges and living borders; the integration of flower strips, ponds or wildlife refuges; ecological connections with the surrounding environment such as living corridors; the maintenance of margins and other natural elements that constitute a mosaic-like landscape; and the use of adapted, traditional and/or native breeds."
   },
   {
-    "id": "vegetation_management",
-    "number": "04",
-    "title": "Planned Grazing & Vegetation Management",
-    "definition": "In the presence of herbivorous or omnivorous livestock, which is a highly desirable and recommended practice, it must be integrated with planned grazing. Keep the soil covered with plant or animal matter for as long as possible throughout the year.",
-    "detail": "Planned grazing includes methodologies such as Holistic Management, PRV (Voisin Rational Grazing), Polyface, Total Grazing, Ultra High Density Grazing, or other systems that plan grazing in symbiosis with the physiological growth of plants and soil fertility, using high animal density in short periods of time followed by long rest periods. Soil cover can be achieved through cover crops, productive crops, meadows, spontaneous vegetation or mulching (organic mulch such as woodchips, shredded prunings, BRF, algae, wool...)."
-  },
-  {
     "id": "soil_management",
     "number": "05",
     "title": "No-till & Soil Management",

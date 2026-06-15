@@ -115,23 +115,6 @@
       ]
     },
     {
-      "id": "vegetation_management",
-      "title": "Pasturatge Planificat",
-      "description": "Si i com s'integra ramaderia en l'hort per gestionar la vegetació i contribuir al cicle de nutrients.",
-      "source": "Criteris d'Agricultura Regenerativa Ibèrica 2026 – Criteri 4; Vázquez-Martínez et al. (2024)",
-      "questions": [
-        {
-          "id": "livestock_integration",
-          "text": "Com integres ramaderia en el teu hort citrícola per a la gestió de la vegetació?",
-          "options": [
-            { "score": 1, "label": "Sense ramaderia — no incorporada al sistema agrícola" },
-            { "score": 2, "label": "Integració parcial — ramaderia utilitzada estacionalment o en zones específiques de la finca" },
-            { "score": 3, "label": "Control principal de males herbes — la ramaderia és el supressor principal de vegetació en tota la finca" }
-          ]
-        }
-      ]
-    },
-    {
       "id": "soil_management",
       "title": "Sense Llaurar",
       "description": "Quant pertorba el sòl el llaurar i quants restes de collita deixes en la superfície després de la recol·lecció.",

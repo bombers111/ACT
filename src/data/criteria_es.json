@@ -115,23 +115,6 @@
       ]
     },
     {
-      "id": "vegetation_management",
-      "title": "Pastoreo Planificado",
-      "description": "Si y cómo se integra ganadería en el huerto para gestionar la vegetación y contribuir al ciclo de nutrientes.",
-      "source": "Criterios de Agricultura Regenerativa Ibérica 2026 – Criterio 4; Vázquez-Martínez et al. (2024)",
-      "questions": [
-        {
-          "id": "livestock_integration",
-          "text": "¿Cómo integras ganadería en tu huerto citrícola para la gestión de la vegetación?",
-          "options": [
-            { "score": 1, "label": "Sin ganadería — no incorporada al sistema agrícola" },
-            { "score": 2, "label": "Integración parcial — ganadería utilizada estacionalmente o en zonas específicas de la finca" },
-            { "score": 3, "label": "Control principal de malas hierbas — la ganadería es el supresor principal de vegetación en toda la finca" }
-          ]
-        }
-      ]
-    },
-    {
       "id": "soil_management",
       "title": "Sin Labranza",
       "description": "Cuánto perturba el suelo el laboreo y cuántos restos de cosecha dejas en la superficie tras la recolección.",

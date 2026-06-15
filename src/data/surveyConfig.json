@@ -15,7 +15,7 @@
     },
     "weights": {
       "title": "Criteria weighting",
-      "description": "You have 100 points to distribute across the 11 assessment criteria below. Allocate more points to criteria you consider more important for determining whether a Valencia citrus farm is regenerative. Points must sum to exactly 100.",
+      "description": "You have 100 points to distribute across the 10 assessment criteria below. Allocate more points to criteria you consider more important for determining whether a Valencia citrus farm is regenerative. Points must sum to exactly 100.",
       "elaborationPrompt": "Optional: Why did you weight this criterion the way you did? (2–3 sentences max)"
     },
     "validation": {

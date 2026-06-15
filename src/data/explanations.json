@@ -55,13 +55,6 @@
       "3": "High diversity with abundant leguminous plants provides biological nitrogen fixation (potentially 30–150 kg N/ha/year), habitat for pollinators and predators, and soil cover year-round."
     }
   },
-  "vegetation_management": {
-    "livestock_integration": {
-      "1": "Without livestock, biomass can only be managed mechanically or chemically, missing the opportunity to convert on-farm vegetation into fertility through natural cycling.",
-      "2": "Partial integration — seasonal or zone-based grazing — begins to use livestock as a management tool, distributing fertility and reducing vegetation management costs.",
-      "3": "Livestock as the primary weed control mechanism eliminates herbicide and mowing costs, distributes fertility across the orchard and integrates animal production into the farm system."
-    }
-  },
   "soil_management": {
     "tillage_type": {
       "1": "Full inversion tillage (>30 cm) destroys soil structure, severs mycorrhizal networks, kills earthworms and fungal communities, releases stored carbon and creates compaction hardpan layers.",

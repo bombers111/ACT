@@ -1,17 +1,16 @@
 {
   "mcaWeights": {
     "note": "Weights must sum to 1.0. Adjust here to change MCA importance of each criterion.",
-    "contextuality": 0.06,
-    "water": 0.10,
-    "biodiversity": 0.10,
-    "vegetation_management": 0.06,
-    "soil_management": 0.10,
-    "soil_nutrition": 0.10,
-    "crop_diversification": 0.08,
-    "plant_health_inputs": 0.12,
-    "plastics_waste": 0.06,
-    "social_foundations": 0.06,
-    "soil_health": 0.16
+    "contextuality": 0.064,
+    "water": 0.106,
+    "biodiversity": 0.106,
+    "soil_management": 0.106,
+    "soil_nutrition": 0.106,
+    "crop_diversification": 0.085,
+    "plant_health_inputs": 0.128,
+    "plastics_waste": 0.064,
+    "social_foundations": 0.064,
+    "soil_health": 0.171
   },
   "levels": {
     "in_transition": { "min": 0, "max": 59, "label": "In Transition", "color": "#e8a838" },
@@ -129,23 +128,6 @@
             { "score": 1, "label": "Absent — bare soil or purely grass monoculture, no leguminous plants or diversity" },
             { "score": 2, "label": "Partial — some plant diversity, limited leguminous plants present" },
             { "score": 3, "label": "High diversity — abundant leguminous plants and high plant diversity in inter-row and border areas" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "vegetation_management",
-      "title": "Planned Grazing",
-      "description": "Whether and how livestock are integrated into the orchard to manage vegetation and contribute to nutrient cycling.",
-      "source": "Iberian RA Criteria 2026 – Criterion 4; Vázquez-Martínez et al. (2024)",
-      "questions": [
-        {
-          "id": "livestock_integration",
-          "text": "How do you integrate livestock into your citrus orchard for vegetation management?",
-          "options": [
-            { "score": 1, "label": "No livestock — not incorporated into the farm system" },
-            { "score": 2, "label": "Partial integration — livestock used seasonally or in specific zones of the farm" },
-            { "score": 3, "label": "Primary weed control — livestock used as the main weed suppressant across the farm" }
           ]
         }
       ]

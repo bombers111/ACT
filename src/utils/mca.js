@@ -93,12 +93,6 @@ export function getRecommendations(criterionId, score) {
       { maxScore: 80, text: 'Establish a full cover crop mix with legumes, grasses and native plants. Add mycorrhizal inoculant at replanting.' },
       { maxScore: 100, text: 'Maintain your soil biology programme and conduct annual soil analysis to track organic matter and microbial activity.' },
     ],
-    vegetation_management: [
-      { maxScore: 30, text: 'Stop removing all vegetation. Allow spontaneous vegetation to grow and practice single annual mowing only.' },
-      { maxScore: 60, text: 'Chip all pruning residues and keep them as mulch. Explore whether neighbouring farmers have livestock you could integrate seasonally.' },
-      { maxScore: 80, text: 'Establish a planned grazing arrangement with a local livestock farmer for seasonal vegetation management.' },
-      { maxScore: 100, text: 'Refine your grazing rotation timing based on vegetation recovery and soil impact observations.' },
-    ],
     crop_diversification: [
       { maxScore: 30, text: 'Introduce one or two traditional Valencia citrus varieties (e.g. Clemenules, Navel) alongside your main variety.' },
       { maxScore: 60, text: 'Plant a few other fruit trees in orchard margins (almond, fig, carob) to begin an agroforestry structure.' },
