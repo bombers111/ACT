@@ -12,6 +12,14 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Expert survey CSV responses (local only)
+scripts/responses.csv
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

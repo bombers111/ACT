@@ -1,0 +1,33 @@
+{
+  "expertDomains": [
+    "Soil science / Agronomy",
+    "Water / Hydrology",
+    "Ecology / Biodiversity",
+    "Social science / Rural development",
+    "Citrus farming (practitioner)",
+    "Agricultural policy / Sustainability",
+    "Other"
+  ],
+  "sections": {
+    "profile": {
+      "title": "About you",
+      "description": "This information helps us understand the distribution of expertise in the panel. Your identity will not be shared publicly."
+    },
+    "weights": {
+      "title": "Criteria weighting",
+      "description": "You have 100 points to distribute across the 11 assessment criteria below. Allocate more points to criteria you consider more important for determining whether a Valencia citrus farm is regenerative. Points must sum to exactly 100.",
+      "elaborationPrompt": "Optional: Why did you weight this criterion the way you did? (2–3 sentences max)"
+    },
+    "validation": {
+      "title": "Indicator validation",
+      "description": "For each criterion, review the indicators and scoring logic. Do they capture the right things?",
+      "options": ["Yes, they are appropriate", "Partly — see comment", "No — see comment"],
+      "commentPrompt": "What would you change or add?"
+    },
+    "freeText": {
+      "title": "Final reflections",
+      "q1": "Is there any criterion or dimension you think is missing from this framework?",
+      "q2": "Any other comments or suggestions?"
+    }
+  }
+}
