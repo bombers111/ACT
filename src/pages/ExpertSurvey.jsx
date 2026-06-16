@@ -92,73 +92,51 @@ function ProfileSection({ profile, onChange }) {
   );
 }
 
-// ── Section 1: Weights ────────────────────────────────────────────────
-function WeightsSection({ weights, elaborations, onWeight, onElab }) {
-  const total = Object.values(weights).reduce((a, b) => a + b, 0);
+// ── Section 1: Ratings ────────────────────────────────────────────────
+function RatingsSection({ ratings, elaborations, onRating, onElab }) {
   const [openElab, setOpenElab] = useState({});
 
-  function adjust(id, delta) {
-    const next = Math.max(0, Math.min(100, (weights[id] || 0) + delta));
-    onWeight(id, next);
-  }
-
   return (
-    <div>
-      <div className={`es-total-bar ${total !== 100 ? 'es-total-warn' : 'es-total-ok'}`}>
-        <span>Points allocated:</span>
-        <strong>{total} / 100</strong>
-        {total !== 100 && <span className="es-total-hint">{total < 100 ? `${100 - total} remaining` : `${total - 100} over — reduce some criteria`}</span>}
-      </div>
+    <div className="es-criteria-list">
+      {criteria.map(c => (
+        <div key={c.id} className="es-criterion-card">
+          <div className="es-criterion-name">{c.title}</div>
+          <div className="es-criterion-desc" style={{ marginBottom: 14 }}>{c.description}</div>
 
-      <div className="es-criteria-list">
-        {criteria.map(c => (
-          <div key={c.id} className="es-criterion-card">
-            <div className="es-criterion-top">
-              <div className="es-criterion-info">
-                <div className="es-criterion-name">{c.title}</div>
-                <div className="es-criterion-desc">{c.description}</div>
-              </div>
-              <div className="es-weight-control">
-                <button
-                  className="es-adj-btn"
-                  onClick={() => adjust(c.id, -1)}
-                  aria-label={`Decrease ${c.title}`}
-                >−</button>
-                <input
-                  className="es-weight-input"
-                  type="number"
-                  min="0"
-                  max="100"
-                  value={weights[c.id] ?? 0}
-                  onChange={e => onWeight(c.id, Math.max(0, Math.min(100, parseInt(e.target.value) || 0)))}
-                  aria-label={`Weight for ${c.title}`}
-                />
-                <button
-                  className="es-adj-btn"
-                  onClick={() => adjust(c.id, 1)}
-                  aria-label={`Increase ${c.title}`}
-                >+</button>
-              </div>
-            </div>
-
-            <button
-              className="es-elab-toggle"
-              onClick={() => setOpenElab(o => ({ ...o, [c.id]: !o[c.id] }))}
-            >
-              {openElab[c.id] ? '▲ Hide' : '▼ Add rationale'} <span className="es-optional">(optional)</span>
-            </button>
-            {openElab[c.id] && (
-              <textarea
-                className="es-textarea"
-                rows={3}
-                placeholder={sections.weights.elaborationPrompt}
-                value={elaborations[c.id] || ''}
-                onChange={e => onElab(c.id, e.target.value)}
-              />
-            )}
+          <div className="es-rating-row">
+            <input
+              type="range"
+              min={1}
+              max={10}
+              step={1}
+              value={ratings[c.id] ?? 5}
+              onChange={e => onRating(c.id, Number(e.target.value))}
+              className="es-slider"
+            />
+            <span className="es-rating-val">{ratings[c.id] ?? 5} / 10</span>
           </div>
-        ))}
-      </div>
+          <div className="es-rating-labels">
+            <span>1 — Not important</span>
+            <span>10 — Critically important</span>
+          </div>
+
+          <button
+            className="es-elab-toggle"
+            onClick={() => setOpenElab(o => ({ ...o, [c.id]: !o[c.id] }))}
+          >
+            {openElab[c.id] ? '▲ Hide' : '▼ Add rationale'} <span className="es-optional">(optional)</span>
+          </button>
+          {openElab[c.id] && (
+            <textarea
+              className="es-textarea"
+              rows={3}
+              placeholder={sections.weights.elaborationPrompt}
+              value={elaborations[c.id] || ''}
+              onChange={e => onElab(c.id, e.target.value)}
+            />
+          )}
+        </div>
+      ))}
     </div>
   );
 }
@@ -206,8 +184,8 @@ export default function ExpertSurvey() {
     valenciaFamiliarity: 3,
   });
 
-  const [weights, setWeights] = useState(
-    Object.fromEntries(criteria.map(c => [c.id, Math.floor(100 / criteria.length)]))
+  const [ratings, setRatings] = useState(
+    Object.fromEntries(criteria.map(c => [c.id, 5]))
   );
 
   const [elaborations, setElaborations] = useState(
@@ -220,10 +198,6 @@ export default function ExpertSurvey() {
     if (currentSection === 0) {
       if (!profile.domain) return 'Please select your area of expertise.';
       if (!profile.yearsExperience) return 'Please enter your years of experience.';
-    }
-    if (currentSection === 1) {
-      const total = Object.values(weights).reduce((a, b) => a + b, 0);
-      if (total !== 100) return `Points must sum to exactly 100 (currently ${total}).`;
     }
     return null;
   }
@@ -254,7 +228,7 @@ export default function ExpertSurvey() {
       domain: profile.domain,
       yearsExperience: profile.yearsExperience,
       valenciaFamiliarity: profile.valenciaFamiliarity,
-      weights,
+      ratings,
       elaborations,
       freeText,
     };
@@ -270,12 +244,12 @@ export default function ExpertSurvey() {
 
   const sectionTitles = [
     sections.profile.title,
-    sections.weights.title,
+    'Rate each criterion independently',
     sections.freeText.title,
   ];
   const sectionDescs = [
     sections.profile.description,
-    sections.weights.description,
+    'Score each criterion from 1 to 10 based on how important it is for defining a regenerative citrus farm. Rate each one on its own — do not worry about the total. 1 = Not important, 10 = Critically important.',
     'Please share any final thoughts on the framework.',
   ];
 
@@ -305,10 +279,10 @@ export default function ExpertSurvey() {
             />
           )}
           {currentSection === 1 && (
-            <WeightsSection
-              weights={weights}
+            <RatingsSection
+              ratings={ratings}
               elaborations={elaborations}
-              onWeight={(id, val) => setWeights(w => ({ ...w, [id]: val }))}
+              onRating={(id, val) => setRatings(r => ({ ...r, [id]: val }))}
               onElab={(id, val) => setElaborations(e => ({ ...e, [id]: val }))}
             />
           )}

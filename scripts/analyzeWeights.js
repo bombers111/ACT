@@ -1,5 +1,5 @@
 /**
- * Analyze expert survey weight responses and compute normalized geometric means.
+ * Analyze expert survey ratings and compute normalized geometric means.
  *
  * Usage:
  *   1. Export the Google Sheet as CSV → save as scripts/responses.csv
@@ -28,7 +28,6 @@ const criteriaIds = [
   'contextuality',
   'water',
   'biodiversity',
-  'vegetation_management',
   'soil_management',
   'soil_nutrition',
   'crop_diversification',
@@ -38,33 +37,38 @@ const criteriaIds = [
   'soil_health',
 ];
 
+function geometricMean(values) {
+  const valid = values.map(v => parseFloat(v)).filter(v => !isNaN(v) && v > 0);
+  if (valid.length === 0) return 0;
+  const logSum = valid.reduce((s, v) => s + Math.log(v), 0);
+  return Math.exp(logSum / valid.length);
+}
+
 console.log(`\nProcessing ${rows.length} response(s)...\n`);
 
 const geoMeans = {};
 
 for (const id of criteriaIds) {
-  const col = `w_${id}`;
-  const values = rows
-    .map(r => parseFloat(r[col]))
-    .filter(v => !isNaN(v) && v > 0);
+  const col = `rating_${id}`;
+  const values = rows.map(r => r[col]).filter(v => v !== undefined && v !== '');
 
   if (values.length === 0) {
-    console.warn(`  Warning: no valid values found for column "${col}" — skipping`);
+    console.warn(`  Warning: no values found for column "${col}" — skipping`);
     geoMeans[id] = 0;
     continue;
   }
 
-  const logMean = values.reduce((sum, v) => sum + Math.log(v), 0) / values.length;
-  geoMeans[id] = Math.exp(logMean);
+  const gm = geometricMean(values);
+  const avg = values.map(v => parseFloat(v)).reduce((a, b) => a + b, 0) / values.length;
+  geoMeans[id] = gm;
 
-  const avg = values.reduce((a, b) => a + b, 0) / values.length;
-  console.log(`  ${id.padEnd(25)} n=${values.length}  avg=${avg.toFixed(1)}  geoMean=${geoMeans[id].toFixed(3)}`);
+  console.log(`  ${id.padEnd(25)} n=${values.length}  avg=${avg.toFixed(2)}/10  geoMean=${gm.toFixed(3)}`);
 }
 
 const total = Object.values(geoMeans).reduce((a, b) => a + b, 0);
 
 if (total === 0) {
-  console.error('\nError: no valid weight data found. Check column headers in CSV.');
+  console.error('\nError: no valid rating data found. Check column headers in CSV.');
   process.exit(1);
 }
 
@@ -72,7 +76,7 @@ const mcaWeights = Object.fromEntries(
   criteriaIds.map(id => [id, parseFloat((geoMeans[id] / total).toFixed(4))])
 );
 
-// Adjust rounding so weights sum to exactly 1.0
+// Fix rounding so weights sum to exactly 1.0
 const wSum = Object.values(mcaWeights).reduce((a, b) => a + b, 0);
 const diff = parseFloat((1.0 - wSum).toFixed(4));
 if (diff !== 0) {
