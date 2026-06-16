@@ -74,5 +74,24 @@
       "contextuality": 50,
       "social_foundations": 33
     }
+  },
+  {
+    "id": "1781598271747",
+    "date": "2026-06-16T08:24:31.747Z",
+    "profileName": "jonas",
+    "overallScore": 97,
+    "level": "Regenerative",
+    "criteria": {
+      "contextuality": 100,
+      "water": 100,
+      "biodiversity": 100,
+      "soil_management": 100,
+      "soil_nutrition": 100,
+      "crop_diversification": 100,
+      "plant_health_inputs": 100,
+      "plastics_waste": 83,
+      "social_foundations": 100,
+      "soil_health": 88
+    }
   }
 ]
