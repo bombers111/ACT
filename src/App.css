@@ -1278,6 +1278,53 @@ body {
 }
 .es-elab-toggle:hover { color: #1a3d2b; }
 
+/* Missing criteria blocks */
+.es-missing-criterion-block {
+  border: 1px solid #d8d0c4;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: #faf8f4;
+}
+.es-missing-criterion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.es-missing-criterion-num {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a3d2b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.es-remove-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+.es-remove-btn:hover { color: #c0392b; }
+.es-add-criterion-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  padding: 8px 16px;
+  background: none;
+  border: 1.5px dashed #1a3d2b;
+  border-radius: 6px;
+  color: #1a3d2b;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.es-add-criterion-btn:hover { background: #eef5ee; }
+
 /* Textarea */
 .es-textarea {
   width: 100%;

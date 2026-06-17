@@ -143,44 +143,69 @@ function RatingsSection({ ratings, elaborations, onRating, onElab }) {
 
 // ── Section 2: Free text ──────────────────────────────────────────────
 function FreeTextSection({ freeText, onChange }) {
-  const showWeight = freeText.missing.trim().length > 0;
+  function updateCriterion(index, field, value) {
+    const updated = freeText.missingCriteria.map((c, i) =>
+      i === index ? { ...c, [field]: value } : c
+    );
+    onChange('missingCriteria', updated);
+  }
+
+  function addCriterion() {
+    onChange('missingCriteria', [...freeText.missingCriteria, { text: '', weight: 5 }]);
+  }
+
+  function removeCriterion(index) {
+    onChange('missingCriteria', freeText.missingCriteria.filter((_, i) => i !== index));
+  }
 
   return (
     <div className="es-form-fields">
       <div className="es-field">
         <label className="es-label">{sections.freeText.q1}</label>
-        <textarea
-          className="es-textarea"
-          rows={5}
-          placeholder="Describe any missing dimension…"
-          value={freeText.missing}
-          onChange={e => onChange('missing', e.target.value)}
-        />
-      </div>
 
-      {showWeight && (
-        <div className="es-field es-missing-weight">
-          <label className="es-label">
-            How important would this missing criterion be?
-            <span className="es-slider-val"> — {freeText.missingWeight ?? 5} / 10</span>
-          </label>
-          <div className="es-rating-row">
-            <input
-              type="range"
-              min={1}
-              max={10}
-              step={1}
-              value={freeText.missingWeight ?? 5}
-              onChange={e => onChange('missingWeight', Number(e.target.value))}
-              className="es-slider"
+        {freeText.missingCriteria.map((c, i) => (
+          <div key={i} className="es-missing-criterion-block">
+            <div className="es-missing-criterion-header">
+              <span className="es-missing-criterion-num">Criterion {i + 1}</span>
+              {freeText.missingCriteria.length > 1 && (
+                <button className="es-remove-btn" onClick={() => removeCriterion(i)}>✕ Remove</button>
+              )}
+            </div>
+            <textarea
+              className="es-textarea"
+              rows={3}
+              placeholder="Describe the missing criterion…"
+              value={c.text}
+              onChange={e => updateCriterion(i, 'text', e.target.value)}
             />
+            {c.text.trim().length > 0 && (
+              <div className="es-missing-weight">
+                <label className="es-label" style={{ marginTop: 8 }}>
+                  How important would this be?
+                  <span className="es-slider-val"> — {c.weight} / 10</span>
+                </label>
+                <div className="es-rating-row">
+                  <input
+                    type="range"
+                    min={1} max={10} step={1}
+                    value={c.weight}
+                    onChange={e => updateCriterion(i, 'weight', Number(e.target.value))}
+                    className="es-slider"
+                  />
+                </div>
+                <div className="es-rating-labels">
+                  <span>1 — Not important</span>
+                  <span>10 — Critically important</span>
+                </div>
+              </div>
+            )}
           </div>
-          <div className="es-rating-labels">
-            <span>1 — Not important</span>
-            <span>10 — Critically important</span>
-          </div>
-        </div>
-      )}
+        ))}
+
+        <button className="es-add-criterion-btn" onClick={addCriterion}>
+          + Add another missing criterion
+        </button>
+      </div>
 
       <div className="es-field">
         <label className="es-label">{sections.freeText.q2}</label>
@@ -219,7 +244,7 @@ export default function ExpertSurvey() {
     Object.fromEntries(criteria.map(c => [c.id, '']))
   );
 
-  const [freeText, setFreeText] = useState({ missing: '', missingWeight: 5, other: '' });
+  const [freeText, setFreeText] = useState({ missingCriteria: [{ text: '', weight: 5 }], other: '' });
 
   function validateSection() {
     if (currentSection === 0) {
@@ -258,8 +283,7 @@ export default function ExpertSurvey() {
       ratings,
       elaborations,
       freeText: {
-        missing: freeText.missing,
-        missingWeight: freeText.missing.trim().length > 0 ? freeText.missingWeight : null,
+        missingCriteria: freeText.missingCriteria.filter(c => c.text.trim().length > 0),
         other: freeText.other,
       },
     };
