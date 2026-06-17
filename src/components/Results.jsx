@@ -6,7 +6,11 @@ import criteriaEn from '../data/criteria.json';
 import criteriaEs from '../data/criteria_es.json';
 import criteriaVal from '../data/criteria_val.json';
 import { getRecommendations } from '../utils/mca';
+import { computeEligibility } from '../utils/eligibility';
 import { useLang } from '../contexts/LangContext';
+import criteriaConfig from '../data/criteria.json';
+
+const { knockouts } = criteriaConfig;
 
 const criteriaMap = { en: criteriaEn, es: criteriaEs, val: criteriaVal };
 
@@ -53,6 +57,10 @@ export default function Results({ results, profile, onRetake, onDashboard, isHis
     : overallScore >= 60 ? t.msgGood
     : t.msgTransition;
 
+  const eligibility = results.knockoutAnswers
+    ? computeEligibility(results.knockoutAnswers, knockouts)
+    : null;
+
   return (
     <div className="results-screen">
       {/* Hero */}
@@ -64,6 +72,35 @@ export default function Results({ results, profile, onRetake, onDashboard, isHis
         <LevelBadge level={level} />
         <p className="hero-msg">{heroMsg}</p>
       </div>
+
+      {/* Eligibility verdict */}
+      {eligibility && (
+        eligibility.eligible ? (
+          <div className="eligibility-pass">
+            <span className="eligibility-icon">✓</span>
+            <div>
+              <div className="eligibility-title">Regenerative</div>
+              <div className="eligibility-desc">This farm meets the minimum requirements for regenerative classification.</div>
+            </div>
+          </div>
+        ) : (
+          <div className="eligibility-fail">
+            <span className="eligibility-icon">✗</span>
+            <div>
+              <div className="eligibility-title">Not yet regenerative</div>
+              <div className="eligibility-desc">
+                This farm does not currently meet the minimum requirements due to the following:
+              </div>
+              <ul className="eligibility-failures">
+                {eligibility.failures.map(f => <li key={f.id}>{f.label}</li>)}
+              </ul>
+              <div className="eligibility-note">
+                Removing these practices would make the farm eligible. Your MCA score reflects performance across all other criteria.
+              </div>
+            </div>
+          </div>
+        )
+      )}
 
       {/* Radar */}
       <div className="results-section">

@@ -7,6 +7,7 @@ import { saveDraft, loadDraft } from '../utils/storage';
 import { useLang } from '../contexts/LangContext';
 
 const criteriaMap = { en: criteriaEn, es: criteriaEs, val: criteriaVal };
+const { knockouts } = criteriaEn;
 
 export default function Survey({ onComplete }) {
   const { lang, t } = useLang();
@@ -15,6 +16,10 @@ export default function Survey({ onComplete }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState(() => loadDraft());
   const [openWhy, setOpenWhy] = useState(null); // `criterionId_questionId`
+  const [knockoutAnswers, setKnockoutAnswers] = useState(
+    Object.fromEntries(knockouts.map(k => [k.id, null]))
+  );
+  const [knockoutError, setKnockoutError] = useState(false);
 
   const criterion = criteria[currentIndex];
   const totalCriteria = criteria.length;
@@ -39,16 +44,23 @@ export default function Survey({ onComplete }) {
     return answers[`${criterion.id}_${questionId}`] ?? null;
   }
 
+  const criterionKnockouts = knockouts.filter(k => k.criterion === criterion.id);
+
   function allAnswered() {
-    return criterion.questions.every((q) => getAnswer(q.id) !== null);
+    const questionsAnswered = criterion.questions.every((q) => getAnswer(q.id) !== null);
+    const knockoutsAnswered = criterionKnockouts.every(k => knockoutAnswers[k.id] !== null);
+    return questionsAnswered && knockoutsAnswered;
   }
 
   function handleNext() {
+    const unansweredKnockouts = criterionKnockouts.some(k => knockoutAnswers[k.id] === null);
+    if (unansweredKnockouts) { setKnockoutError(true); return; }
+    setKnockoutError(false);
     if (currentIndex < totalCriteria - 1) {
       setCurrentIndex((i) => i + 1);
       setOpenWhy(null);
     } else {
-      onComplete(answers);
+      onComplete(answers, knockoutAnswers);
     }
   }
 
@@ -131,6 +143,34 @@ export default function Survey({ onComplete }) {
         </div>
 
         <div className="source-note">{t.sourceLabel} {criterion.source}</div>
+
+        {criterionKnockouts.length > 0 && (
+          <div className="knockout-block">
+            <div className="knockout-title">Minimum requirements</div>
+            {criterionKnockouts.map(k => (
+              <div key={k.id} className="knockout-question">
+                <p className="knockout-question-text">{k.question}</p>
+                <div className="knockout-options">
+                  {['Yes', 'No'].map(opt => {
+                    const val = opt === 'Yes';
+                    return (
+                      <button
+                        key={opt}
+                        className={`knockout-btn ${knockoutAnswers[k.id] === val ? 'selected' : ''}`}
+                        onClick={() => { setKnockoutAnswers(prev => ({ ...prev, [k.id]: val })); setKnockoutError(false); }}
+                      >
+                        {opt}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+            {knockoutError && (
+              <p className="knockout-error">Please answer the minimum requirements question to continue.</p>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="survey-nav">

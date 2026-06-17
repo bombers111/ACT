@@ -39,13 +39,14 @@ export default function App() {
     setScreen('survey');
   }
 
-  function handleComplete(answers) {
+  function handleComplete(answers, knockoutAnswers) {
     const mca = runMCA(answers);
-    setResults(mca);
+    const mcaWithKnockouts = { ...mca, knockoutAnswers };
+    setResults(mcaWithKnockouts);
     clearDraft();
     if (profile) {
-      const saved = saveResult(profile.id, mca, farmMeta);
-      pushAssessmentToGitHub(profile.name, { ...mca, ...saved, farmMeta });
+      const saved = saveResult(profile.id, mcaWithKnockouts, farmMeta);
+      pushAssessmentToGitHub(profile.name, { ...mcaWithKnockouts, ...saved, farmMeta });
     }
     setScreen('results');
     window.scrollTo({ top: 0, behavior: 'smooth' });

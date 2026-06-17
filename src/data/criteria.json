@@ -17,6 +17,15 @@
     "approaching": { "min": 60, "max": 79, "label": "Approaching Regenerative", "color": "#8ab545" },
     "regenerative": { "min": 80, "max": 100, "label": "Regenerative", "color": "#3a7d44" }
   },
+  "knockouts": [
+    {
+      "id": "synthetic_pesticides",
+      "label": "Synthetic pesticide or herbicide use",
+      "question": "Does the farm currently use any synthetic pesticides or herbicides?",
+      "failsOn": true,
+      "criterion": "plant_health_inputs"
+    }
+  ],
   "criteria": [
     {
       "id": "contextuality",
