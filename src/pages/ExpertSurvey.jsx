@@ -143,6 +143,8 @@ function RatingsSection({ ratings, elaborations, onRating, onElab }) {
 
 // ── Section 2: Free text ──────────────────────────────────────────────
 function FreeTextSection({ freeText, onChange }) {
+  const showWeight = freeText.missing.trim().length > 0;
+
   return (
     <div className="es-form-fields">
       <div className="es-field">
@@ -155,6 +157,31 @@ function FreeTextSection({ freeText, onChange }) {
           onChange={e => onChange('missing', e.target.value)}
         />
       </div>
+
+      {showWeight && (
+        <div className="es-field es-missing-weight">
+          <label className="es-label">
+            How important would this missing criterion be?
+            <span className="es-slider-val"> — {freeText.missingWeight ?? 5} / 10</span>
+          </label>
+          <div className="es-rating-row">
+            <input
+              type="range"
+              min={1}
+              max={10}
+              step={1}
+              value={freeText.missingWeight ?? 5}
+              onChange={e => onChange('missingWeight', Number(e.target.value))}
+              className="es-slider"
+            />
+          </div>
+          <div className="es-rating-labels">
+            <span>1 — Not important</span>
+            <span>10 — Critically important</span>
+          </div>
+        </div>
+      )}
+
       <div className="es-field">
         <label className="es-label">{sections.freeText.q2}</label>
         <textarea
@@ -192,7 +219,7 @@ export default function ExpertSurvey() {
     Object.fromEntries(criteria.map(c => [c.id, '']))
   );
 
-  const [freeText, setFreeText] = useState({ missing: '', other: '' });
+  const [freeText, setFreeText] = useState({ missing: '', missingWeight: 5, other: '' });
 
   function validateSection() {
     if (currentSection === 0) {
@@ -230,7 +257,11 @@ export default function ExpertSurvey() {
       valenciaFamiliarity: profile.valenciaFamiliarity,
       ratings,
       elaborations,
-      freeText,
+      freeText: {
+        missing: freeText.missing,
+        missingWeight: freeText.missing.trim().length > 0 ? freeText.missingWeight : null,
+        other: freeText.other,
+      },
     };
 
     try {
