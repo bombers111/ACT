@@ -1136,19 +1136,42 @@ body {
 .es-header-inner {
   max-width: 760px;
   margin: 0 auto;
+}
+.es-header-top {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 .es-header-title {
+  display: block;
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
 .es-header-sub {
+  display: block;
   font-size: 0.78rem;
   opacity: 0.75;
 }
+.es-lang-toggle {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.es-lang-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: white;
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.es-lang-btn:hover { background: rgba(255,255,255,0.25); }
+.es-lang-btn.active { background: rgba(255,255,255,0.9); color: #1a3d2b; }
 
 .es-main {
   flex: 1;

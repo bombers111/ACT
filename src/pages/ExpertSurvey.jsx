@@ -5,7 +5,7 @@ import surveyConfig from '../data/surveyConfig.json';
 import { submitSurvey } from '../utils/surveySubmit';
 
 const { criteria } = criteriaData;
-const { expertDomains, sections } = surveyConfig;
+const { expertDomains, sections, ui } = surveyConfig;
 
 const TOTAL_SECTIONS = 3;
 
@@ -19,45 +19,60 @@ function StepIndicator({ current }) {
   );
 }
 
-function SectionHeader({ title, description, step }) {
+function SectionHeader({ title, description, step, t }) {
   return (
     <div className="es-section-header">
-      <div className="es-section-label">Section {step + 1} of {TOTAL_SECTIONS}</div>
+      <div className="es-section-label">{t.sectionLabel} {step + 1} {t.of} {TOTAL_SECTIONS}</div>
       <h2 className="es-section-title">{title}</h2>
       <p className="es-section-desc">{description}</p>
     </div>
   );
 }
 
+function LangToggle({ lang, setLang }) {
+  return (
+    <div className="es-lang-toggle">
+      <button
+        className={`es-lang-btn ${lang === 'en' ? 'active' : ''}`}
+        onClick={() => setLang('en')}
+      >EN</button>
+      <button
+        className={`es-lang-btn ${lang === 'es' ? 'active' : ''}`}
+        onClick={() => setLang('es')}
+      >ES</button>
+    </div>
+  );
+}
+
 // ── Section 0: Profile ────────────────────────────────────────────────
-function ProfileSection({ profile, onChange }) {
+function ProfileSection({ profile, onChange, t, lang }) {
   return (
     <div className="es-form-fields">
       <div className="es-field">
-        <label className="es-label">Your name or anonymous ID <span className="es-optional">(optional)</span></label>
+        <label className="es-label">{t.nameLabel} <span className="es-optional">{t.nameOptional}</span></label>
         <input
           className="es-input"
           type="text"
-          placeholder="e.g. Dr. García or Expert-03"
+          placeholder={t.namePlaceholder}
           value={profile.expertId}
           onChange={e => onChange('expertId', e.target.value)}
         />
       </div>
 
       <div className="es-field">
-        <label className="es-label">Primary area of expertise <span className="es-required">*</span></label>
+        <label className="es-label">{t.domainLabel} <span className="es-required">{t.domainRequired}</span></label>
         <select
           className="es-input"
           value={profile.domain}
           onChange={e => onChange('domain', e.target.value)}
         >
-          <option value="">Select domain…</option>
-          {expertDomains.map(d => <option key={d} value={d}>{d}</option>)}
+          <option value="">{t.domainPlaceholder}</option>
+          {expertDomains[lang].map(d => <option key={d} value={d}>{d}</option>)}
         </select>
       </div>
 
       <div className="es-field">
-        <label className="es-label">Years of experience in your field <span className="es-required">*</span></label>
+        <label className="es-label">{t.yearsLabel} <span className="es-required">*</span></label>
         <input
           className="es-input"
           type="number"
@@ -71,11 +86,11 @@ function ProfileSection({ profile, onChange }) {
 
       <div className="es-field">
         <label className="es-label">
-          Familiarity with Valencia / Valencian citrus farming
+          {t.familiarityLabel}
           <span className="es-slider-val"> — {profile.valenciaFamiliarity}/5</span>
         </label>
         <div className="es-slider-row">
-          <span className="es-slider-label">Not familiar</span>
+          <span className="es-slider-label">{t.familiarityLow}</span>
           <input
             type="range"
             min="1"
@@ -85,7 +100,7 @@ function ProfileSection({ profile, onChange }) {
             onChange={e => onChange('valenciaFamiliarity', parseInt(e.target.value))}
             className="es-slider"
           />
-          <span className="es-slider-label">Very familiar</span>
+          <span className="es-slider-label">{t.familiarityHigh}</span>
         </div>
       </div>
     </div>
@@ -93,7 +108,7 @@ function ProfileSection({ profile, onChange }) {
 }
 
 // ── Section 1: Ratings ────────────────────────────────────────────────
-function RatingsSection({ ratings, elaborations, onRating, onElab }) {
+function RatingsSection({ ratings, elaborations, onRating, onElab, t, lang }) {
   const [openElab, setOpenElab] = useState({});
 
   return (
@@ -116,21 +131,21 @@ function RatingsSection({ ratings, elaborations, onRating, onElab }) {
             <span className="es-rating-val">{ratings[c.id] ?? 5} / 10</span>
           </div>
           <div className="es-rating-labels">
-            <span>1 — Not important</span>
-            <span>10 — Critically important</span>
+            <span>{t.notImportant}</span>
+            <span>{t.criticallyImportant}</span>
           </div>
 
           <button
             className="es-elab-toggle"
             onClick={() => setOpenElab(o => ({ ...o, [c.id]: !o[c.id] }))}
           >
-            {openElab[c.id] ? '▲ Hide' : '▼ Add rationale'} <span className="es-optional">(optional)</span>
+            {openElab[c.id] ? t.hideRationale : t.addRationale} <span className="es-optional">(optional)</span>
           </button>
           {openElab[c.id] && (
             <textarea
               className="es-textarea"
               rows={3}
-              placeholder={sections.weights.elaborationPrompt}
+              placeholder={sections[lang].weights.elaborationPrompt}
               value={elaborations[c.id] || ''}
               onChange={e => onElab(c.id, e.target.value)}
             />
@@ -142,7 +157,7 @@ function RatingsSection({ ratings, elaborations, onRating, onElab }) {
 }
 
 // ── Section 2: Free text ──────────────────────────────────────────────
-function FreeTextSection({ freeText, onChange }) {
+function FreeTextSection({ freeText, onChange, t, lang }) {
   function updateCriterion(index, field, value) {
     const updated = freeText.missingCriteria.map((c, i) =>
       i === index ? { ...c, [field]: value } : c
@@ -161,27 +176,27 @@ function FreeTextSection({ freeText, onChange }) {
   return (
     <div className="es-form-fields">
       <div className="es-field">
-        <label className="es-label">{sections.freeText.q1}</label>
+        <label className="es-label">{sections[lang].freeText.q1}</label>
 
         {freeText.missingCriteria.map((c, i) => (
           <div key={i} className="es-missing-criterion-block">
             <div className="es-missing-criterion-header">
-              <span className="es-missing-criterion-num">Criterion {i + 1}</span>
+              <span className="es-missing-criterion-num">{t.criterionNum} {i + 1}</span>
               {freeText.missingCriteria.length > 1 && (
-                <button className="es-remove-btn" onClick={() => removeCriterion(i)}>✕ Remove</button>
+                <button className="es-remove-btn" onClick={() => removeCriterion(i)}>{t.removeCriterion}</button>
               )}
             </div>
             <textarea
               className="es-textarea"
               rows={3}
-              placeholder="Describe the missing criterion…"
+              placeholder={t.missingPlaceholder}
               value={c.text}
               onChange={e => updateCriterion(i, 'text', e.target.value)}
             />
             {c.text.trim().length > 0 && (
               <div className="es-missing-weight">
                 <label className="es-label" style={{ marginTop: 8 }}>
-                  How important would this be?
+                  {t.missingWeightLabel}
                   <span className="es-slider-val"> — {c.weight} / 10</span>
                 </label>
                 <div className="es-rating-row">
@@ -194,8 +209,8 @@ function FreeTextSection({ freeText, onChange }) {
                   />
                 </div>
                 <div className="es-rating-labels">
-                  <span>1 — Not important</span>
-                  <span>10 — Critically important</span>
+                  <span>{t.notImportant}</span>
+                  <span>{t.criticallyImportant}</span>
                 </div>
               </div>
             )}
@@ -203,16 +218,16 @@ function FreeTextSection({ freeText, onChange }) {
         ))}
 
         <button className="es-add-criterion-btn" onClick={addCriterion}>
-          + Add another missing criterion
+          {t.addCriterion}
         </button>
       </div>
 
       <div className="es-field">
-        <label className="es-label">{sections.freeText.q2}</label>
+        <label className="es-label">{sections[lang].freeText.q2}</label>
         <textarea
           className="es-textarea"
           rows={5}
-          placeholder="Any other comments…"
+          placeholder={t.otherPlaceholder}
           value={freeText.other}
           onChange={e => onChange('other', e.target.value)}
         />
@@ -224,6 +239,9 @@ function FreeTextSection({ freeText, onChange }) {
 // ── Main component ────────────────────────────────────────────────────
 export default function ExpertSurvey() {
   const navigate = useNavigate();
+
+  const [lang, setLang] = useState('en');
+  const t = ui[lang];
 
   const [currentSection, setCurrentSection] = useState(0);
   const [submitting, setSubmitting] = useState(false);
@@ -248,8 +266,8 @@ export default function ExpertSurvey() {
 
   function validateSection() {
     if (currentSection === 0) {
-      if (!profile.domain) return 'Please select your area of expertise.';
-      if (!profile.yearsExperience) return 'Please enter your years of experience.';
+      if (!profile.domain) return t.errorDomain;
+      if (!profile.yearsExperience) return t.errorYears;
     }
     return null;
   }
@@ -276,6 +294,7 @@ export default function ExpertSurvey() {
 
     const payload = {
       timestamp: new Date().toISOString(),
+      lang,
       expertId: profile.expertId || 'anonymous',
       domain: profile.domain,
       yearsExperience: profile.yearsExperience,
@@ -292,28 +311,33 @@ export default function ExpertSurvey() {
       await submitSurvey(payload);
       navigate('/ACT/survey/complete');
     } catch (e) {
-      setError(`Submission failed: ${e.message}. Please try again or contact the research team.`);
+      setError(`${lang === 'es' ? 'Error al enviar' : 'Submission failed'}: ${e.message}.`);
       setSubmitting(false);
     }
   }
 
   const sectionTitles = [
-    sections.profile.title,
-    'Rate each criterion independently',
-    sections.freeText.title,
+    sections[lang].profile.title,
+    t.ratingsTitle,
+    sections[lang].freeText.title,
   ];
   const sectionDescs = [
-    sections.profile.description,
-    'Score each criterion from 1 to 10 based on how important it is for defining a regenerative citrus farm. Rate each one on its own — do not worry about the total. 1 = Not important, 10 = Critically important.',
-    'Please share any final thoughts on the framework.',
+    sections[lang].profile.description,
+    t.ratingsDesc,
+    lang === 'es' ? 'Por favor, comparta sus reflexiones finales sobre el marco.' : 'Please share any final thoughts on the framework.',
   ];
 
   return (
     <div className="es-page">
       <header className="es-header">
         <div className="es-header-inner">
-          <span className="es-header-title">ACT — Expert Weight Elicitation Survey</span>
-          <span className="es-header-sub">Agro-regenerative Citrus Tool · Wageningen / CREAF 2026</span>
+          <div className="es-header-top">
+            <div>
+              <span className="es-header-title">{t.headerTitle}</span>
+              <span className="es-header-sub">{t.headerSub}</span>
+            </div>
+            <LangToggle lang={lang} setLang={setLang} />
+          </div>
         </div>
       </header>
 
@@ -325,12 +349,15 @@ export default function ExpertSurvey() {
             title={sectionTitles[currentSection]}
             description={sectionDescs[currentSection]}
             step={currentSection}
+            t={t}
           />
 
           {currentSection === 0 && (
             <ProfileSection
               profile={profile}
               onChange={(k, v) => setProfile(p => ({ ...p, [k]: v }))}
+              t={t}
+              lang={lang}
             />
           )}
           {currentSection === 1 && (
@@ -339,12 +366,16 @@ export default function ExpertSurvey() {
               elaborations={elaborations}
               onRating={(id, val) => setRatings(r => ({ ...r, [id]: val }))}
               onElab={(id, val) => setElaborations(e => ({ ...e, [id]: val }))}
+              t={t}
+              lang={lang}
             />
           )}
           {currentSection === 2 && (
             <FreeTextSection
               freeText={freeText}
               onChange={(k, v) => setFreeText(f => ({ ...f, [k]: v }))}
+              t={t}
+              lang={lang}
             />
           )}
 
@@ -353,17 +384,17 @@ export default function ExpertSurvey() {
           <div className="es-nav">
             {currentSection > 0 && (
               <button className="es-btn-secondary" onClick={handleBack} disabled={submitting}>
-                ← Back
+                {t.back}
               </button>
             )}
             <div style={{ flex: 1 }} />
             {currentSection < TOTAL_SECTIONS - 1 ? (
               <button className="es-btn-primary" onClick={handleNext}>
-                Next →
+                {t.next}
               </button>
             ) : (
               <button className="es-btn-primary" onClick={handleSubmit} disabled={submitting}>
-                {submitting ? 'Submitting…' : 'Submit response'}
+                {submitting ? t.submitting : t.submit}
               </button>
             )}
           </div>
@@ -371,8 +402,7 @@ export default function ExpertSurvey() {
       </main>
 
       <footer className="es-footer">
-        Based on the Iberian Regenerative Agriculture Criteria 2026 (CREAF / ARI).
-        Expert responses are confidential and used only for MCA calibration.
+        {t.footer}
       </footer>
     </div>
   );

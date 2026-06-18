@@ -1,33 +1,124 @@
 {
-  "expertDomains": [
-    "Soil science / Agronomy",
-    "Water / Hydrology",
-    "Ecology / Biodiversity",
-    "Social science / Rural development",
-    "Citrus farming (practitioner)",
-    "Agricultural policy / Sustainability",
-    "Other"
-  ],
+  "expertDomains": {
+    "en": [
+      "Soil science / Agronomy",
+      "Water / Hydrology",
+      "Ecology / Biodiversity",
+      "Social science / Rural development",
+      "Citrus farming (practitioner)",
+      "Agricultural policy / Sustainability",
+      "Other"
+    ],
+    "es": [
+      "Ciencias del suelo / Agronomía",
+      "Agua / Hidrología",
+      "Ecología / Biodiversidad",
+      "Ciencias sociales / Desarrollo rural",
+      "Agricultura citrícola (practicante)",
+      "Política agrícola / Sostenibilidad",
+      "Otro"
+    ]
+  },
   "sections": {
-    "profile": {
-      "title": "About you",
-      "description": "This information helps us understand the distribution of expertise in the panel. Your identity will not be shared publicly."
+    "en": {
+      "profile": {
+        "title": "About you",
+        "description": "This information helps us understand the distribution of expertise in the panel. Your identity will not be shared publicly."
+      },
+      "weights": {
+        "elaborationPrompt": "Optional: Why did you rate this criterion the way you did? (2–3 sentences max)"
+      },
+      "freeText": {
+        "title": "Final reflections",
+        "q1": "Is there any criterion or dimension you think is missing from this framework?",
+        "q2": "Any other comments or suggestions?"
+      }
     },
-    "weights": {
-      "title": "Criteria weighting",
-      "description": "You have 100 points to distribute across the 10 assessment criteria below. Allocate more points to criteria you consider more important for determining whether a Valencia citrus farm is regenerative. Points must sum to exactly 100.",
-      "elaborationPrompt": "Optional: Why did you weight this criterion the way you did? (2–3 sentences max)"
+    "es": {
+      "profile": {
+        "title": "Sobre usted",
+        "description": "Esta información nos ayuda a comprender la distribución de experiencia en el panel. Su identidad no será compartida públicamente."
+      },
+      "weights": {
+        "elaborationPrompt": "Opcional: ¿Por qué ha valorado este criterio de esta manera? (máx. 2–3 frases)"
+      },
+      "freeText": {
+        "title": "Reflexiones finales",
+        "q1": "¿Hay algún criterio o dimensión que crea que falta en este marco?",
+        "q2": "¿Algún otro comentario o sugerencia?"
+      }
+    }
+  },
+  "ui": {
+    "en": {
+      "headerTitle": "ACT — Expert Weight Elicitation Survey",
+      "headerSub": "Agro-regenerative Citrus Tool · Wageningen / CREAF 2026",
+      "footer": "Based on the Iberian Regenerative Agriculture Criteria 2026 (CREAF / ARI). Expert responses are confidential and used only for MCA calibration.",
+      "sectionLabel": "Section",
+      "of": "of",
+      "next": "Next →",
+      "back": "← Back",
+      "submit": "Submit response",
+      "submitting": "Submitting…",
+      "nameLabel": "Your name or anonymous ID",
+      "nameOptional": "(optional)",
+      "namePlaceholder": "e.g. Dr. García or Expert-03",
+      "domainLabel": "Primary area of expertise",
+      "domainRequired": "*",
+      "domainPlaceholder": "Select domain…",
+      "yearsLabel": "Years of experience in your field",
+      "familiarityLabel": "Familiarity with Valencia / Valencian citrus farming",
+      "familiarityLow": "Not familiar",
+      "familiarityHigh": "Very familiar",
+      "ratingsTitle": "Rate each criterion independently",
+      "ratingsDesc": "Score each criterion from 1 to 10 based on how important it is for defining a regenerative citrus farm. Rate each one on its own — do not worry about the total. 1 = Not important, 10 = Critically important.",
+      "notImportant": "1 — Not important",
+      "criticallyImportant": "10 — Critically important",
+      "addRationale": "▼ Add rationale",
+      "hideRationale": "▲ Hide",
+      "missingWeightLabel": "How important would this missing criterion be?",
+      "addCriterion": "+ Add another missing criterion",
+      "missingPlaceholder": "Describe the missing criterion…",
+      "removeCriterion": "✕ Remove",
+      "criterionNum": "Criterion",
+      "otherPlaceholder": "Any other comments…",
+      "errorDomain": "Please select your area of expertise.",
+      "errorYears": "Please enter your years of experience."
     },
-    "validation": {
-      "title": "Indicator validation",
-      "description": "For each criterion, review the indicators and scoring logic. Do they capture the right things?",
-      "options": ["Yes, they are appropriate", "Partly — see comment", "No — see comment"],
-      "commentPrompt": "What would you change or add?"
-    },
-    "freeText": {
-      "title": "Final reflections",
-      "q1": "Is there any criterion or dimension you think is missing from this framework?",
-      "q2": "Any other comments or suggestions?"
+    "es": {
+      "headerTitle": "ACT — Encuesta de Ponderación de Expertos",
+      "headerSub": "Herramienta Agro-regenerativa para Cítricos · Wageningen / CREAF 2026",
+      "footer": "Basado en los Criterios de Agricultura Regenerativa Ibérica 2026 (CREAF / ARI). Las respuestas de los expertos son confidenciales y se utilizan únicamente para la calibración del AMC.",
+      "sectionLabel": "Sección",
+      "of": "de",
+      "next": "Siguiente →",
+      "back": "← Atrás",
+      "submit": "Enviar respuesta",
+      "submitting": "Enviando…",
+      "nameLabel": "Su nombre o ID anónimo",
+      "nameOptional": "(opcional)",
+      "namePlaceholder": "p.ej. Dr. García o Experto-03",
+      "domainLabel": "Área principal de experiencia",
+      "domainRequired": "*",
+      "domainPlaceholder": "Seleccionar área…",
+      "yearsLabel": "Años de experiencia en su campo",
+      "familiarityLabel": "Familiaridad con la agricultura citrícola valenciana",
+      "familiarityLow": "Poco familiarizado",
+      "familiarityHigh": "Muy familiarizado",
+      "ratingsTitle": "Valore cada criterio de forma independiente",
+      "ratingsDesc": "Puntúe cada criterio del 1 al 10 según su importancia para definir una finca citrícola regenerativa. Valórelos individualmente — no se preocupe por el total. 1 = No importante, 10 = Críticamente importante.",
+      "notImportant": "1 — No importante",
+      "criticallyImportant": "10 — Críticamente importante",
+      "addRationale": "▼ Añadir justificación",
+      "hideRationale": "▲ Ocultar",
+      "missingWeightLabel": "¿Qué importancia tendría este criterio que falta?",
+      "addCriterion": "+ Añadir otro criterio que falta",
+      "missingPlaceholder": "Describa el criterio que falta…",
+      "removeCriterion": "✕ Eliminar",
+      "criterionNum": "Criterio",
+      "otherPlaceholder": "Cualquier otro comentario…",
+      "errorDomain": "Por favor, seleccione su área de experiencia.",
+      "errorYears": "Por favor, indique sus años de experiencia."
     }
   }
 }
