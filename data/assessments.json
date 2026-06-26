@@ -93,5 +93,24 @@
       "social_foundations": 100,
       "soil_health": 88
     }
+  },
+  {
+    "id": "1782485439475",
+    "date": "2026-06-26T14:50:39.476Z",
+    "profileName": "Jonas Putman",
+    "overallScore": 85,
+    "level": "Regenerative",
+    "criteria": {
+      "contextuality": 100,
+      "water": 83,
+      "biodiversity": 67,
+      "soil_management": 75,
+      "soil_nutrition": 100,
+      "crop_diversification": 50,
+      "plant_health_inputs": 100,
+      "plastics_waste": 100,
+      "social_foundations": 88,
+      "soil_health": 88
+    }
   }
 ]
