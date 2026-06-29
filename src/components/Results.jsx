@@ -157,25 +157,6 @@ export default function Results({ results, profile, onRetake, onDashboard, isHis
         </div>
       </div>
 
-      {/* All recommendations */}
-      <div className="results-section">
-        <h2>{t.allRecommendations}</h2>
-        <div className="all-recs-list">
-          {criteria.map((c) => {
-            const score = criteriaScores[c.id] ?? 0;
-            return (
-              <details key={c.id} className="rec-detail">
-                <summary>
-                  <span>{c.title}</span>
-                  <span className="rec-score" style={{ color: getColor(score) }}>{score}%</span>
-                </summary>
-                <p className="rec-text">{getRecommendations(c.id, score)}</p>
-              </details>
-            );
-          })}
-        </div>
-      </div>
-
       {/* Status */}
       <div className="results-section level-section">
         <h2>{t.yourStatus}</h2>
