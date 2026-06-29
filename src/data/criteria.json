@@ -31,42 +31,33 @@
       "id": "contextuality",
       "title": "Contextuality",
       "description": "Adapt the application of regenerative practices to the territorial, environmental, social and agronomic context of each farm, in coherence with long-term planning.",
-      "source": "Iberian RA Criteria 2026 – Criterion 1; EU CAP Network Focus Group 'Regenerative Agriculture for Soil Health' (2024); Tadeo et al. (2021); Fernández-Escobar et al. (2011)",
+      "source": "Iberian RA Criteria 2026 – Criterion 1",
       "questions": [
         {
-          "id": "topography",
-          "text": "How would you describe the slope and erosion risk of your farm?",
+          "id": "pruning_residue",
+          "text": "How is pruning material managed on your farm?",
           "options": [
-            { "score": 1, "label": "Steep slopes (>15% gradient) — severe erosion risk, gullies visible, high DANA flood vulnerability" },
-            { "score": 2, "label": "Gentle slopes (5–10%) — moderate erosion risk, some gullying visible" },
-            { "score": 3, "label": "Flat or very gentle terrain (<5%) — minimal erosion risk, water infiltrates naturally" }
+            { "score": 1, "label": "Pruning is removed from fields (sold as firewood, or burned). Soil loses nutrient cycling opportunity and is labour intensive to remove." },
+            { "score": 2, "label": "Pruning material is left in the field as it is cut; scattered unevenly across the orchard floor. Organic matter retained but creates uneven mulch coverage; slow, inconsistent decomposition; not actively managed." },
+            { "score": 3, "label": "Pruning material is mulched into uniform wood chips and spread evenly across soil. Creates a consistent mulch layer for increased soil and water retention benefit." }
           ]
         },
         {
-          "id": "pest_pressure",
-          "text": "What is the baseline pest and disease pressure on your farm?",
+          "id": "monitoring_protocol",
+          "text": "How do you monitor and record farm performance over time?",
           "options": [
-            { "score": 1, "label": "High pressure — spider mites, scale insects, citrus fungal diseases require frequent sprays" },
-            { "score": 2, "label": "Moderate — manageable with good practices; RA helps but may need some inputs initially" },
-            { "score": 3, "label": "Low pressure — biological control is sufficient; beneficial insects establish quickly" }
+            { "score": 1, "label": "No systematic monitoring; farm changes such as water use, pest populations, soil health, or yields are not tracked or recorded over time." },
+            { "score": 2, "label": "Basic monitoring protocol developed; some key metrics (water use, yields, pest pressure, visual soil observations) are tracked with occasional records; informal note-taking; not comprehensive or regular." },
+            { "score": 3, "label": "Comprehensive, context-specific monitoring protocol developed and regularly updated; multiple indicators (soil health, water use, pest/disease populations, biodiversity, yields, expenses) are tracked; maintains written records or photos; conducts soil/leaf testing; uses data to guide management decisions; monitors progress toward RA goals." }
           ]
         },
         {
-          "id": "soil_salinity",
-          "text": "Does your farm have a soil salinity problem?",
+          "id": "direct_grazing",
+          "text": "How is livestock incorporated into your farm system?",
           "options": [
-            { "score": 1, "label": "High salinity — visible salt crust, leaf burn common, coastal area with seawater intrusion risk" },
-            { "score": 2, "label": "Moderate salinity — occasional salt accumulation, manageable with good drainage" },
-            { "score": 3, "label": "No salinity — no visible salt problems, inland location, no seawater risk" }
-          ]
-        },
-        {
-          "id": "fruit_set",
-          "text": "How would you describe your citrus flowering intensity and fruit set this season? (Count flowers on 5 branches in April; count fruit set in June)",
-          "options": [
-            { "score": 1, "label": "Poor — low flower count and <15% fruit set, indicating severe tree stress or malnutrition" },
-            { "score": 2, "label": "Normal — good flower count and 15–45% fruit set, normal citrus productivity" },
-            { "score": 3, "label": "Excellent — heavy flowering and >45% fruit set, indicating excellent tree health and soil nutrition" }
+            { "score": 1, "label": "No livestock incorporated into the farm system." },
+            { "score": 2, "label": "Livestock utilised partly, either spatially or temporally (e.g. seasonal grazing in specific zones)." },
+            { "score": 3, "label": "Livestock used as the primary weed suppressant across the farm." }
           ]
         }
       ]
@@ -74,34 +65,16 @@
     {
       "id": "water",
       "title": "Water",
-      "description": "Plan, size and develop agricultural and livestock production in accordance with water availability and the geological and edaphoclimatic reality of the region, and carry out hydrological management practices that promote responsible and non-polluting use of water, favoring the capture and retention of rainwater in the landscape.",
-      "source": "Iberian RA Criteria 2026 – Criterion 2; Harmanny & Malek (2019); Soto et al. (2020); Cachipuendo et al. (2025)",
+      "description": "Plan, size and develop agricultural and livestock production in accordance with water availability and the geological and edaphoclimatic reality of the basin, and carry out hydrological management practices that promote responsible and non-polluting use of water and prevent the over consumption of ground water levels.",
+      "source": "Iberian RA Criteria 2026 – Criterion 2",
       "questions": [
         {
-          "id": "irrigation",
-          "text": "How do you manage irrigation on your farm?",
+          "id": "conscious_water_use",
+          "text": "How consciously do you manage your water use from the collective allocation?",
           "options": [
-            { "score": 1, "label": "Flood irrigation or fixed schedule with no adaptation to crop or climate needs" },
-            { "score": 2, "label": "Drip or sprinkler irrigation with semi-consistent schedule, some over-irrigation still occurs" },
-            { "score": 3, "label": "Drip irrigation with adaptive or predictive scheduling based on crop needs and soil conditions" }
-          ]
-        },
-        {
-          "id": "green_cover",
-          "text": "How much green cover is present between your tree rows for moisture retention?",
-          "options": [
-            { "score": 1, "label": "Bare or sparse — high runoff, low water infiltration" },
-            { "score": 2, "label": "Moderate green cover between rows — some soil moisture retention" },
-            { "score": 3, "label": "High, dense, diverse plant cover year-round — excellent moisture retention and infiltration" }
-          ]
-        },
-        {
-          "id": "som_management",
-          "text": "How do you manage soil organic matter to improve water-holding capacity?",
-          "options": [
-            { "score": 1, "label": "No management — no organic matter inputs, compacted soil with low biological activity" },
-            { "score": 2, "label": "Occasional compost or cover crop residues — some biological activity" },
-            { "score": 3, "label": "Regular organic inputs, compost, and cover crops actively promoting high SOM and water-holding capacity" }
+            { "score": 1, "label": "Full water allocation provided by the collective scheme is used without consideration." },
+            { "score": 2, "label": "Water quantity used from collective allocation is consciously reduced based on rainfall and crop stage, and farm water efficiency is considered." },
+            { "score": 3, "label": "Water quantity used from collective allocation is consciously reduced and considers landscape-level water impacts; avoids capturing/storing rainfall that would deprive downstream users; recognizes that water is a shared community resource; practices water reduction that benefits both own farm and greater watershed." }
           ]
         }
       ]
@@ -110,33 +83,15 @@
       "id": "biodiversity",
       "title": "Biodiversity",
       "description": "Implement practices that actively protect and increase both wild and cultivated/domestic biodiversity.",
-      "source": "Iberian RA Criteria 2026 – Criterion 3; Stroud (2019); Soto et al. (2020)",
+      "source": "Iberian RA Criteria 2026 – Criterion 3",
       "questions": [
         {
-          "id": "earthworms",
-          "text": "How many earthworms do you find in a 20×20×20 cm pit dug in spring or autumn? (Hand-sort for 5 minutes and identify functional groups: epigeic, endogeic, anecic)",
+          "id": "habitat_management",
+          "text": "How actively do you create and manage habitat for beneficial fauna and flora?",
           "options": [
-            { "score": 1, "label": "Absent or very low — no earthworms or only one functional group (<20/m²), biologically depleted soil" },
-            { "score": 2, "label": "Present — two functional groups found, moderate biological activity" },
-            { "score": 3, "label": "Abundant — all three functional groups, ≥9 per pit (≥150/m²), healthy biologically active soil" }
-          ]
-        },
-        {
-          "id": "auxiliary_fauna",
-          "text": "How often do you observe ladybugs and other beneficial insects (auxiliary fauna) across your farm?",
-          "options": [
-            { "score": 1, "label": "Absent — no ladybugs or auxiliary fauna observed anywhere on the farm" },
-            { "score": 2, "label": "Sparse — occasional sightings, not consistently present across the farm" },
-            { "score": 3, "label": "Abundant — regular, widespread presence of ladybugs and auxiliary fauna across the whole farm" }
-          ]
-        },
-        {
-          "id": "indicator_plants",
-          "text": "What is the plant diversity in your inter-row and border areas?",
-          "options": [
-            { "score": 1, "label": "Absent — bare soil or purely grass monoculture, no leguminous plants or diversity" },
-            { "score": 2, "label": "Partial — some plant diversity, limited leguminous plants present" },
-            { "score": 3, "label": "High diversity — abundant leguminous plants and high plant diversity in inter-row and border areas" }
+            { "score": 1, "label": "No intentional habitat creation; monoculture ground cover or bare soil; no flowering plants or native vegetation; broad-spectrum pesticides kill beneficial insects; no nesting/breeding sites provided; hostile environment for beneficial fauna and flora." },
+            { "score": 2, "label": "Some habitat creation emerging; plants some flowering herbs or native plants; maintains some ground cover; occasional deadwood or vegetation patches left; beginning to limit pesticide use; basic measures to encourage beneficial species but not systematic or comprehensive." },
+            { "score": 3, "label": "Comprehensive habitat management; intentionally plants flowering herbs, native species, and legumes year-round (spring–fall succession); maintains hedgerows and vegetation margins; provides nesting/breeding sites (deadwood, hollow stems, bare soil patches); creates water sources (bowls, troughs); regularly maintains and monitors habitat quality; actively manages habitat for specific beneficial species (above-ground pollinators, predators, parasitoids and below-ground soil fauna such as earthworms, ground beetles, springtails); understands interconnection between soil life and above-ground biodiversity." }
           ]
         }
       ]
@@ -145,24 +100,15 @@
       "id": "soil_management",
       "title": "Soil Management",
       "description": "There should be no tillage that turns over soil layers. Only minimal vertical tillage is permitted during transition.",
-      "source": "Iberian RA Criteria 2026 – Criterion 5; Beeson et al. (2016); CTIC (2009)",
+      "source": "Iberian RA Criteria 2026 – Criterion 5",
       "questions": [
         {
           "id": "tillage_type",
           "text": "What type of tillage do you practice?",
           "options": [
-            { "score": 1, "label": "Full inversion tillage (ploughing >30 cm) — regular disturbance of soil layers" },
-            { "score": 2, "label": "Shallow or reduced tillage (<30 cm topsoil) — reduced frequency, some disturbance remains" },
-            { "score": 3, "label": "No tillage of any form — soil structure left intact year-round" }
-          ]
-        },
-        {
-          "id": "residue_cover",
-          "text": "What percentage of soil surface is covered by crop or pruning residue shortly after harvest? (Visually estimate the surface covered before any tillage)",
-          "options": [
-            { "score": 1, "label": "Less than 15% residue cover — intensive tillage, little residue retained" },
-            { "score": 2, "label": "15–30% residue cover — reduced tillage, some residue retained on surface" },
-            { "score": 3, "label": "More than 30% residue cover — conservation or no tillage, soil surface well protected" }
+            { "score": 1, "label": "Full inversion tillage (ploughing >30 cm). Regular disturbance of soil layers." },
+            { "score": 2, "label": "Shallow tillage (<30 cm topsoil), reduced frequency. Some soil disturbance remains." },
+            { "score": 3, "label": "No tillage of any form. Soil structure left intact year-round." }
           ]
         }
       ]
@@ -170,16 +116,16 @@
     {
       "id": "soil_nutrition",
       "title": "Soil Cover",
-      "description": "Keep the soil covered with plant or animal matter for as long as possible throughout the year.",
-      "source": "Iberian RA Criteria 2026 – Criterion 6; Rainforest Alliance Certification (2022)",
+      "description": "Keep the soil covered with plant or animal matter for as long as possible throughout the year within the hydrological availability and limitations of the basin and ensuring a positive carbon cycle limiting oxidation.",
+      "source": "Iberian RA Criteria 2026 – Criterion 6",
       "questions": [
         {
-          "id": "soil_cover_pct",
-          "text": "What percentage of your soil surface is covered (by living plants, crop residues, or mulch) throughout most of the year?",
+          "id": "soil_cover",
+          "text": "How is soil cover managed on your farm throughout the year?",
           "options": [
-            { "score": 1, "label": "Less than 40% soil cover — significant bare soil periods, no deliberate cover cropping" },
-            { "score": 2, "label": "40–60% soil cover — some cover crops or residue management, moving toward regenerative" },
-            { "score": 3, "label": "60% or more soil cover — year-round cover as a principle (Rainforest Alliance regenerative threshold)" }
+            { "score": 1, "label": "Little to no natural soil cover at any time of year; bare soil exposed; no ground cover strategy." },
+            { "score": 2, "label": "Soil cover present but not managed; grows unchecked; may compete with main crop for water/nutrients; farmer does not actively control cover amount or timing." },
+            { "score": 3, "label": "Soil cover actively managed through intentional winter and summer cover crop rotations; winter cover crops (e.g., clover, vetch) planted and allowed to establish; summer cover crops managed (rolled, cut, or grazed) to prevent competition with citrus during water-stressed season; cover crops regrow annually from established root systems; farmer maintains optimal balance between soil protection and citrus water/nutrient availability through seasonal management." }
           ]
         }
       ]
@@ -187,16 +133,25 @@
     {
       "id": "crop_diversification",
       "title": "Crop Diversification",
-      "description": "In the case of seasonal crops, apply associations and/or rotations and/or crop diversification by combining them in space and over time.",
-      "source": "Iberian RA Criteria 2026 – Criterion 7; Perrino et al. (2025); Deng et al. (2025); Fernández-Soler et al. (2024)",
+      "description": "In the case of seasonal crops, apply associations and/or rotations and/or crop diversification by combining them in space and time. In the case of perennial crops, apply intercropping and/or agroforestry and/or vegetation diversification.",
+      "source": "Iberian RA Criteria 2026 – Criterion 7",
       "questions": [
         {
           "id": "intercropping",
           "text": "How diverse is your cropping system — do you use intercropping or alley cropping between citrus rows?",
           "options": [
-            { "score": 1, "label": "Monoculture — single crop variety, no intercropping or cover crops between rows" },
-            { "score": 2, "label": "Partial diversification — some cover crops or alley cropping, limited species variety" },
-            { "score": 3, "label": "Intercropping or alley cropping — multiple species actively used, including leguminous species for high inter-row diversity" }
+            { "score": 1, "label": "Single crop variety. No deliberate diversification. No intercropping between rows." },
+            { "score": 2, "label": "Some alley cropping. Limited species variety." },
+            { "score": 3, "label": "Active intercropping or alley cropping utilised, including leguminous species. High inter-row diversity." }
+          ]
+        },
+        {
+          "id": "crop_variety",
+          "text": "What types of citrus varieties are planted on your farm?",
+          "options": [
+            { "score": 1, "label": "Farm planted with conventional citrus varieties bred for high-input systems; require synthetic fertilizers and frequent irrigation; poor drought tolerance; not suited to RA conditions." },
+            { "score": 2, "label": "Farm contains a mix of conventional and drought-resistant varieties; gradual replanting toward water-efficient cultivars; some plants suited to RA, others still dependent on high inputs." },
+            { "score": 3, "label": "Farm planted primarily with drought-resistant citrus varieties or heirloom/indigenous varieties suited to RA conditions; require less water and synthetic inputs; naturally resilient to local climate and pests; compatible with low-input RA management." }
           ]
         }
       ]
@@ -208,12 +163,48 @@
       "source": "Iberian RA Criteria 2026 – Criterion 8",
       "questions": [
         {
-          "id": "synthetic_use",
-          "text": "What is your current use of synthetic chemical inputs (fertilisers, herbicides, pesticides)?",
+          "id": "synthetic_biocides",
+          "text": "What is your use of synthetic pesticides, herbicides, and fungicides?",
           "options": [
-            { "score": 1, "label": "Intensive synthetic use — regular use of synthetic fertilisers, herbicides, and pesticides" },
-            { "score": 2, "label": "Reduced synthetic use — some organic alternatives introduced, synthetics still used" },
-            { "score": 3, "label": "Organic only — only organic fertilisers and biocides used, no synthetic chemicals or GMO-derived inputs" }
+            { "score": 1, "label": "Conventional use of synthetic chemical fertilisers, herbicides, and pesticides." },
+            { "score": 2, "label": "Reduced synthetic inputs. Some organic alternatives introduced." },
+            { "score": 3, "label": "Only organic biocides used. No synthetic chemicals, transgenics, or GMO-derived inputs." }
+          ]
+        },
+        {
+          "id": "som_management",
+          "text": "How do you manage Soil Organic Matter (SOM)?",
+          "options": [
+            { "score": 1, "label": "No SOM added to soil; relies on synthetic fertilizers only." },
+            { "score": 2, "label": "SOM is added occasionally; compost, manure, or green manure crops used inconsistently; not yet standard practice." },
+            { "score": 3, "label": "SOM amendments are an integral and regular practice; compost, manure, or green manure crops applied systematically as core fertility strategy." }
+          ]
+        },
+        {
+          "id": "micronutrient_management",
+          "text": "How do you manage micronutrients on your farm?",
+          "options": [
+            { "score": 1, "label": "Only generic NPK fertiliser added to soil routinely." },
+            { "score": 2, "label": "Micronutrients added only to address visible deficiencies." },
+            { "score": 3, "label": "Specific deficiencies identified through lab tests and only those micronutrients are applied to the areas where they are required." }
+          ]
+        },
+        {
+          "id": "fertiliser",
+          "text": "What type of fertiliser do you apply?",
+          "options": [
+            { "score": 1, "label": "Only synthetic fertiliser is applied." },
+            { "score": 2, "label": "A combination of synthetic and organic fertiliser is applied." },
+            { "score": 3, "label": "Only organic fertiliser used and only applied as required." }
+          ]
+        },
+        {
+          "id": "biological_pest_management",
+          "text": "How do you manage pests on your farm?",
+          "options": [
+            { "score": 1, "label": "No biological pest management employed." },
+            { "score": 2, "label": "Natural traps and predators used for invasive and indigenous pests." },
+            { "score": 3, "label": "Natural traps and predators used only for invasive pests. An environment is created that naturally attracts beneficial insects to manage indigenous pests." }
           ]
         }
       ]
@@ -222,33 +213,24 @@
       "id": "plastics_waste",
       "title": "Plastics & Waste",
       "description": "Minimize the use of plastic and non-recyclable materials, and ensure proper recycling of those that are used.",
-      "source": "Iberian RA Criteria 2026 – Criterion 9; Gilbert, Ricci & Thompson / FAO (2021)",
+      "source": "Iberian RA Criteria 2026 – Criterion 9",
       "questions": [
         {
-          "id": "plastic_mulch",
-          "text": "How do you manage ground cover mulching on your farm?",
+          "id": "mulching",
+          "text": "What type of mulching do you use on your farm?",
           "options": [
-            { "score": 1, "label": "Plastic mulch — standard plastic sheeting used with no plan to reduce or replace" },
-            { "score": 2, "label": "Limited or biodegradable plastic — biodegradable, paper-based, or thick (≥2mm) plastic if used" },
-            { "score": 3, "label": "Organic mulching only — pruning waste, cover crops, or biomass used instead of plastic mulch" }
+            { "score": 1, "label": "Low-quality plastic mulching used as primary mulching form." },
+            { "score": 2, "label": "Farmer routinely uses a combination of plastic and organic mulching." },
+            { "score": 3, "label": "Plastic mulching is used only when absolutely necessary (e.g., invasive plants) and must be high-quality permeable tarpaulin that does not degrade and allows the soil to breathe and receive rainwater." }
           ]
         },
         {
-          "id": "infrastructure_plastic",
-          "text": "What materials does your farm infrastructure use (irrigation pipes, protective netting, supports for young trees)?",
+          "id": "general_plastics",
+          "text": "How do you manage general plastic use and disposal on the farm?",
           "options": [
-            { "score": 1, "label": "PVC-based — PVC irrigation pipes or woven PVC textile used extensively" },
-            { "score": 2, "label": "Mixed — some PVC, some alternatives; moving toward reducing PVC-based products" },
-            { "score": 3, "label": "No PVC — irrigation system without PVC polymers; organic or bio-based supports used for young trees" }
-          ]
-        },
-        {
-          "id": "waste_disposal",
-          "text": "How do you dispose of agricultural plastic waste (drip tape, packaging, nets, containers)?",
-          "options": [
-            { "score": 1, "label": "Burned or buried — plastics burned on farm or left in the field" },
-            { "score": 2, "label": "Municipal waste point — taken to standard waste collection" },
-            { "score": 3, "label": "Proper recycling — delivered to certified scheme (e.g. MAPLA), with waste records and polymer separation" }
+            { "score": 1, "label": "Plastic is burned or incorporated into the soil." },
+            { "score": 2, "label": "Farmer limits plastic use and removes them from the farm before they degrade." },
+            { "score": 3, "label": "High-quality plastic only used where necessary and is sustainably disposed of before it degrades." }
           ]
         }
       ]
@@ -257,42 +239,33 @@
       "id": "social_foundations",
       "title": "Social & Territorial Foundations",
       "description": "Promote landscape-wide cooperation and knowledge transfer, to strengthen the community and the sustainability of territories.",
-      "source": "Iberian RA Criteria 2026 – Criterion 10; Gaspar et al. (2025)",
+      "source": "Iberian RA Criteria 2026 – Criterion 10",
       "questions": [
         {
           "id": "knowledge_exchange",
           "text": "How actively do you participate in knowledge exchange and learning with other farmers?",
           "options": [
-            { "score": 1, "label": "Absent — no participation in knowledge exchange events; information only from top-down channels" },
-            { "score": 2, "label": "Informal — participates 2–5 times per year in events or through informal personal networks" },
-            { "score": 3, "label": "Active — organises or participates 3–5+ times per year in farmer networks, field days, or peer learning" }
+            { "score": 1, "label": "Farmer does not participate in knowledge exchange events. Receives information only through top-down channels." },
+            { "score": 2, "label": "Farmer participates 2–5 times per year in events or learns mainly through informal personal networks." },
+            { "score": 3, "label": "Farmer actively organises or participates 3–5+ times per year in farmer networks, field days, or peer-to-peer learning opportunities." }
           ]
         },
         {
           "id": "community_identity",
           "text": "How connected do you feel to Valencia and the local farming community?",
           "options": [
-            { "score": 1, "label": "Individual — operates alone with little connection or identity to the local area" },
-            { "score": 2, "label": "Connected — feels regional connection but not yet translated into active community engagement" },
-            { "score": 3, "label": "Embedded — strong connection to Valencia, invests in community, demonstrates social cohesion with the area" }
-          ]
-        },
-        {
-          "id": "local_decisions",
-          "text": "What role do you play in local agricultural decision-making (e.g. water board meetings, municipal farming committees)?",
-          "options": [
-            { "score": 1, "label": "None — does not attend local meetings where agricultural decisions are made" },
-            { "score": 2, "label": "Passive — attends meetings but takes a passive role" },
-            { "score": 3, "label": "Active — takes an active role in horizontal decision-making and empowers local agricultural direction" }
+            { "score": 1, "label": "Farmer operates as an individual with little connection or identity with Valencia or the surrounding area." },
+            { "score": 2, "label": "Farmer feels a connection to the region but has not translated this into active community engagement." },
+            { "score": 3, "label": "Farmer feels a strong connection to Valencia, invests in the community, and demonstrates social cohesion with the surrounding area." }
           ]
         },
         {
           "id": "cooperative_networks",
           "text": "What is your involvement in cooperatives or agricultural networks?",
           "options": [
-            { "score": 1, "label": "None — has not joined any cooperative; little access to grants, networks, or technical support" },
-            { "score": 2, "label": "Member — part of a cooperative but invests little energy in networking opportunities" },
-            { "score": 3, "label": "Active member — active in cooperatives, with good access to grants, policy connections, and local institutions" }
+            { "score": 1, "label": "Farmer has not joined any cooperative. Little access to grants, networks, or technical support." },
+            { "score": 2, "label": "Farmer is a member of a cooperative but invests little energy in networking opportunities." },
+            { "score": 3, "label": "Farmer is active in cooperatives, has good access to grants, policy connections, and local institutions." }
           ]
         }
       ]
@@ -307,18 +280,18 @@
           "id": "on_farm_inputs",
           "text": "Where do the majority of your farm inputs come from?",
           "options": [
-            { "score": 1, "label": "All inputs are purchased from commercial enterprises" },
-            { "score": 2, "label": "Some inputs are produced on-farm or purchased from other farmers" },
-            { "score": 3, "label": "The majority of inputs are either produced on-farm or purchased from other farmers" }
+            { "score": 1, "label": "All inputs are purchased from commercial enterprises." },
+            { "score": 2, "label": "Some inputs are produced on-farm or purchased from other farmers." },
+            { "score": 3, "label": "The majority of inputs are either produced on-farm or purchased from other farmers." }
           ]
         },
         {
           "id": "market_access",
           "text": "How do you sell your produce?",
           "options": [
-            { "score": 1, "label": "All produce sold at wholesale price directly to intermediaries, without any label or certification" },
-            { "score": 2, "label": "Produce sold through either a cooperative/organisation or through direct sales to consumers or businesses" },
-            { "score": 3, "label": "Produce sold through cooperative/organisation or direct sales and carries official certification" }
+            { "score": 1, "label": "All produce is sold at wholesale price directly to intermediaries, without any label or certification." },
+            { "score": 2, "label": "Produce is sold through either a cooperative/organisation or through direct sales to consumers or businesses." },
+            { "score": 3, "label": "Produce is sold through cooperative/organisation or direct sales and carries official certification." }
           ]
         }
       ]
