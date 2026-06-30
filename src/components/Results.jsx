@@ -107,15 +107,18 @@ export default function Results({ results, profile, onRetake, onDashboard, isHis
         <h2>{t.yourProfile}</h2>
         <div className="radar-wrap">
           <ResponsiveContainer width="100%" height={340}>
-            <RadarChart data={radarData} margin={{ top: 20, right: 40, bottom: 20, left: 40 }}>
-              <PolarGrid stroke="#ddd" />
-              <PolarAngleAxis dataKey="subject" tick={{ fill: '#444', fontSize: 11 }} />
+            <RadarChart data={radarData} margin={{ top: 20, right: 40, bottom: 10, left: 40 }}>
+              <PolarGrid stroke="#e0e0e0" />
+              <PolarAngleAxis dataKey="subject" tick={{ fill: '#555', fontSize: 10.5, fontWeight: 500 }} />
               <Radar name={t.benchmarkLabel} dataKey="benchmark"
                 stroke="#bbb" fill="transparent" strokeDasharray="5 4" strokeWidth={1.5} />
-              <Radar name="Score" dataKey="score"
-                stroke={level.color} fill={level.color} fillOpacity={0.25} strokeWidth={2} />
-              <Legend formatter={(name) => name === 'Score' ? (profile?.name || 'Your farm') : name} />
-              <Tooltip formatter={(v) => `${v}%`} />
+              <Radar name={t.yourScore} dataKey="score"
+                stroke={level.color} fill={level.color} fillOpacity={0.22} strokeWidth={2} />
+              <Legend
+                wrapperStyle={{ paddingTop: 24, fontSize: 12, color: '#666' }}
+                iconSize={10}
+              />
+              <Tooltip formatter={(v) => `${v}%`} contentStyle={{ fontSize: 12, borderRadius: 6, border: '1px solid #e0e0e0' }} />
             </RadarChart>
           </ResponsiveContainer>
         </div>
