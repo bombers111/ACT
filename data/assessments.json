@@ -131,5 +131,24 @@
       "social_foundations": 83,
       "economic_viability": 100
     }
+  },
+  {
+    "id": "1783003795579",
+    "date": "2026-07-02T14:49:55.579Z",
+    "profileName": "jonas 2",
+    "overallScore": 90,
+    "level": "Regenerative",
+    "criteria": {
+      "contextuality": 100,
+      "water": 100,
+      "biodiversity": 100,
+      "soil_management": 100,
+      "soil_nutrition": 100,
+      "crop_diversification": 50,
+      "plant_health_inputs": 80,
+      "plastics_waste": 100,
+      "social_foundations": 67,
+      "economic_viability": 100
+    }
   }
 ]
